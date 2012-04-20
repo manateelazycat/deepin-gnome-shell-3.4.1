@@ -1988,3 +1988,10 @@ msgstr "%1$s: %2$s"
 
 #~ msgid "Can't logout: %s"
 #~ msgstr "Can't logout: %s"
+
+msgid "Add to Desktop"
+msgstr "Add to Desktop"
+
+msgid "Remove from Desktop"
+msgstr "Remove from Desktop"
+

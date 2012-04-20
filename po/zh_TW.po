@@ -1738,3 +1738,10 @@ msgstr "%1$s：%2$s"
 
 #~ msgid "RECENT ITEMS"
 #~ msgstr "最近使用項目"
+
+msgid "Add to Desktop"
+msgstr "添加到桌面"
+
+msgid "Remove from Desktop"
+msgstr "從桌面移除"
+

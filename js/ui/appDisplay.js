@@ -23,6 +23,9 @@ const Tweener = imports.ui.tweener;
 const Workspace = imports.ui.workspace;
 const Params = imports.misc.params;
 
+const Util = imports.misc.util;
+const Gio = imports.gi.Gio;
+
 const MAX_APPLICATION_WORK_MILLIS = 75;
 const MENU_POPUP_TIMEOUT = 600;
 const SCROLL_TIME = 0.1;
@@ -724,6 +727,12 @@ const AppIconMenu = new Lang.Class({
 
             this._toggleFavoriteMenuItem = this._appendMenuItem(isFavorite ? _("Remove from Favorites")
                                                                 : _("Add to Favorites"));
+
+			let appId = this._source.app.get_id();
+			let isDesktopIcon = this.isDesktopIcon(appId);
+            this._appendSeparator();
+
+            this._toggleAddToDesktopMenuItem = this._appendMenuItem(isDesktopIcon ? _("Remove from Desktop") : _("Add to Desktop"));			
         }
     },
 
@@ -758,8 +767,50 @@ const AppIconMenu = new Lang.Class({
                 favs.removeFavorite(this._source.app.get_id());
             else
                 favs.addFavorite(this._source.app.get_id());
-        }
+        } else if (child == this._toggleAddToDesktopMenuItem) {
+			let appId = this._source.app.get_id();
+			let isDesktopIcon = this.isDesktopIcon(appId);
+			if (isDesktopIcon)
+				this.removeDesktopIcon(appId);
+			else
+				this.addDesktopIcon(appId);
+		}
+
         this.close();
-    }
+    },
+
+	isDesktopIcon: function(appId) {
+		try {
+			let desktopPath = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DESKTOP);
+			let file = Gio.file_new_for_path(desktopPath + "/" + appId);
+			let isExists = GLib.file_test(desktopPath + "/" + appId, GLib.FileTest.EXISTS);
+			
+			return isExists;
+		} catch (x) {
+			global.log(x);
+
+			return false;
+		}
+	},
+
+	addDesktopIcon: function(appId) {
+		try {
+			let command = "xdg-desktop-icon install --novendor /usr/share/applications/" + appId;
+			Util.trySpawnCommandLine(command);
+			globa.log("Add desktop");
+		} catch (err) {
+			global.log(err);
+		}
+	},
+
+	removeDesktopIcon: function(appId) {
+		try {
+			let command = "xdg-desktop-icon uninstall /usr/share/applications/" + appId;
+			Util.trySpawnCommandLine(command);
+			globa.log("Remove desktop");
+		} catch (err) {
+			global.log(err);
+		}
+	}
 });
 Signals.addSignalMethods(AppIconMenu.prototype);
