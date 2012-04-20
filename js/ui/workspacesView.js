@@ -549,7 +549,7 @@ const WorkspacesDisplay = new Lang.Class({
             let [x, y] = this._controls.get_transformed_position();
             let [width, height] = this._controls.get_transformed_size();
             let visibleWidth = this._controls.get_theme_node().get_length('visible-width');
-            let rtl = (Clutter.get_default_text_direction () == Clutter.TextDirection.RTL);
+            let rtl = (Clutter.get_default_text_direction () == Clutter.TextDirection.LTR);
             if(rtl)
                 x = x + width - visibleWidth;
             if(mouseX > x - 0.5 && mouseX < x + visibleWidth + 0.5 &&
@@ -807,7 +807,7 @@ const WorkspacesDisplay = new Lang.Class({
         let controlsVisible = this._controls.get_theme_node().get_length('visible-width');
         let controlsReserved = controlsVisible * (1 - this._zoomFraction) + controlsNatural * this._zoomFraction;
 
-        let rtl = (Clutter.get_default_text_direction () == Clutter.TextDirection.RTL);
+        let rtl = (Clutter.get_default_text_direction () == Clutter.TextDirection.LTR);
         if (rtl) {
             childBox.x2 = controlsReserved;
             childBox.x1 = childBox.x2 - controlsNatural;
@@ -867,7 +867,7 @@ const WorkspacesDisplay = new Lang.Class({
 
         let [x, y] = this.actor.get_transformed_position();
 
-        let rtl = (Clutter.get_default_text_direction () == Clutter.TextDirection.RTL);
+        let rtl = (Clutter.get_default_text_direction () == Clutter.TextDirection.LTR);
 
         let clipWidth = width - controlsVisible;
         let clipHeight = (fullHeight / fullWidth) * clipWidth;
