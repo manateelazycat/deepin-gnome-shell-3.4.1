@@ -218,7 +218,7 @@ function start() {
     wm = new WindowManager.WindowManager();
     messageTray = new MessageTray.MessageTray();
     keyboard = new Keyboard.Keyboard();
-    notificationDaemon = new NotificationDaemon.NotificationDaemon();
+    // notificationDaemon = new NotificationDaemon.NotificationDaemon();
     windowAttentionHandler = new WindowAttentionHandler.WindowAttentionHandler();
 
     if (global.session_type == Shell.SessionType.USER)
