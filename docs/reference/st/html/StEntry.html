@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StEntry</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="widgets.html" title="Widgets">
+<link rel="prev" href="StDrawingArea.html" title="StDrawingArea">
+<link rel="next" href="StIcon.html" title="StIcon">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StDrawingArea.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="widgets.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StIcon.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StEntry.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StEntry.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StEntry.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StEntry.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StEntry.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#StEntry.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StEntry"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StEntry.top_of_page"></a>StEntry</span></h2>
+<p>StEntry — Widget for displaying text</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StEntry.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StEntry.html#StEntry-struct" title="struct StEntry">StEntry</a>;
+struct              <a class="link" href="StEntry.html#StEntryClass" title="struct StEntryClass">StEntryClass</a>;
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StEntry.html#st-entry-get-clutter-text" title="st_entry_get_clutter_text ()">st_entry_get_clutter_text</a>           (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StEntry.html#st-entry-get-hint-text" title="st_entry_get_hint_text ()">st_entry_get_hint_text</a>              (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StEntry.html#st-entry-get-text" title="st_entry_get_text ()">st_entry_get_text</a>                   (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>);
+<a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          <a class="link" href="StEntry.html#st-entry-new" title="st_entry_new ()">st_entry_new</a>                        (<em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StEntry.html#st-entry-set-hint-text" title="st_entry_set_hint_text ()">st_entry_set_hint_text</a>              (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StEntry.html#st-entry-set-primary-icon" title="st_entry_set_primary_icon ()">st_entry_set_primary_icon</a>           (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *icon</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StEntry.html#st-entry-set-secondary-icon" title="st_entry_set_secondary_icon ()">st_entry_set_secondary_icon</a>         (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *icon</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StEntry.html#st-entry-set-text" title="st_entry_set_text ()">st_entry_set_text</a>                   (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StEntry.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----StEntry
+</pre>
+</div>
+<div class="refsect1">
+<a name="StEntry.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StEntry implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StEntry.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StEntry.html#StEntry--clutter-text" title='The "clutter-text" property'>clutter-text</a>"             <span class="type">ClutterText</span>*          : Read
+  "<a class="link" href="StEntry.html#StEntry--hint-text" title='The "hint-text" property'>hint-text</a>"                <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="StEntry.html#StEntry--text" title='The "text" property'>text</a>"                     <span class="type">gchar</span>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="StEntry.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="StEntry.html#StEntry-primary-icon-clicked" title='The "primary-icon-clicked" signal'>primary-icon-clicked</a>"                           : <code class="literal">Run Last</code>
+  "<a class="link" href="StEntry.html#StEntry-secondary-icon-clicked" title='The "secondary-icon-clicked" signal'>secondary-icon-clicked</a>"                         : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="StEntry.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> is a simple widget for displaying text. It derives from
+<a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> to add extra style and placement functionality over
+<span class="type">ClutterText</span>. The internal <span class="type">ClutterText</span> is publicly accessibly to allow
+applications to set further properties.
+</p>
+<p>
+<a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> supports the following pseudo style states:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>focus: the widget has focus</p></li>
+<li class="listitem"><p>indeterminate: the widget is showing the hint text</p></li>
+<li class="listitem"><p>hover: the widget is showing the hint text and is underneath the
+               pointer</p></li>
+</ul></div>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="StEntry.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StEntry-struct"></a><h3>struct StEntry</h3>
+<pre class="programlisting">struct StEntry;</pre>
+<p>
+The contents of this structure is private and should only be accessed using
+the provided API.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StEntryClass"></a><h3>struct StEntryClass</h3>
+<pre class="programlisting">struct StEntryClass {
+  StWidgetClass parent_class;
+
+  /* signals */
+  void (*primary_icon_clicked)   (StEntry *entry);
+  void (*secondary_icon_clicked) (StEntry *entry);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-entry-get-clutter-text"></a><h3>st_entry_get_clutter_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_entry_get_clutter_text           (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>);</pre>
+<p>
+Retrieve the internal <span class="type">ClutterText</span> so that extra parameters can be set
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <span class="type">ClutterText</span> used by <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>. The entry is
+owned by the <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> and should not be unref'ed by the application. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-entry-get-hint-text"></a><h3>st_entry_get_hint_text ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_entry_get_hint_text              (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>);</pre>
+<p>
+Gets the text that is displayed when the entry is empty and unfocused
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the current value of the hint property. This string is owned by the
+<a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> and should not be freed or modified.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-entry-get-text"></a><h3>st_entry_get_text ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_entry_get_text                   (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>);</pre>
+<p>
+Get the text displayed on the entry
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the text for the entry. This must not be freed by the application</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-entry-new"></a><h3>st_entry_new ()</h3>
+<pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          st_entry_new                        (<em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
+<p>
+Create a new <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> with the specified entry
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>text to set the entry to</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-entry-set-hint-text"></a><h3>st_entry_set_hint_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_entry_set_hint_text              (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
+<p>
+Sets the text to display when the entry is empty and unfocused. When the
+entry is displaying the hint, it has a pseudo class of "indeterminate".
+A value of NULL unsets the hint.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>text to set as the entry hint. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-entry-set-primary-icon"></a><h3>st_entry_set_primary_icon ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_entry_set_primary_icon           (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *icon</code></em>);</pre>
+<p>
+Set the primary icon of the entry to <em class="parameter"><code>icon</code></em>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>a <span class="type">ClutterActor</span>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-entry-set-secondary-icon"></a><h3>st_entry_set_secondary_icon ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_entry_set_secondary_icon         (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *icon</code></em>);</pre>
+<p>
+Set the secondary icon of the entry to <em class="parameter"><code>icon</code></em>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>an <span class="type">ClutterActor</span>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-entry-set-text"></a><h3>st_entry_set_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_entry_set_text                   (<em class="parameter"><code><a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
+<p>
+Sets the text displayed on the entry
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>text to set the entry to. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StEntry.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StEntry--clutter-text"></a><h3>The <code class="literal">"clutter-text"</code> property</h3>
+<pre class="programlisting">  "clutter-text"             <span class="type">ClutterText</span>*          : Read</pre>
+<p>Internal ClutterText actor.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StEntry--hint-text"></a><h3>The <code class="literal">"hint-text"</code> property</h3>
+<pre class="programlisting">  "hint-text"                <span class="type">gchar</span>*                : Read / Write</pre>
+<p>Text to display when the entry is not focused and the text property is empty.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StEntry--text"></a><h3>The <code class="literal">"text"</code> property</h3>
+<pre class="programlisting">  "text"                     <span class="type">gchar</span>*                : Read / Write</pre>
+<p>Text of the entry.</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="StEntry.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="StEntry-primary-icon-clicked"></a><h3>The <code class="literal">"primary-icon-clicked"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *arg0,
+                                                        <span class="type">gpointer</span> user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the primary icon is clicked
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StEntry-secondary-icon-clicked"></a><h3>The <code class="literal">"secondary-icon-clicked"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StEntry.html" title="StEntry"><span class="type">StEntry</span></a> *arg0,
+                                                        <span class="type">gpointer</span> user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the secondary icon is clicked
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

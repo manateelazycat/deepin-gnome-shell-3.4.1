@@ -1,0 +1,1595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>st-theme-node</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="styling.html" title="Styling">
+<link rel="prev" href="st-st-theme-context.html" title="st-theme-context">
+<link rel="next" href="StThemeNodeTransition.html" title="StThemeNodeTransition">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="st-st-theme-context.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="styling.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StThemeNodeTransition.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#st-st-theme-node.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#st-st-theme-node.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#st-st-theme-node.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#st-st-theme-node.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#st-st-theme-node.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="st-st-theme-node"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="st-st-theme-node.top_of_page"></a>st-theme-node</span></h2>
+<p>st-theme-node — style information for one node in a tree of themed objects</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="st-st-theme-node.synopsis"></a><h2>Synopsis</h2>
+<a name="StTheme"></a><a name="StThemeContext"></a><a name="StThemeNode"></a><pre class="synopsis">enum                <a class="link" href="st-st-theme-node.html#StCorner" title="enum StCorner">StCorner</a>;
+enum                <a class="link" href="st-st-theme-node.html#StGradientType" title="enum StGradientType">StGradientType</a>;
+enum                <a class="link" href="st-st-theme-node.html#StSide" title="enum StSide">StSide</a>;
+enum                <a class="link" href="st-st-theme-node.html#StTextAlign" title="enum StTextAlign">StTextAlign</a>;
+enum                <a class="link" href="st-st-theme-node.html#StTextDecoration" title="enum StTextDecoration">StTextDecoration</a>;
+                    <a class="link" href="st-st-theme-node.html#StTheme-struct" title="StTheme">StTheme</a>;
+                    <a class="link" href="st-st-theme-node.html#StThemeContext-struct" title="StThemeContext">StThemeContext</a>;
+                    <a class="link" href="st-st-theme-node.html#StThemeNode-struct" title="StThemeNode">StThemeNode</a>;
+                    <a class="link" href="st-st-theme-node.html#StThemeNodeClass" title="StThemeNodeClass">StThemeNodeClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-adjust-for-height" title="st_theme_node_adjust_for_height ()">st_theme_node_adjust_for_height</a>     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *for_height</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-adjust-for-width" title="st_theme_node_adjust_for_width ()">st_theme_node_adjust_for_width</a>      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *for_width</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-adjust-preferred-height" title="st_theme_node_adjust_preferred_height ()">st_theme_node_adjust_preferred_height</a>
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *min_height_p</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *natural_height_p</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-adjust-preferred-width" title="st_theme_node_adjust_preferred_width ()">st_theme_node_adjust_preferred_width</a>
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *min_width_p</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *natural_width_p</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-copy-cached-paint-state" title="st_theme_node_copy_cached_paint_state ()">st_theme_node_copy_cached_paint_state</a>
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *other</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="st-st-theme-node.html#st-theme-node-equal" title="st_theme_node_equal ()">st_theme_node_equal</a>                 (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node_a</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node_b</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="st-st-theme-node.html#st-theme-node-geometry-equal" title="st_theme_node_geometry_equal ()">st_theme_node_geometry_equal</a>        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *other</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-background-color" title="st_theme_node_get_background_color ()">st_theme_node_get_background_color</a>  (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-background-gradient" title="st_theme_node_get_background_gradient ()">st_theme_node_get_background_gradient</a>
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StGradientType" title="enum StGradientType"><span class="type">StGradientType</span></a> *type</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *start</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *end</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="st-st-theme-node.html#st-theme-node-get-background-image" title="st_theme_node_get_background_image ()">st_theme_node_get_background_image</a>  (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">StShadow</span> *          <a class="link" href="st-st-theme-node.html#st-theme-node-get-background-image-shadow" title="st_theme_node_get_background_image_shadow ()">st_theme_node_get_background_image_shadow</a>
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-background-paint-box" title="st_theme_node_get_background_paint_box ()">st_theme_node_get_background_paint_box</a>
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *paint_box</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-border-color" title="st_theme_node_get_border_color ()">st_theme_node_get_border_color</a>      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StSide" title="enum StSide"><span class="type">StSide</span></a> side</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);
+<span class="returnvalue">StBorderImage</span> *     <a class="link" href="st-st-theme-node.html#st-theme-node-get-border-image" title="st_theme_node_get_border_image ()">st_theme_node_get_border_image</a>      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-border-radius" title="st_theme_node_get_border_radius ()">st_theme_node_get_border_radius</a>     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StCorner" title="enum StCorner"><span class="type">StCorner</span></a> corner</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-border-width" title="st_theme_node_get_border_width ()">st_theme_node_get_border_width</a>      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StSide" title="enum StSide"><span class="type">StSide</span></a> side</code></em>);
+<span class="returnvalue">StShadow</span> *          <a class="link" href="st-st-theme-node.html#st-theme-node-get-box-shadow" title="st_theme_node_get_box_shadow ()">st_theme_node_get_box_shadow</a>        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-color" title="st_theme_node_get_color ()">st_theme_node_get_color</a>             (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-content-box" title="st_theme_node_get_content_box ()">st_theme_node_get_content_box</a>       (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *content_box</code></em>);
+<span class="returnvalue">gdouble</span>             <a class="link" href="st-st-theme-node.html#st-theme-node-get-double" title="st_theme_node_get_double ()">st_theme_node_get_double</a>            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="st-st-theme-node.html#st-theme-node-get-element-class" title="st_theme_node_get_element_class ()">st_theme_node_get_element_class</a>     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="st-st-theme-node.html#st-theme-node-get-element-id" title="st_theme_node_get_element_id ()">st_theme_node_get_element_id</a>        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">GType</span>               <a class="link" href="st-st-theme-node.html#st-theme-node-get-element-type" title="st_theme_node_get_element_type ()">st_theme_node_get_element_type</a>      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+const <span class="returnvalue">PangoFontDescription</span> * <a class="link" href="st-st-theme-node.html#st-theme-node-get-font" title="st_theme_node_get_font ()">st_theme_node_get_font</a>     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-foreground-color" title="st_theme_node_get_foreground_color ()">st_theme_node_get_foreground_color</a>  (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-height" title="st_theme_node_get_height ()">st_theme_node_get_height</a>            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">double</span>              <a class="link" href="st-st-theme-node.html#st-theme-node-get-horizontal-padding" title="st_theme_node_get_horizontal_padding ()">st_theme_node_get_horizontal_padding</a>
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">StIconColors</span> *      <a class="link" href="st-st-theme-node.html#st-theme-node-get-icon-colors" title="st_theme_node_get_icon_colors ()">st_theme_node_get_icon_colors</a>       (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">gdouble</span>             <a class="link" href="st-st-theme-node.html#st-theme-node-get-length" title="st_theme_node_get_length ()">st_theme_node_get_length</a>            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-max-height" title="st_theme_node_get_max_height ()">st_theme_node_get_max_height</a>        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-max-width" title="st_theme_node_get_max_width ()">st_theme_node_get_max_width</a>         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-min-height" title="st_theme_node_get_min_height ()">st_theme_node_get_min_height</a>        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-min-width" title="st_theme_node_get_min_width ()">st_theme_node_get_min_width</a>         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-outline-color" title="st_theme_node_get_outline_color ()">st_theme_node_get_outline_color</a>     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-outline-width" title="st_theme_node_get_outline_width ()">st_theme_node_get_outline_width</a>     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">double</span>              <a class="link" href="st-st-theme-node.html#st-theme-node-get-padding" title="st_theme_node_get_padding ()">st_theme_node_get_padding</a>           (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StSide" title="enum StSide"><span class="type">StSide</span></a> side</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-get-paint-box" title="st_theme_node_get_paint_box ()">st_theme_node_get_paint_box</a>         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *paint_box</code></em>);
+<a class="link" href="st-st-theme-node.html#StThemeNode"><span class="returnvalue">StThemeNode</span></a> *       <a class="link" href="st-st-theme-node.html#st-theme-node-get-parent" title="st_theme_node_get_parent ()">st_theme_node_get_parent</a>            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="st-st-theme-node.html#st-theme-node-get-pseudo-class" title="st_theme_node_get_pseudo_class ()">st_theme_node_get_pseudo_class</a>      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">StShadow</span> *          <a class="link" href="st-st-theme-node.html#st-theme-node-get-shadow" title="st_theme_node_get_shadow ()">st_theme_node_get_shadow</a>            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>);
+<a class="link" href="st-st-theme-node.html#StTextAlign" title="enum StTextAlign"><span class="returnvalue">StTextAlign</span></a>         <a class="link" href="st-st-theme-node.html#st-theme-node-get-text-align" title="st_theme_node_get_text_align ()">st_theme_node_get_text_align</a>        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<a class="link" href="st-st-theme-node.html#StTextDecoration" title="enum StTextDecoration"><span class="returnvalue">StTextDecoration</span></a>    <a class="link" href="st-st-theme-node.html#st-theme-node-get-text-decoration" title="st_theme_node_get_text_decoration ()">st_theme_node_get_text_decoration</a>   (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">StShadow</span> *          <a class="link" href="st-st-theme-node.html#st-theme-node-get-text-shadow" title="st_theme_node_get_text_shadow ()">st_theme_node_get_text_shadow</a>       (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<a class="link" href="st-st-theme-node.html#StTheme"><span class="returnvalue">StTheme</span></a> *           <a class="link" href="st-st-theme-node.html#st-theme-node-get-theme" title="st_theme_node_get_theme ()">st_theme_node_get_theme</a>             (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-transition-duration" title="st_theme_node_get_transition_duration ()">st_theme_node_get_transition_duration</a>
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">double</span>              <a class="link" href="st-st-theme-node.html#st-theme-node-get-vertical-padding" title="st_theme_node_get_vertical_padding ()">st_theme_node_get_vertical_padding</a>  (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="st-st-theme-node.html#st-theme-node-get-width" title="st_theme_node_get_width ()">st_theme_node_get_width</a>             (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="st-st-theme-node.html#st-theme-node-lookup-color" title="st_theme_node_lookup_color ()">st_theme_node_lookup_color</a>          (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> inherit</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="st-st-theme-node.html#st-theme-node-lookup-double" title="st_theme_node_lookup_double ()">st_theme_node_lookup_double</a>         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> inherit</code></em>,
+                                                         <em class="parameter"><code><span class="type">double</span> *value</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="st-st-theme-node.html#st-theme-node-lookup-length" title="st_theme_node_lookup_length ()">st_theme_node_lookup_length</a>         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> inherit</code></em>,
+                                                         <em class="parameter"><code><span class="type">gdouble</span> *length</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="st-st-theme-node.html#st-theme-node-lookup-shadow" title="st_theme_node_lookup_shadow ()">st_theme_node_lookup_shadow</a>         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> inherit</code></em>,
+                                                         <em class="parameter"><code><span class="type">StShadow</span> **shadow</code></em>);
+<a class="link" href="st-st-theme-node.html#StThemeNode"><span class="returnvalue">StThemeNode</span></a> *       <a class="link" href="st-st-theme-node.html#st-theme-node-new" title="st_theme_node_new ()">st_theme_node_new</a>                   (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeContext"><span class="type">StThemeContext</span></a> *context</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *parent_node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StTheme"><span class="type">StTheme</span></a> *theme</code></em>,
+                                                         <em class="parameter"><code><span class="type">GType</span> element_type</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *element_id</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *element_class</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *pseudo_class</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *inline_style</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-st-theme-node.html#st-theme-node-paint" title="st_theme_node_paint ()">st_theme_node_paint</a>                 (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *box</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint8</span> paint_opacity</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="st-st-theme-node.html#st-theme-node-paint-equal" title="st_theme_node_paint_equal ()">st_theme_node_paint_equal</a>           (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *other</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="st-st-theme-node.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----StTheme
+</pre>
+<pre class="synopsis">
+  GObject
+   +----StThemeContext
+</pre>
+<pre class="synopsis">
+  GObject
+   +----StThemeNode
+</pre>
+</div>
+<div class="refsect1">
+<a name="st-st-theme-node.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="st-st-theme-node.html#StTheme--application-stylesheet" title='The "application-stylesheet" property'>application-stylesheet</a>"   <span class="type">gchar</span>*                : Read / Write / Construct Only
+  "<a class="link" href="st-st-theme-node.html#StTheme--default-stylesheet" title='The "default-stylesheet" property'>default-stylesheet</a>"       <span class="type">gchar</span>*                : Read / Write / Construct Only
+  "<a class="link" href="st-st-theme-node.html#StTheme--theme-stylesheet" title='The "theme-stylesheet" property'>theme-stylesheet</a>"         <span class="type">gchar</span>*                : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="st-st-theme-node.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="st-st-theme-node.html#StThemeContext-changed" title='The "changed" signal'>changed</a>"                                        : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="st-st-theme-node.description"></a><h2>Description</h2>
+<p>
+A <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> represents the CSS style information (the set of CSS properties) for one
+node in a tree of themed objects. In typical usage, it represents the style information
+for a single <span class="type">ClutterActor</span>. A <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> is immutable: attributes such as the
+CSS classes for the node are passed in at construction. If the attributes of the node
+or any parent node change, the node should be discarded and a new node created.
+<a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> has generic accessors to look up properties by name and specific
+accessors for standard CSS properties that add caching and handling of various
+details of the CSS specification. <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> also has convenience functions to help
+in implementing a <span class="type">ClutterActor</span> with borders and padding.
+</p>
+</div>
+<div class="refsect1">
+<a name="st-st-theme-node.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StCorner"></a><h3>enum StCorner</h3>
+<pre class="programlisting">typedef enum {
+    ST_CORNER_TOPLEFT,
+    ST_CORNER_TOPRIGHT,
+    ST_CORNER_BOTTOMRIGHT,
+    ST_CORNER_BOTTOMLEFT
+} StCorner;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StGradientType"></a><h3>enum StGradientType</h3>
+<pre class="programlisting">typedef enum {
+  ST_GRADIENT_NONE,
+  ST_GRADIENT_VERTICAL,
+  ST_GRADIENT_HORIZONTAL,
+  ST_GRADIENT_RADIAL
+} StGradientType;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StSide"></a><h3>enum StSide</h3>
+<pre class="programlisting">typedef enum {
+    ST_SIDE_TOP,
+    ST_SIDE_RIGHT,
+    ST_SIDE_BOTTOM,
+    ST_SIDE_LEFT
+} StSide;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTextAlign"></a><h3>enum StTextAlign</h3>
+<pre class="programlisting">typedef enum {
+    ST_TEXT_ALIGN_LEFT = PANGO_ALIGN_LEFT,
+    ST_TEXT_ALIGN_CENTER = PANGO_ALIGN_CENTER,
+    ST_TEXT_ALIGN_RIGHT = PANGO_ALIGN_RIGHT,
+    ST_TEXT_ALIGN_JUSTIFY
+} StTextAlign;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTextDecoration"></a><h3>enum StTextDecoration</h3>
+<pre class="programlisting">typedef enum {
+    ST_TEXT_DECORATION_UNDERLINE    = 1 &lt;&lt; 0,
+    ST_TEXT_DECORATION_OVERLINE     = 1 &lt;&lt; 1,
+    ST_TEXT_DECORATION_LINE_THROUGH = 1 &lt;&lt; 2,
+    ST_TEXT_DECORATION_BLINK        = 1 &lt;&lt; 3
+} StTextDecoration;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTheme-struct"></a><h3>StTheme</h3>
+<pre class="programlisting">typedef struct _StTheme StTheme;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StThemeContext-struct"></a><h3>StThemeContext</h3>
+<pre class="programlisting">typedef struct _StThemeContext StThemeContext;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StThemeNode-struct"></a><h3>StThemeNode</h3>
+<pre class="programlisting">typedef struct _StThemeNode StThemeNode;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StThemeNodeClass"></a><h3>StThemeNodeClass</h3>
+<pre class="programlisting">typedef struct _StThemeNodeClass StThemeNodeClass;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-adjust-for-height"></a><h3>st_theme_node_adjust_for_height ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_adjust_for_height     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *for_height</code></em>);</pre>
+<p>
+Adjusts a "for height" passed to <code class="function">clutter_actor_get_preferred_width()</code> to
+account for borders and padding. This is a convenience function meant
+to be called from a <code class="function">get_preferred_width()</code> method of a <span class="type">ClutterActor</span>
+subclass. The value after adjustment is the height available for the actor's
+content.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>for_height</code></em> :</span></p></td>
+<td>the "for height" to adjust. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-adjust-for-width"></a><h3>st_theme_node_adjust_for_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_adjust_for_width      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *for_width</code></em>);</pre>
+<p>
+Adjusts a "for width" passed to <code class="function">clutter_actor_get_preferred_height()</code> to
+account for borders and padding. This is a convenience function meant
+to be called from a <code class="function">get_preferred_height()</code> method of a <span class="type">ClutterActor</span>
+subclass. The value after adjustment is the width available for the actor's
+content.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>for_width</code></em> :</span></p></td>
+<td>the "for width" to adjust. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-adjust-preferred-height"></a><h3>st_theme_node_adjust_preferred_height ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_adjust_preferred_height
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *min_height_p</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *natural_height_p</code></em>);</pre>
+<p>
+Adjusts the minimum and natural height computed for an actor by
+adding on the necessary space for borders and padding and taking
+into account any minimum or maximum height. This is a convenience
+function meant to be called from the <code class="function">get_preferred_height()</code> method
+of a <span class="type">ClutterActor</span> subclass
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min_height_p</code></em> :</span></p></td>
+<td>the minimum height to adjust. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>natural_height_p</code></em> :</span></p></td>
+<td>the natural height to adjust. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-adjust-preferred-width"></a><h3>st_theme_node_adjust_preferred_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_adjust_preferred_width
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *min_width_p</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *natural_width_p</code></em>);</pre>
+<p>
+Adjusts the minimum and natural width computed for an actor by
+adding on the necessary space for borders and padding and taking
+into account any minimum or maximum width. This is a convenience
+function meant to be called from the <code class="function">get_preferred_width()</code> method
+of a <span class="type">ClutterActor</span> subclass
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min_width_p</code></em> :</span></p></td>
+<td>the minimum width to adjust. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>natural_width_p</code></em> :</span></p></td>
+<td>the natural width to adjust. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-copy-cached-paint-state"></a><h3>st_theme_node_copy_cached_paint_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_copy_cached_paint_state
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *other</code></em>);</pre>
+<p>
+Copy cached painting state from <em class="parameter"><code>other</code></em> to <em class="parameter"><code>node</code></em>. This function can be used to
+optimize redrawing cached background images when the style on an element changess
+in a way that doesn't affect background drawing. This function must only be called
+if st_theme_node_paint_equal (node, other) returns <code class="literal">TRUE</code>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>other</code></em> :</span></p></td>
+<td>a different <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-equal"></a><h3>st_theme_node_equal ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_theme_node_equal                 (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node_a</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node_b</code></em>);</pre>
+<p>
+Compare two <a href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNodes</span></a>. Two nodes which compare equal will match
+the same CSS rules and have the same style properties. However, two
+nodes that have ended up with identical style properties do not
+necessarily compare equal.
+In detail, <em class="parameter"><code>node_a</code></em> and <em class="parameter"><code>node_b</code></em> are considered equal iff
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>they share the same <a class="link" href="st-st-theme-node.html#StTheme"><span class="type">StTheme</span></a> and <a class="link" href="st-st-theme-node.html#StThemeContext"><span class="type">StThemeContext</span></a></p></li>
+<li class="listitem"><p>they have the same parent</p></li>
+<li class="listitem"><p>they have the same element type</p></li>
+<li class="listitem"><p>their id, class, pseudo-class and inline-style match</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node_a</code></em> :</span></p></td>
+<td>first <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node_b</code></em> :</span></p></td>
+<td>second <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if <em class="parameter"><code>node_a</code></em> equals <em class="parameter"><code>node_b</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-geometry-equal"></a><h3>st_theme_node_geometry_equal ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_theme_node_geometry_equal        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *other</code></em>);</pre>
+<p>
+Tests if two theme nodes have the same borders and padding; this can be
+used to optimize having to relayout when the style applied to a Clutter
+actor changes colors without changing the geometry.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>other</code></em> :</span></p></td>
+<td>a different <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-background-color"></a><h3>st_theme_node_get_background_color ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_background_color  (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);</pre>
+<p>
+Gets <em class="parameter"><code>node</code></em>'s background color.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>location to store the color. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-background-gradient"></a><h3>st_theme_node_get_background_gradient ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_background_gradient
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StGradientType" title="enum StGradientType"><span class="type">StGradientType</span></a> *type</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *start</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *end</code></em>);</pre>
+<p>
+The <em class="parameter"><code>start</code></em> and <em class="parameter"><code>end</code></em> arguments will only be set if <em class="parameter"><code>type</code></em> is not <span class="type">ST_GRADIENT_NONE</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>A <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>Type of gradient. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td>Color at start of gradient. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td>Color at end of gradient. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-background-image"></a><h3>st_theme_node_get_background_image ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        st_theme_node_get_background_image  (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-background-image-shadow"></a><h3>st_theme_node_get_background_image_shadow ()</h3>
+<pre class="programlisting"><span class="returnvalue">StShadow</span> *          st_theme_node_get_background_image_shadow
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the value for the -st-background-image-shadow style property
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the node's background image shadow, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+if node has no such shadow. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-background-paint-box"></a><h3>st_theme_node_get_background_paint_box ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_background_paint_box
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *paint_box</code></em>);</pre>
+<p>
+Gets the box used to paint the actor's background, including the area
+occupied by properties which paint outside the actor's assigned allocation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>allocation</code></em> :</span></p></td>
+<td>the box allocated to a <span class="type">ClutterActor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>paint_box</code></em> :</span></p></td>
+<td>computed box occupied when painting the actor's background. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-border-color"></a><h3>st_theme_node_get_border_color ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_border_color      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StSide" title="enum StSide"><span class="type">StSide</span></a> side</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);</pre>
+<p>
+Gets the color of <em class="parameter"><code>node</code></em>'s border on <em class="parameter"><code>side</code></em>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>side</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StSide" title="enum StSide"><span class="type">StSide</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>location to store the color. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-border-image"></a><h3>st_theme_node_get_border_image ()</h3>
+<pre class="programlisting"><span class="returnvalue">StBorderImage</span> *     st_theme_node_get_border_image      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the value for the border-image style property
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the border image, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+if there is no border image. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-border-radius"></a><h3>st_theme_node_get_border_radius ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_border_radius     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StCorner" title="enum StCorner"><span class="type">StCorner</span></a> corner</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-border-width"></a><h3>st_theme_node_get_border_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_border_width      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StSide" title="enum StSide"><span class="type">StSide</span></a> side</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-box-shadow"></a><h3>st_theme_node_get_box_shadow ()</h3>
+<pre class="programlisting"><span class="returnvalue">StShadow</span> *          st_theme_node_get_box_shadow        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the value for the box-shadow style property
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the node's shadow, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+if node has no shadow. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-color"></a><h3>st_theme_node_get_color ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_color             (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);</pre>
+<p>
+Generically looks up a property containing a single color value. When
+specific getters (like <a class="link" href="st-st-theme-node.html#st-theme-node-get-background-color" title="st_theme_node_get_background_color ()"><code class="function">st_theme_node_get_background_color()</code></a>) exist, they
+should be used instead. They are cached, so more efficient, and have
+handling for shortcut properties and other details of CSS.
+</p>
+<p>
+If <em class="parameter"><code>property_name</code></em> is not found, a warning will be logged and a
+default color returned.
+</p>
+<p>
+See also <a class="link" href="st-st-theme-node.html#st-theme-node-lookup-color" title="st_theme_node_lookup_color ()"><code class="function">st_theme_node_lookup_color()</code></a>, which provides more options,
+and lets you handle the case where the theme does not specify the
+indicated color.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>The name of the color property</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>location to store the color that
+was determined. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-content-box"></a><h3>st_theme_node_get_content_box ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_content_box       (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *content_box</code></em>);</pre>
+<p>
+Gets the box within an actor's allocation that contents the content
+of an actor (excluding borders and padding). This is a convenience function
+meant to be used from the <code class="function">allocate()</code> or <code class="function">paint()</code> methods of a <span class="type">ClutterActor</span>
+subclass.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>allocation</code></em> :</span></p></td>
+<td>the box allocated to a <span class="type">ClutterAlctor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>content_box</code></em> :</span></p></td>
+<td>computed box occupied by the actor's content. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-double"></a><h3>st_theme_node_get_double ()</h3>
+<pre class="programlisting"><span class="returnvalue">gdouble</span>             st_theme_node_get_double            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>);</pre>
+<p>
+Generically looks up a property containing a single numeric value
+ without units.
+</p>
+<p>
+See also <a class="link" href="st-st-theme-node.html#st-theme-node-lookup-double" title="st_theme_node_lookup_double ()"><code class="function">st_theme_node_lookup_double()</code></a>, which provides more options,
+and lets you handle the case where the theme does not specify the
+indicated value.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>The name of the numeric property</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the value found. If <em class="parameter"><code>property_name</code></em> is not
+found, a warning will be logged and 0 will be returned.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-element-class"></a><h3>st_theme_node_get_element_class ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        st_theme_node_get_element_class     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-element-id"></a><h3>st_theme_node_get_element_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        st_theme_node_get_element_id        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-element-type"></a><h3>st_theme_node_get_element_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">GType</span>               st_theme_node_get_element_type      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-font"></a><h3>st_theme_node_get_font ()</h3>
+<pre class="programlisting">const <span class="returnvalue">PangoFontDescription</span> * st_theme_node_get_font     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-foreground-color"></a><h3>st_theme_node_get_foreground_color ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_foreground_color  (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);</pre>
+<p>
+Gets <em class="parameter"><code>node</code></em>'s foreground color.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>location to store the color. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-height"></a><h3>st_theme_node_get_height ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_height            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-horizontal-padding"></a><h3>st_theme_node_get_horizontal_padding ()</h3>
+<pre class="programlisting"><span class="returnvalue">double</span>              st_theme_node_get_horizontal_padding
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the total horizonal padding (left + right padding)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the total horizonal padding
+in pixels</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-icon-colors"></a><h3>st_theme_node_get_icon_colors ()</h3>
+<pre class="programlisting"><span class="returnvalue">StIconColors</span> *      st_theme_node_get_icon_colors       (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the colors that should be used for colorizing symbolic icons according
+the style of this node.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the icon colors to use for this theme node. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-length"></a><h3>st_theme_node_get_length ()</h3>
+<pre class="programlisting"><span class="returnvalue">gdouble</span>             st_theme_node_get_length            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>);</pre>
+<p>
+Generically looks up a property containing a single length value. When
+specific getters (like <a class="link" href="st-st-theme-node.html#st-theme-node-get-border-width" title="st_theme_node_get_border_width ()"><code class="function">st_theme_node_get_border_width()</code></a>) exist, they
+should be used instead. They are cached, so more efficient, and have
+handling for shortcut properties and other details of CSS.
+</p>
+<p>
+Unlike <a class="link" href="st-st-theme-node.html#st-theme-node-get-color" title="st_theme_node_get_color ()"><code class="function">st_theme_node_get_color()</code></a> and <a class="link" href="st-st-theme-node.html#st-theme-node-get-double" title="st_theme_node_get_double ()"><code class="function">st_theme_node_get_double()</code></a>,
+this does not print a warning if the property is not found; it just
+returns 0.
+</p>
+<p>
+See also <a class="link" href="st-st-theme-node.html#st-theme-node-lookup-length" title="st_theme_node_lookup_length ()"><code class="function">st_theme_node_lookup_length()</code></a>, which provides more options.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>The name of the length property</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the length, in pixels, or 0 if the property was not found.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-max-height"></a><h3>st_theme_node_get_max_height ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_max_height        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-max-width"></a><h3>st_theme_node_get_max_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_max_width         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-min-height"></a><h3>st_theme_node_get_min_height ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_min_height        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-min-width"></a><h3>st_theme_node_get_min_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_min_width         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-outline-color"></a><h3>st_theme_node_get_outline_color ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_outline_color     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);</pre>
+<p>
+Gets the color of <em class="parameter"><code>node</code></em>'s outline.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>location to store the color. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-outline-width"></a><h3>st_theme_node_get_outline_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_outline_width     (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-padding"></a><h3>st_theme_node_get_padding ()</h3>
+<pre class="programlisting"><span class="returnvalue">double</span>              st_theme_node_get_padding           (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StSide" title="enum StSide"><span class="type">StSide</span></a> side</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-paint-box"></a><h3>st_theme_node_get_paint_box ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_get_paint_box         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *paint_box</code></em>);</pre>
+<p>
+Gets the box used to paint the actor, including the area occupied
+by properties which paint outside the actor's assigned allocation.
+When painting <em class="parameter"><code>node</code></em> to an offscreen buffer, this function can be
+used to determine the necessary size of the buffer.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>allocation</code></em> :</span></p></td>
+<td>the box allocated to a <span class="type">ClutterActor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>paint_box</code></em> :</span></p></td>
+<td>computed box occupied when painting the actor. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-parent"></a><h3>st_theme_node_get_parent ()</h3>
+<pre class="programlisting"><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="returnvalue">StThemeNode</span></a> *       st_theme_node_get_parent            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the parent themed element node.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the parent <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if this
+is the root node of the tree of theme elements. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-pseudo-class"></a><h3>st_theme_node_get_pseudo_class ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        st_theme_node_get_pseudo_class      (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-shadow"></a><h3>st_theme_node_get_shadow ()</h3>
+<pre class="programlisting"><span class="returnvalue">StShadow</span> *          st_theme_node_get_shadow            (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>);</pre>
+<p>
+Generically looks up a property containing a set of shadow values. When
+specific getters (like <a class="link" href="st-st-theme-node.html#st-theme-node-get-box-shadow" title="st_theme_node_get_box_shadow ()"><code class="function">st_theme_node_get_box_shadow()</code></a>) exist, they
+should be used instead. They are cached, so more efficient, and have
+handling for shortcut properties and other details of CSS.
+</p>
+<p>
+Like <code class="function">st_theme_get_length()</code>, this does not print a warning if the property is
+not found; it just returns <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+</p>
+<p>
+See also <a class="link" href="st-st-theme-node.html#st-theme-node-lookup-shadow" title="st_theme_node_lookup_shadow ()"><code class="function">st_theme_node_lookup_shadow()</code></a>, which provides more options.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>The name of the shadow property</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the shadow, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the property was not found. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-text-align"></a><h3>st_theme_node_get_text_align ()</h3>
+<pre class="programlisting"><a class="link" href="st-st-theme-node.html#StTextAlign" title="enum StTextAlign"><span class="returnvalue">StTextAlign</span></a>         st_theme_node_get_text_align        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-text-decoration"></a><h3>st_theme_node_get_text_decoration ()</h3>
+<pre class="programlisting"><a class="link" href="st-st-theme-node.html#StTextDecoration" title="enum StTextDecoration"><span class="returnvalue">StTextDecoration</span></a>    st_theme_node_get_text_decoration   (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-text-shadow"></a><h3>st_theme_node_get_text_shadow ()</h3>
+<pre class="programlisting"><span class="returnvalue">StShadow</span> *          st_theme_node_get_text_shadow       (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the value for the text-shadow style property
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the node's text-shadow, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+if node has no text-shadow. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-theme"></a><h3>st_theme_node_get_theme ()</h3>
+<pre class="programlisting"><a class="link" href="st-st-theme-node.html#StTheme"><span class="returnvalue">StTheme</span></a> *           st_theme_node_get_theme             (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the theme stylesheet set that styles this node
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the theme stylesheet set. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-transition-duration"></a><h3>st_theme_node_get_transition_duration ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_transition_duration
+                                                        (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Get the value of the transition-duration property, which
+specifies the transition time between the previous <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+and <em class="parameter"><code>node</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>an <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the node's transition duration in milliseconds</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-vertical-padding"></a><h3>st_theme_node_get_vertical_padding ()</h3>
+<pre class="programlisting"><span class="returnvalue">double</span>              st_theme_node_get_vertical_padding  (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+<p>
+Gets the total vertical padding (top + bottom padding)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the total vertical padding
+in pixels</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-get-width"></a><h3>st_theme_node_get_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 st_theme_node_get_width             (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-lookup-color"></a><h3>st_theme_node_lookup_color ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_theme_node_lookup_color          (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> inherit</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterColor</span> *color</code></em>);</pre>
+<p>
+Generically looks up a property containing a single color value. When
+specific getters (like <a class="link" href="st-st-theme-node.html#st-theme-node-get-background-color" title="st_theme_node_get_background_color ()"><code class="function">st_theme_node_get_background_color()</code></a>) exist, they
+should be used instead. They are cached, so more efficient, and have
+handling for shortcut properties and other details of CSS.
+</p>
+<p>
+See also <a class="link" href="st-st-theme-node.html#st-theme-node-get-color" title="st_theme_node_get_color ()"><code class="function">st_theme_node_get_color()</code></a>, which provides a simpler API.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>The name of the color property</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inherit</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, if a value is not found for the property on the
+node, then it will be looked up on the parent node, and then on the
+parent's parent, and so forth. Note that if the property has a
+value of 'inherit' it will be inherited even if <code class="literal">FALSE</code> is passed
+in for <em class="parameter"><code>inherit</code></em>; this only affects the default behavior for inheritance.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>location to store the color that was
+determined. If the property is not found, the value in this location
+will not be changed. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the property was found in the properties for this
+theme node (or in the properties of parent nodes when inheriting.)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-lookup-double"></a><h3>st_theme_node_lookup_double ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_theme_node_lookup_double         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> inherit</code></em>,
+                                                         <em class="parameter"><code><span class="type">double</span> *value</code></em>);</pre>
+<p>
+Generically looks up a property containing a single numeric value
+ without units.
+</p>
+<p>
+See also <a class="link" href="st-st-theme-node.html#st-theme-node-get-double" title="st_theme_node_get_double ()"><code class="function">st_theme_node_get_double()</code></a>, which provides a simpler API.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>The name of the numeric property</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inherit</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, if a value is not found for the property on the
+node, then it will be looked up on the parent node, and then on the
+parent's parent, and so forth. Note that if the property has a
+value of 'inherit' it will be inherited even if <code class="literal">FALSE</code> is passed
+in for <em class="parameter"><code>inherit</code></em>; this only affects the default behavior for inheritance.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>location to store the value that was determined.
+If the property is not found, the value in this location
+will not be changed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the property was found in the properties for this
+theme node (or in the properties of parent nodes when inheriting.)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-lookup-length"></a><h3>st_theme_node_lookup_length ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_theme_node_lookup_length         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> inherit</code></em>,
+                                                         <em class="parameter"><code><span class="type">gdouble</span> *length</code></em>);</pre>
+<p>
+Generically looks up a property containing a single length value. When
+specific getters (like <a class="link" href="st-st-theme-node.html#st-theme-node-get-border-width" title="st_theme_node_get_border_width ()"><code class="function">st_theme_node_get_border_width()</code></a>) exist, they
+should be used instead. They are cached, so more efficient, and have
+handling for shortcut properties and other details of CSS.
+</p>
+<p>
+See also <a class="link" href="st-st-theme-node.html#st-theme-node-get-length" title="st_theme_node_get_length ()"><code class="function">st_theme_node_get_length()</code></a>, which provides a simpler API.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>The name of the length property</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inherit</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, if a value is not found for the property on the
+node, then it will be looked up on the parent node, and then on the
+parent's parent, and so forth. Note that if the property has a
+value of 'inherit' it will be inherited even if <code class="literal">FALSE</code> is passed
+in for <em class="parameter"><code>inherit</code></em>; this only affects the default behavior for inheritance.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>location to store the length that was determined.
+If the property is not found, the value in this location
+will not be changed. The returned length is resolved
+to pixels. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the property was found in the properties for this
+theme node (or in the properties of parent nodes when inheriting.)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-lookup-shadow"></a><h3>st_theme_node_lookup_shadow ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_theme_node_lookup_shadow         (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> inherit</code></em>,
+                                                         <em class="parameter"><code><span class="type">StShadow</span> **shadow</code></em>);</pre>
+<p>
+If the property is not found, the value in the shadow variable will not
+be changed.
+</p>
+<p>
+Generically looks up a property containing a set of shadow values. When
+specific getters (like <a class="link" href="st-st-theme-node.html#st-theme-node-get-box-shadow" title="st_theme_node_get_box_shadow ()"><code class="function">st_theme_node_get_box_shadow()</code></a>) exist, they
+should be used instead. They are cached, so more efficient, and have
+handling for shortcut properties and other details of CSS.
+</p>
+<p>
+See also <a class="link" href="st-st-theme-node.html#st-theme-node-get-shadow" title="st_theme_node_get_shadow ()"><code class="function">st_theme_node_get_shadow()</code></a>, which provides a simpler API.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>The name of the shadow property</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inherit</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, if a value is not found for the property on the
+node, then it will be looked up on the parent node, and then on the
+parent's parent, and so forth. Note that if the property has a
+value of 'inherit' it will be inherited even if <code class="literal">FALSE</code> is passed
+in for <em class="parameter"><code>inherit</code></em>; this only affects the default behavior for inheritance.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shadow</code></em> :</span></p></td>
+<td>location to store the shadow. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the property was found in the properties for this
+theme node (or in the properties of parent nodes when inheriting.)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-new"></a><h3>st_theme_node_new ()</h3>
+<pre class="programlisting"><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="returnvalue">StThemeNode</span></a> *       st_theme_node_new                   (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeContext"><span class="type">StThemeContext</span></a> *context</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *parent_node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StTheme"><span class="type">StTheme</span></a> *theme</code></em>,
+                                                         <em class="parameter"><code><span class="type">GType</span> element_type</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *element_id</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *element_class</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *pseudo_class</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *inline_style</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>. Once created, a node is immutable. Of any
+of the attributes of the node (like the <em class="parameter"><code>element_class</code></em>) change the node
+and its child nodes must be destroyed and recreated.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>the context representing global state for this themed tree</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent_node</code></em> :</span></p></td>
+<td>the parent node of this node. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theme</code></em> :</span></p></td>
+<td>a theme (stylesheet set) that overrides the
+theme inherited from the parent node. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>element_type</code></em> :</span></p></td>
+<td>the type of the GObject represented by this node
+in the tree (corresponding to an element if we were theming an XML
+document. <code class="literal">G_TYPE_NONE</code> means this style was created for the stage
+actor and matches a selector element name of 'stage'.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>element_id</code></em> :</span></p></td>
+<td>the ID to match CSS rules against. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>element_class</code></em> :</span></p></td>
+<td>a whitespace-separated list of classes
+to match CSS rules against. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pseudo_class</code></em> :</span></p></td>
+<td>a whitespace-separated list of pseudo-classes
+(like 'hover' or 'visited') to match CSS rules against. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the theme node. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-paint"></a><h3>st_theme_node_paint ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_paint                 (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *box</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint8</span> paint_opacity</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-paint-equal"></a><h3>st_theme_node_paint_equal ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_theme_node_paint_equal           (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *other</code></em>);</pre>
+<p>
+Check if <a class="link" href="st-st-theme-node.html#st-theme-node-paint" title="st_theme_node_paint ()"><code class="function">st_theme_node_paint()</code></a> will paint identically for <em class="parameter"><code>node</code></em> as it does
+for <em class="parameter"><code>other</code></em>. Note that in some cases this function may return <code class="literal">TRUE</code> even
+if there is no visible difference in the painting.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>other</code></em> :</span></p></td>
+<td>a different <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the two theme nodes paint identically. <code class="literal">FALSE</code> if the
+two nodes potentially paint differently.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="st-st-theme-node.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StTheme--application-stylesheet"></a><h3>The <code class="literal">"application-stylesheet"</code> property</h3>
+<pre class="programlisting">  "application-stylesheet"   <span class="type">gchar</span>*                : Read / Write / Construct Only</pre>
+<p>
+The highest priority stylesheet, representing application-specific
+styling; this is associated with the CSS "author" stylesheet.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTheme--default-stylesheet"></a><h3>The <code class="literal">"default-stylesheet"</code> property</h3>
+<pre class="programlisting">  "default-stylesheet"       <span class="type">gchar</span>*                : Read / Write / Construct Only</pre>
+<p>
+The lowest priority stylesheet, representing global default
+styling; this is associated with the CSS "user agent" stylesheet.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTheme--theme-stylesheet"></a><h3>The <code class="literal">"theme-stylesheet"</code> property</h3>
+<pre class="programlisting">  "theme-stylesheet"         <span class="type">gchar</span>*                : Read / Write / Construct Only</pre>
+<p>
+The second priority stylesheet, representing theme-specific styling;
+this is associated with the CSS "user" stylesheet.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="st-st-theme-node.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="StThemeContext-changed"></a><h3>The <code class="literal">"changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="st-st-theme-node.html#StThemeContext"><span class="type">StThemeContext</span></a> *stthemecontext,
+                                                        <span class="type">gpointer</span>        user_data)           : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

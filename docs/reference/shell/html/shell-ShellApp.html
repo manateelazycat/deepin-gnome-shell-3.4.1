@@ -1,0 +1,539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellApp</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Application tracking">
+<link rel="prev" href="ch02.html" title="Application tracking">
+<link rel="next" href="shell-ShellAppUsage.html" title="ShellAppUsage">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch02.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="shell-ShellAppUsage.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-ShellApp.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-ShellApp.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#shell-ShellApp.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-ShellApp"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-ShellApp.top_of_page"></a>ShellApp</span></h2>
+<p>ShellApp — Object representing an application</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-ShellApp.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellAppState"></a><pre class="synopsis">                    <a class="link" href="shell-ShellApp.html#ShellAppAction" title="ShellAppAction">ShellAppAction</a>;
+struct              <a class="link" href="shell-ShellApp.html#ShellAppClass" title="struct ShellAppClass">ShellAppClass</a>;
+enum                <a class="link" href="shell-ShellApp.html#ShellAppState-enum" title="enum ShellAppState">ShellAppState</a>;
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellApp.html#shell-app-activate" title="shell_app_activate ()">shell_app_activate</a>                  (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellApp.html#shell-app-activate-full" title="shell_app_activate_full ()">shell_app_activate_full</a>             (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> workspace</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellApp.html#shell-app-activate-window" title="shell_app_activate_window ()">shell_app_activate_window</a>           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindow</span> *window</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="shell-ShellApp.html#shell-app-compare" title="shell_app_compare ()">shell_app_compare</a>                   (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">ShellApp</span> *other</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="shell-ShellApp.html#shell-app-compare-by-name" title="shell_app_compare_by_name ()">shell_app_compare_by_name</a>           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">ShellApp</span> *other</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="shell-ShellApp.html#shell-app-create-icon-texture" title="shell_app_create_icon_texture ()">shell_app_create_icon_texture</a>       (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> size</code></em>);
+<span class="returnvalue">GDesktopAppInfo</span> *   <a class="link" href="shell-ShellApp.html#shell-app-get-app-info" title="shell_app_get_app_info ()">shell_app_get_app_info</a>              (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="shell-ShellApp.html#shell-app-get-description" title="shell_app_get_description ()">shell_app_get_description</a>           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="shell-ShellApp.html#shell-app-get-faded-icon" title="shell_app_get_faded_icon ()">shell_app_get_faded_icon</a>            (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> size</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="shell-ShellApp.html#shell-app-get-id" title="shell_app_get_id ()">shell_app_get_id</a>                    (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="shell-ShellApp.html#shell-app-get-n-windows" title="shell_app_get_n_windows ()">shell_app_get_n_windows</a>             (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="shell-ShellApp.html#shell-app-get-name" title="shell_app_get_name ()">shell_app_get_name</a>                  (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="shell-ShellApp.html#shell-app-get-pids" title="shell_app_get_pids ()">shell_app_get_pids</a>                  (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<a class="link" href="shell-ShellApp.html#ShellAppState"><span class="returnvalue">ShellAppState</span></a>       <a class="link" href="shell-ShellApp.html#shell-app-get-state" title="shell_app_get_state ()">shell_app_get_state</a>                 (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">GMenuTreeEntry</span> *    <a class="link" href="shell-ShellApp.html#shell-app-get-tree-entry" title="shell_app_get_tree_entry ()">shell_app_get_tree_entry</a>            (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="shell-ShellApp.html#shell-app-get-windows" title="shell_app_get_windows ()">shell_app_get_windows</a>               (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-ShellApp.html#shell-app-is-on-workspace" title="shell_app_is_on_workspace ()">shell_app_is_on_workspace</a>           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWorkspace</span> *workspace</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-ShellApp.html#shell-app-is-window-backed" title="shell_app_is_window_backed ()">shell_app_is_window_backed</a>          (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-ShellApp.html#shell-app-launch" title="shell_app_launch ()">shell_app_launch</a>                    (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> timestamp</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *uris</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> workspace</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **startup_id</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellApp.html#shell-app-open-new-window" title="shell_app_open_new_window ()">shell_app_open_new_window</a>           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> workspace</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-ShellApp.html#shell-app-request-quit" title="shell_app_request_quit ()">shell_app_request_quit</a>              (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellApp.html#shell-app-update-window-actions" title="shell_app_update_window_actions ()">shell_app_update_window_actions</a>     (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindow</span> *window</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-ShellApp.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GEnum
+   +----ShellAppState
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-ShellApp.description"></a><h2>Description</h2>
+<p>
+This object wraps a <span class="type">GMenuTreeEntry</span>, providing methods and signals
+primarily useful for running applications.
+</p>
+</div>
+<div class="refsect1">
+<a name="shell-ShellApp.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellAppAction"></a><h3>ShellAppAction</h3>
+<pre class="programlisting">typedef struct _ShellAppAction ShellAppAction;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellAppClass"></a><h3>struct ShellAppClass</h3>
+<pre class="programlisting">struct ShellAppClass {
+  GObjectClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellAppState-enum"></a><h3>enum ShellAppState</h3>
+<pre class="programlisting">typedef enum {
+  SHELL_APP_STATE_STOPPED,
+  SHELL_APP_STATE_STARTING,
+  SHELL_APP_STATE_RUNNING
+} ShellAppState;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-activate"></a><h3>shell_app_activate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_app_activate                  (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+<p>
+Like <a class="link" href="shell-ShellApp.html#shell-app-activate-full" title="shell_app_activate_full ()"><code class="function">shell_app_activate_full()</code></a>, but using the default workspace and
+event timestamp.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>a <span class="type">ShellApp</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-activate-full"></a><h3>shell_app_activate_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_app_activate_full             (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> workspace</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>);</pre>
+<p>
+Perform an appropriate default action for operating on this application,
+dependent on its current state.  For example, if the application is not
+currently running, launch it.  If it is running, activate the most
+recently used NORMAL window (or if that window has a transient, the most
+recently used transient for that window).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>a <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>workspace</code></em> :</span></p></td>
+<td>launch on this workspace, or -1 for default. Ignored if
+activating an existing window</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>timestamp</code></em> :</span></p></td>
+<td>Event timestamp</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-activate-window"></a><h3>shell_app_activate_window ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_app_activate_window           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindow</span> *window</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>);</pre>
+<p>
+Bring all windows for the given app to the foreground,
+but ensure that <em class="parameter"><code>window</code></em> is on top.  If <em class="parameter"><code>window</code></em> is <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>,
+the window with the most recent user time for the app
+will be used.
+</p>
+<p>
+This function has no effect if <em class="parameter"><code>app</code></em> is not currently running.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>a <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>Window to be focused. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>timestamp</code></em> :</span></p></td>
+<td>Event timestamp</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-compare"></a><h3>shell_app_compare ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 shell_app_compare                   (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">ShellApp</span> *other</code></em>);</pre>
+<p>
+Compare one <span class="type">ShellApp</span> instance to another, in the following way:
+  - Running applications sort before not-running applications.
+  - If one of them has visible windows and the other does not, the one
+    with visible windows is first.
+  - Finally, the application which the user interacted with most recently
+    compares earlier.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>other</code></em> :</span></p></td>
+<td>A <span class="type">ShellApp</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-compare-by-name"></a><h3>shell_app_compare_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 shell_app_compare_by_name           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">ShellApp</span> *other</code></em>);</pre>
+<p>
+Order two applications by name.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>One app</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>other</code></em> :</span></p></td>
+<td>The other app</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>-1, 0, or 1; suitable for use as a comparison function
+for e.g. <code class="function">g_slist_sort()</code>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-create-icon-texture"></a><h3>shell_app_create_icon_texture ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      shell_app_create_icon_texture       (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> size</code></em>);</pre>
+<p>
+Look up the icon for this application, and create a <span class="type">ClutterTexture</span>
+for it at the given size.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A floating <span class="type">ClutterActor</span>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-app-info"></a><h3>shell_app_get_app_info ()</h3>
+<pre class="programlisting"><span class="returnvalue">GDesktopAppInfo</span> *   shell_app_get_app_info              (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>a <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The <span class="type">GDesktopAppInfo</span> for this app, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if backed by a window. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-description"></a><h3>shell_app_get_description ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        shell_app_get_description           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-faded-icon"></a><h3>shell_app_get_faded_icon ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      shell_app_get_faded_icon            (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> size</code></em>);</pre>
+<p>
+Return an actor with a horizontally faded look.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>A <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>Size in pixels</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A floating <span class="type">ClutterActor</span>, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if no icon. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-id"></a><h3>shell_app_get_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        shell_app_get_id                    (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-n-windows"></a><h3>shell_app_get_n_windows ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>               shell_app_get_n_windows             (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-name"></a><h3>shell_app_get_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        shell_app_get_name                  (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-pids"></a><h3>shell_app_get_pids ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_app_get_pids                  (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>a <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>An unordered list of process identifers associated with this application. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> int]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-state"></a><h3>shell_app_get_state ()</h3>
+<pre class="programlisting"><a class="link" href="shell-ShellApp.html#ShellAppState"><span class="returnvalue">ShellAppState</span></a>       shell_app_get_state                 (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>a <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>State of the application</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-tree-entry"></a><h3>shell_app_get_tree_entry ()</h3>
+<pre class="programlisting"><span class="returnvalue">GMenuTreeEntry</span> *    shell_app_get_tree_entry            (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>a <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The <span class="type">GMenuTreeEntry</span> for this app, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if backed by a window. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-get-windows"></a><h3>shell_app_get_windows ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_app_get_windows               (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+<p>
+Get the toplevel, interesting windows which are associated with this
+application.  The returned list will be sorted first by whether
+they're on the active workspace, then by whether they're visible,
+and finally by the time the user last interacted with them.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>List of windows. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> MetaWindow]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-is-on-workspace"></a><h3>shell_app_is_on_workspace ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_app_is_on_workspace           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWorkspace</span> *workspace</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-is-window-backed"></a><h3>shell_app_is_window_backed ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_app_is_window_backed          (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+<p>
+A window backed application is one which represents just an open
+window, i.e. there's no .desktop file assocation, so we don't know
+how to launch it again.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-launch"></a><h3>shell_app_launch ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_app_launch                    (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> timestamp</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *uris</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> workspace</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **startup_id</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>timestamp</code></em> :</span></p></td>
+<td>Event timestamp, or 0 for current event timestamp</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uris</code></em> :</span></p></td>
+<td>List of uris to pass to application. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>workspace</code></em> :</span></p></td>
+<td>Start on this workspace, or -1 for default</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>startup_id</code></em> :</span></p></td>
+<td>Returned startup notification ID, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if none. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>A <span class="type">GError</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-open-new-window"></a><h3>shell_app_open_new_window ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_app_open_new_window           (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> workspace</code></em>);</pre>
+<p>
+Request that the application create a new window.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>a <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>workspace</code></em> :</span></p></td>
+<td>open on this workspace, or -1 for default</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-request-quit"></a><h3>shell_app_request_quit ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_app_request_quit              (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>);</pre>
+<p>
+Initiate an asynchronous request to quit this application.
+The application may interact with the user, and the user
+might cancel the quit request from the application UI.
+</p>
+<p>
+This operation may not be supported for all applications.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>app</code></em> :</span></p></td>
+<td>A <span class="type">ShellApp</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if a quit request is supported for this application</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-update-window-actions"></a><h3>shell_app_update_window_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_app_update_window_actions     (<em class="parameter"><code><span class="type">ShellApp</span> *app</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindow</span> *window</code></em>);</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

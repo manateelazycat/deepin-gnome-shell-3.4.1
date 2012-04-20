@@ -1,0 +1,46 @@
+From: Ricardo Salveti de Araujo <ricardo.salveti@linaro.org>
+Subject: Don't generically include the GL headers.
+
+The patch "Don't try to use GLX if Cogl isn't using that Winsys" removes
+the direct symbol usage of GLX elements, but the header is still being
+included by default. At an environment with both GL and GLES headers
+available, the build option for GLES will fail because of headers
+conflict between them.
+
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/935124
+Forwarded: not-needed
+
+Index: gnome-shell-3.4.1/src/gnome-shell-plugin.c
+===================================================================
+--- gnome-shell-3.4.1.orig/src/gnome-shell-plugin.c	2012-04-18 00:29:48.740306760 -0400
++++ gnome-shell-3.4.1/src/gnome-shell-plugin.c	2012-04-18 00:29:48.784306983 -0400
+@@ -32,8 +32,6 @@
+ #define COGL_ENABLE_EXPERIMENTAL_API
+ #include <clutter/clutter.h>
+ #include <clutter/x11/clutter-x11.h>
+-#include <GL/glx.h>
+-#include <GL/glxext.h>
+ #include <gjs/gjs.h>
+ #include <meta/display.h>
+ #include <meta/meta-plugin.h>
+Index: gnome-shell-3.4.1/src/Makefile.am
+===================================================================
+--- gnome-shell-3.4.1.orig/src/Makefile.am	2012-04-16 13:47:21.000000000 -0400
++++ gnome-shell-3.4.1/src/Makefile.am	2012-04-18 00:30:38.392552962 -0400
+@@ -115,7 +115,6 @@
+ 	shell-network-agent.h		\
+ 	shell-perf-log.h		\
+ 	shell-screenshot.h		\
+-	shell-screen-grabber.h		\
+ 	shell-slicer.h			\
+ 	shell-stack.h			\
+ 	shell-tp-client.h		\
+@@ -234,8 +232,6 @@
+ 
+ test_recorder_SOURCES =     \
+ 	$(shell_recorder_sources) $(shell_recorder_private_sources) \
+-	shell-screen-grabber.c	\
+-	shell-screen-grabber.h	\
+ 	test-recorder.c
+ endif BUILD_RECORDER
+ 

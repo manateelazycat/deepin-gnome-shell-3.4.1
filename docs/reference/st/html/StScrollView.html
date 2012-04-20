@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StScrollView</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="containers.html" title="Containers">
+<link rel="prev" href="StBoxLayout.html" title="StBoxLayout">
+<link rel="next" href="StTable.html" title="StTable">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StBoxLayout.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="containers.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StTable.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StScrollView.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StScrollView.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StScrollView.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StScrollView.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StScrollView.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StScrollView"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StScrollView.top_of_page"></a>StScrollView</span></h2>
+<p>StScrollView — a container for scrollable children</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StScrollView.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StScrollView.html#StScrollView-struct" title="struct StScrollView">StScrollView</a>;
+struct              <a class="link" href="StScrollView.html#StScrollViewClass" title="struct StScrollViewClass">StScrollViewClass</a>;
+<span class="returnvalue">gfloat</span>              <a class="link" href="StScrollView.html#st-scroll-view-get-column-size" title="st_scroll_view_get_column_size ()">st_scroll_view_get_column_size</a>      (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StScrollView.html#st-scroll-view-get-hscroll-bar" title="st_scroll_view_get_hscroll_bar ()">st_scroll_view_get_hscroll_bar</a>      (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StScrollView.html#st-scroll-view-get-mouse-scrolling" title="st_scroll_view_get_mouse_scrolling ()">st_scroll_view_get_mouse_scrolling</a>  (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);
+<span class="returnvalue">gfloat</span>              <a class="link" href="StScrollView.html#st-scroll-view-get-row-size" title="st_scroll_view_get_row_size ()">st_scroll_view_get_row_size</a>         (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StScrollView.html#st-scroll-view-get-vscroll-bar" title="st_scroll_view_get_vscroll_bar ()">st_scroll_view_get_vscroll_bar</a>      (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);
+<a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          <a class="link" href="StScrollView.html#st-scroll-view-new" title="st_scroll_view_new ()">st_scroll_view_new</a>                  (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StScrollView.html#st-scroll-view-set-column-size" title="st_scroll_view_set_column_size ()">st_scroll_view_set_column_size</a>      (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">gfloat</span> column_size</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StScrollView.html#st-scroll-view-set-mouse-scrolling" title="st_scroll_view_set_mouse_scrolling ()">st_scroll_view_set_mouse_scrolling</a>  (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> enabled</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StScrollView.html#st-scroll-view-set-policy" title="st_scroll_view_set_policy ()">st_scroll_view_set_policy</a>           (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkPolicyType</span> hscroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkPolicyType</span> vscroll</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StScrollView.html#st-scroll-view-set-row-size" title="st_scroll_view_set_row_size ()">st_scroll_view_set_row_size</a>         (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">gfloat</span> row_size</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StScrollView.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----<a class="link" href="StBin.html" title="StBin">StBin</a>
+                           +----StScrollView
+</pre>
+</div>
+<div class="refsect1">
+<a name="StScrollView.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StScrollView implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StScrollView.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StScrollView.html#StScrollView--enable-mouse-scrolling" title='The "enable-mouse-scrolling" property'>enable-mouse-scrolling</a>"   <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="StScrollView.html#StScrollView--hscroll" title='The "hscroll" property'>hscroll</a>"                  <span class="type">StScrollBar</span>*          : Read
+  "<a class="link" href="StScrollView.html#StScrollView--hscrollbar-policy" title='The "hscrollbar-policy" property'>hscrollbar-policy</a>"        <span class="type">GtkPolicyType</span>         : Read / Write
+  "<a class="link" href="StScrollView.html#StScrollView--hscrollbar-visible" title='The "hscrollbar-visible" property'>hscrollbar-visible</a>"       <span class="type">gboolean</span>              : Read
+  "<a class="link" href="StScrollView.html#StScrollView--vscroll" title='The "vscroll" property'>vscroll</a>"                  <span class="type">StScrollBar</span>*          : Read
+  "<a class="link" href="StScrollView.html#StScrollView--vscrollbar-policy" title='The "vscrollbar-policy" property'>vscrollbar-policy</a>"        <span class="type">GtkPolicyType</span>         : Read / Write
+  "<a class="link" href="StScrollView.html#StScrollView--vscrollbar-visible" title='The "vscrollbar-visible" property'>vscrollbar-visible</a>"       <span class="type">gboolean</span>              : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="StScrollView.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> is a single child container for actors that implement
+<span class="type">StScrollable</span>. It provides scrollbars around the edge of the child to
+allow the user to move around the scrollable area.
+</p>
+</div>
+<div class="refsect1">
+<a name="StScrollView.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StScrollView-struct"></a><h3>struct StScrollView</h3>
+<pre class="programlisting">struct StScrollView;</pre>
+<p>
+The contents of this structure are private and should only be accessed
+through the public API.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StScrollViewClass"></a><h3>struct StScrollViewClass</h3>
+<pre class="programlisting">struct StScrollViewClass {
+  StBinClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-get-column-size"></a><h3>st_scroll_view_get_column_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">gfloat</span>              st_scroll_view_get_column_size      (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-get-hscroll-bar"></a><h3>st_scroll_view_get_hscroll_bar ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_scroll_view_get_hscroll_bar      (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);</pre>
+<p>
+Gets the horizontal scrollbar of the scrollbiew
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>scroll</code></em> :</span></p></td>
+<td>a <a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the horizontal <span class="type">StScrollBar</span>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-get-mouse-scrolling"></a><h3>st_scroll_view_get_mouse_scrolling ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_scroll_view_get_mouse_scrolling  (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-get-row-size"></a><h3>st_scroll_view_get_row_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">gfloat</span>              st_scroll_view_get_row_size         (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-get-vscroll-bar"></a><h3>st_scroll_view_get_vscroll_bar ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_scroll_view_get_vscroll_bar      (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>);</pre>
+<p>
+Gets the vertical scrollbar of the scrollbiew
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>scroll</code></em> :</span></p></td>
+<td>a <a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the vertical <span class="type">StScrollBar</span>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-new"></a><h3>st_scroll_view_new ()</h3>
+<pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          st_scroll_view_new                  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-set-column-size"></a><h3>st_scroll_view_set_column_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_scroll_view_set_column_size      (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">gfloat</span> column_size</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-set-mouse-scrolling"></a><h3>st_scroll_view_set_mouse_scrolling ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_scroll_view_set_mouse_scrolling  (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> enabled</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-set-policy"></a><h3>st_scroll_view_set_policy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_scroll_view_set_policy           (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkPolicyType</span> hscroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkPolicyType</span> vscroll</code></em>);</pre>
+<p>
+Set the scroll policy.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>scroll</code></em> :</span></p></td>
+<td>A <a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hscroll</code></em> :</span></p></td>
+<td>Whether to enable horizontal scrolling</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vscroll</code></em> :</span></p></td>
+<td>Whether to enable vertical scrolling</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scroll-view-set-row-size"></a><h3>st_scroll_view_set_row_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_scroll_view_set_row_size         (<em class="parameter"><code><a class="link" href="StScrollView.html" title="StScrollView"><span class="type">StScrollView</span></a> *scroll</code></em>,
+                                                         <em class="parameter"><code><span class="type">gfloat</span> row_size</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="StScrollView.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StScrollView--enable-mouse-scrolling"></a><h3>The <code class="literal">"enable-mouse-scrolling"</code> property</h3>
+<pre class="programlisting">  "enable-mouse-scrolling"   <span class="type">gboolean</span>              : Read / Write</pre>
+<p>Enable automatic mouse wheel scrolling.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StScrollView--hscroll"></a><h3>The <code class="literal">"hscroll"</code> property</h3>
+<pre class="programlisting">  "hscroll"                  <span class="type">StScrollBar</span>*          : Read</pre>
+<p>Horizontal scroll indicator.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StScrollView--hscrollbar-policy"></a><h3>The <code class="literal">"hscrollbar-policy"</code> property</h3>
+<pre class="programlisting">  "hscrollbar-policy"        <span class="type">GtkPolicyType</span>         : Read / Write</pre>
+<p>When the horizontal scrollbar is displayed.</p>
+<p>Default value: GTK_POLICY_AUTOMATIC</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StScrollView--hscrollbar-visible"></a><h3>The <code class="literal">"hscrollbar-visible"</code> property</h3>
+<pre class="programlisting">  "hscrollbar-visible"       <span class="type">gboolean</span>              : Read</pre>
+<p>Whether the horizontal scrollbar is visible.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StScrollView--vscroll"></a><h3>The <code class="literal">"vscroll"</code> property</h3>
+<pre class="programlisting">  "vscroll"                  <span class="type">StScrollBar</span>*          : Read</pre>
+<p>Vertical scroll indicator.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StScrollView--vscrollbar-policy"></a><h3>The <code class="literal">"vscrollbar-policy"</code> property</h3>
+<pre class="programlisting">  "vscrollbar-policy"        <span class="type">GtkPolicyType</span>         : Read / Write</pre>
+<p>When the vertical scrollbar is displayed.</p>
+<p>Default value: GTK_POLICY_AUTOMATIC</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StScrollView--vscrollbar-visible"></a><h3>The <code class="literal">"vscrollbar-visible"</code> property</h3>
+<pre class="programlisting">  "vscrollbar-visible"       <span class="type">gboolean</span>              : Read</pre>
+<p>Whether the vertical scrollbar is visible.</p>
+<p>Default value: TRUE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

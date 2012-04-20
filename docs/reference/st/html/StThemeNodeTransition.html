@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StThemeNodeTransition</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="styling.html" title="Styling">
+<link rel="prev" href="st-st-theme-node.html" title="st-theme-node">
+<link rel="next" href="StTextureCache.html" title="StTextureCache">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="st-st-theme-node.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="styling.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StTextureCache.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StThemeNodeTransition.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StThemeNodeTransition.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StThemeNodeTransition.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StThemeNodeTransition.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StThemeNodeTransition"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StThemeNodeTransition.top_of_page"></a>StThemeNodeTransition</span></h2>
+<p>StThemeNodeTransition</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StThemeNodeTransition.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StThemeNodeTransition.html#StThemeNodeTransition-struct" title="struct StThemeNodeTransition">StThemeNodeTransition</a>;
+struct              <a class="link" href="StThemeNodeTransition.html#StThemeNodeTransitionClass" title="struct StThemeNodeTransitionClass">StThemeNodeTransitionClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="StThemeNodeTransition.html#st-theme-node-transition-get-paint-box" title="st_theme_node_transition_get_paint_box ()">st_theme_node_transition_get_paint_box</a>
+                                                        (<em class="parameter"><code><a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="type">StThemeNodeTransition</span></a> *transition</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *paint_box</code></em>);
+<a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="returnvalue">StThemeNodeTransition</span></a> * <a class="link" href="StThemeNodeTransition.html#st-theme-node-transition-new" title="st_theme_node_transition_new ()">st_theme_node_transition_new</a>    (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *from_node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *to_node</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> duration</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StThemeNodeTransition.html#st-theme-node-transition-paint" title="st_theme_node_transition_paint ()">st_theme_node_transition_paint</a>      (<em class="parameter"><code><a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="type">StThemeNodeTransition</span></a> *transition</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint8</span> paint_opacity</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StThemeNodeTransition.html#st-theme-node-transition-update" title="st_theme_node_transition_update ()">st_theme_node_transition_update</a>     (<em class="parameter"><code><a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="type">StThemeNodeTransition</span></a> *transition</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *new_node</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StThemeNodeTransition.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----StThemeNodeTransition
+</pre>
+</div>
+<div class="refsect1">
+<a name="StThemeNodeTransition.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="StThemeNodeTransition.html#StThemeNodeTransition-completed" title='The "completed" signal'>completed</a>"                                      : <code class="literal">Run Last</code>
+  "<a class="link" href="StThemeNodeTransition.html#StThemeNodeTransition-new-frame" title='The "new-frame" signal'>new-frame</a>"                                      : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="StThemeNodeTransition.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="StThemeNodeTransition.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StThemeNodeTransition-struct"></a><h3>struct StThemeNodeTransition</h3>
+<pre class="programlisting">struct StThemeNodeTransition;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StThemeNodeTransitionClass"></a><h3>struct StThemeNodeTransitionClass</h3>
+<pre class="programlisting">struct StThemeNodeTransitionClass {
+  GObjectClass parent_class;
+
+  void (*completed) (StThemeNodeTransition *transition);
+  void (*new_frame) (StThemeNodeTransition *transition);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-transition-get-paint-box"></a><h3>st_theme_node_transition_get_paint_box ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_transition_get_paint_box
+                                                        (<em class="parameter"><code><a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="type">StThemeNodeTransition</span></a> *transition</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *paint_box</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-transition-new"></a><h3>st_theme_node_transition_new ()</h3>
+<pre class="programlisting"><a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="returnvalue">StThemeNodeTransition</span></a> * st_theme_node_transition_new    (<em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *from_node</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *to_node</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> duration</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-transition-paint"></a><h3>st_theme_node_transition_paint ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_transition_paint      (<em class="parameter"><code><a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="type">StThemeNodeTransition</span></a> *transition</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *allocation</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint8</span> paint_opacity</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-theme-node-transition-update"></a><h3>st_theme_node_transition_update ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_theme_node_transition_update     (<em class="parameter"><code><a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="type">StThemeNodeTransition</span></a> *transition</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *new_node</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="StThemeNodeTransition.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="StThemeNodeTransition-completed"></a><h3>The <code class="literal">"completed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="type">StThemeNodeTransition</span></a> *stthemenodetransition,
+                                                        <span class="type">gpointer</span>               user_data)                  : <code class="literal">Run Last</code></pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StThemeNodeTransition-new-frame"></a><h3>The <code class="literal">"new-frame"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition"><span class="type">StThemeNodeTransition</span></a> *stthemenodetransition,
+                                                        <span class="type">gpointer</span>               user_data)                  : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

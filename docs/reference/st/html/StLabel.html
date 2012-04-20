@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StLabel</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="widgets.html" title="Widgets">
+<link rel="prev" href="StIcon.html" title="StIcon">
+<link rel="next" href="containers.html" title="Containers">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StIcon.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="widgets.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="containers.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StLabel.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StLabel.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StLabel.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StLabel.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StLabel.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StLabel"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StLabel.top_of_page"></a>StLabel</span></h2>
+<p>StLabel — Widget for displaying text</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StLabel.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StLabel.html#StLabel-struct" title="struct StLabel">StLabel</a>;
+struct              <a class="link" href="StLabel.html#StLabelClass" title="struct StLabelClass">StLabelClass</a>;
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StLabel.html#st-label-get-clutter-text" title="st_label_get_clutter_text ()">st_label_get_clutter_text</a>           (<em class="parameter"><code><a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> *label</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StLabel.html#st-label-get-text" title="st_label_get_text ()">st_label_get_text</a>                   (<em class="parameter"><code><a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> *label</code></em>);
+<a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          <a class="link" href="StLabel.html#st-label-new" title="st_label_new ()">st_label_new</a>                        (<em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StLabel.html#st-label-set-text" title="st_label_set_text ()">st_label_set_text</a>                   (<em class="parameter"><code><a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> *label</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StLabel.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----StLabel
+</pre>
+</div>
+<div class="refsect1">
+<a name="StLabel.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StLabel implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StLabel.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StLabel.html#StLabel--clutter-text" title='The "clutter-text" property'>clutter-text</a>"             <span class="type">ClutterText</span>*          : Read
+  "<a class="link" href="StLabel.html#StLabel--text" title='The "text" property'>text</a>"                     <span class="type">gchar</span>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="StLabel.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> is a simple widget for displaying text. It derives from
+<a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> to add extra style and placement functionality over
+<span class="type">ClutterText</span>. The internal <span class="type">ClutterText</span> is publicly accessibly to allow
+applications to set further properties.
+</p>
+</div>
+<div class="refsect1">
+<a name="StLabel.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StLabel-struct"></a><h3>struct StLabel</h3>
+<pre class="programlisting">struct StLabel;</pre>
+<p>
+The contents of this structure is private and should only be accessed using
+the provided API.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StLabelClass"></a><h3>struct StLabelClass</h3>
+<pre class="programlisting">struct StLabelClass {
+  StWidgetClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-label-get-clutter-text"></a><h3>st_label_get_clutter_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_label_get_clutter_text           (<em class="parameter"><code><a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> *label</code></em>);</pre>
+<p>
+Retrieve the internal <span class="type">ClutterText</span> so that extra parameters can be set
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>label</code></em> :</span></p></td>
+<td>a <a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>ethe <span class="type">ClutterText</span> used by <a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a>. The label
+is owned by the <a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> and should not be unref'ed by the application. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-label-get-text"></a><h3>st_label_get_text ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_label_get_text                   (<em class="parameter"><code><a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> *label</code></em>);</pre>
+<p>
+Get the text displayed on the label
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>label</code></em> :</span></p></td>
+<td>a <a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the text for the label. This must not be freed by the application</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-label-new"></a><h3>st_label_new ()</h3>
+<pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          st_label_new                        (<em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
+<p>
+Create a new <a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> with the specified label
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>text to set the label to</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-label-set-text"></a><h3>st_label_set_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_label_set_text                   (<em class="parameter"><code><a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a> *label</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
+<p>
+Sets the text displayed on the label
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>label</code></em> :</span></p></td>
+<td>a <a class="link" href="StLabel.html" title="StLabel"><span class="type">StLabel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>text to set the label to</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StLabel.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StLabel--clutter-text"></a><h3>The <code class="literal">"clutter-text"</code> property</h3>
+<pre class="programlisting">  "clutter-text"             <span class="type">ClutterText</span>*          : Read</pre>
+<p>Internal ClutterText actor.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StLabel--text"></a><h3>The <code class="literal">"text"</code> property</h3>
+<pre class="programlisting">  "text"                     <span class="type">gchar</span>*                : Read / Write</pre>
+<p>Text of the label.</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

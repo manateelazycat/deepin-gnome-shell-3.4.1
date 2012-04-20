@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>shell-util</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="shell-shell-xfixes-cursor.html" title="shell-xfixes-cursor">
+<link rel="next" href="ShellMountOperation.html" title="ShellMountOperation">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="shell-shell-xfixes-cursor.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="ShellMountOperation.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-shell-util.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-shell-util.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-shell-util"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-shell-util.top_of_page"></a>shell-util</span></h2>
+<p>shell-util</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-shell-util.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><span class="returnvalue">char</span> *              <a class="link" href="shell-shell-util.html#shell-get-file-contents-utf8-sync" title="shell_get_file_contents_utf8_sync ()">shell_get_file_contents_utf8_sync</a>   (<em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-shell-util.html#shell-parse-search-provider" title="shell_parse_search_provider ()">shell_parse_search_provider</a>         (<em class="parameter"><code>const <span class="type">char</span> *data</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **name</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **url</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> **langs</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **icon_data_uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-shell-util.html#shell-session-is-active-for-systemd" title="shell_session_is_active_for_systemd ()">shell_session_is_active_for_systemd</a> (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-util.html#shell-shader-effect-set-double-uniform" title="shell_shader_effect_set_double_uniform ()">shell_shader_effect_set_double_uniform</a>
+                                                        (<em class="parameter"><code><span class="type">ClutterShaderEffect</span> *effect</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gdouble</span> value</code></em>);
+<span class="returnvalue">char</span> *              <a class="link" href="shell-shell-util.html#shell-util-format-date" title="shell_util_format_date ()">shell_util_format_date</a>              (<em class="parameter"><code>const <span class="type">char</span> *format</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint64</span> time_ms</code></em>);
+<span class="returnvalue">GIcon</span> *             <a class="link" href="shell-shell-util.html#shell-util-get-icon-for-uri" title="shell_util_get_icon_for_uri ()">shell_util_get_icon_for_uri</a>         (<em class="parameter"><code>const <span class="type">char</span> *text_uri</code></em>);
+<span class="returnvalue">char</span> *              <a class="link" href="shell-shell-util.html#shell-util-get-label-for-uri" title="shell_util_get_label_for_uri ()">shell_util_get_label_for_uri</a>        (<em class="parameter"><code>const <span class="type">char</span> *text_uri</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-util.html#shell-util-get-transformed-allocation" title="shell_util_get_transformed_allocation ()">shell_util_get_transformed_allocation</a>
+                                                        (<em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *box</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="shell-shell-util.html#shell-util-get-week-start" title="shell_util_get_week_start ()">shell_util_get_week_start</a>           (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">char</span> *              <a class="link" href="shell-shell-util.html#shell-util-normalize-and-casefold" title="shell_util_normalize_and_casefold ()">shell_util_normalize_and_casefold</a>   (<em class="parameter"><code>const <span class="type">char</span> *str</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-util.html#shell-util-set-hidden-from-pick" title="shell_util_set_hidden_from_pick ()">shell_util_set_hidden_from_pick</a>     (<em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> hidden</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-shell-util.html#shell-util-wifexited" title="shell_util_wifexited ()">shell_util_wifexited</a>                (<em class="parameter"><code><span class="type">int</span> status</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *exit</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-util.html#shell-write-soup-message-to-stream" title="shell_write_soup_message_to_stream ()">shell_write_soup_message_to_stream</a>  (<em class="parameter"><code><span class="type">GOutputStream</span> *stream</code></em>,
+                                                         <em class="parameter"><code><span class="type">SoupMessage</span> *message</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-shell-util.html#shell-write-string-to-stream" title="shell_write_string_to_stream ()">shell_write_string_to_stream</a>        (<em class="parameter"><code><span class="type">GOutputStream</span> *stream</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *str</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-util.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="shell-shell-util.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="shell-get-file-contents-utf8-sync"></a><h3>shell_get_file_contents_utf8_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *              shell_get_file_contents_utf8_sync   (<em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Synchronously load the contents of a file as a NUL terminated
+string, validating it as UTF-8.  Embedded NUL characters count as
+invalid content.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>UTF-8 encoded filename path</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <span class="type">GError</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>File contents. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-parse-search-provider"></a><h3>shell_parse_search_provider ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_parse_search_provider         (<em class="parameter"><code>const <span class="type">char</span> *data</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **name</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **url</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> **langs</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **icon_data_uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>description of provider</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>location to store a display name. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>url</code></em> :</span></p></td>
+<td>location to store template of url. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>langs</code></em> :</span></p></td>
+<td>list of supported languages. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon_data_uri</code></em> :</span></p></td>
+<td>location to store uri. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>location to store GError</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> on success</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-session-is-active-for-systemd"></a><h3>shell_session_is_active_for_systemd ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_session_is_active_for_systemd (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Checks whether the session we are running in is currently active,
+i.e. in the foreground and ready for user input.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if session is active</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-shader-effect-set-double-uniform"></a><h3>shell_shader_effect_set_double_uniform ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_shader_effect_set_double_uniform
+                                                        (<em class="parameter"><code><span class="type">ClutterShaderEffect</span> *effect</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gdouble</span> value</code></em>);</pre>
+<p>
+Set a double uniform on a ClutterShaderEffect.
+</p>
+<p>
+The problem here is that JavaScript doesn't have more than
+one number type, and gjs tries to automatically guess what
+type we want to set a GValue to. If the number is "1.0" or
+something, it will use an integer, which will cause errors
+in GLSL.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>effect</code></em> :</span></p></td>
+<td>The <span class="type">ClutterShaderEffect</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>The name of the uniform</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>The value to set it to.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-util-format-date"></a><h3>shell_util_format_date ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *              shell_util_format_date              (<em class="parameter"><code>const <span class="type">char</span> *format</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint64</span> time_ms</code></em>);</pre>
+<p>
+Formats a date for the current locale. This should be
+used instead of the Spidermonkey Date.toLocaleFormat()
+extension because Date.toLocaleFormat() is buggy for
+Unicode format strings:
+https://bugzilla.mozilla.org/show_bug.cgi?id=508783
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td>a strftime-style string format, as parsed by
+<code class="function">g_date_time_format()</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time_ms</code></em> :</span></p></td>
+<td>milliseconds since 1970-01-01 00:00:00 UTC; the
+value returned by Date.getTime()</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the formatted date. If the date is
+outside of the range of a GDateTime (which contains
+any plausible dates we actually care about), will
+return an empty string.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-util-get-icon-for-uri"></a><h3>shell_util_get_icon_for_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">GIcon</span> *             shell_util_get_icon_for_uri         (<em class="parameter"><code>const <span class="type">char</span> *text_uri</code></em>);</pre>
+<p>
+Look up the icon that should be associated with a given URI.  Handles
+various special GNOME-internal cases like x-nautilus-search, etc.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text_uri</code></em> :</span></p></td>
+<td>A URI</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A new <span class="type">GIcon</span>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-util-get-label-for-uri"></a><h3>shell_util_get_label_for_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *              shell_util_get_label_for_uri        (<em class="parameter"><code>const <span class="type">char</span> *text_uri</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-util-get-transformed-allocation"></a><h3>shell_util_get_transformed_allocation ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_util_get_transformed_allocation
+                                                        (<em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActorBox</span> *box</code></em>);</pre>
+<p>
+This function is similar to a combination of <code class="function">clutter_actor_get_transformed_position()</code>,
+and <code class="function">clutter_actor_get_transformed_size()</code>, but unlike
+<code class="function">clutter_actor_get_transformed_size()</code>, it always returns a transform
+of the current allocation, while <code class="function">clutter_actor_get_transformed_size()</code> returns
+bad values (the transform of the requested size) if a relayout has been
+queued.
+</p>
+<p>
+This function is more convenient to use than
+<code class="function">clutter_actor_get_abs_allocation_vertices()</code> if no transformation is in effect
+and also works around limitations in the GJS binding of arrays.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <span class="type">ClutterActor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>box</code></em> :</span></p></td>
+<td>location to store returned box in stage coordinates. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-util-get-week-start"></a><h3>shell_util_get_week_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 shell_util_get_week_start           (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Gets the first week day for the current locale, expressed as a
+number in the range 0..6, representing week days from Sunday to
+Saturday.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A number representing the first week day for the current
+locale</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-util-normalize-and-casefold"></a><h3>shell_util_normalize_and_casefold ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *              shell_util_normalize_and_casefold   (<em class="parameter"><code>const <span class="type">char</span> *str</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-util-set-hidden-from-pick"></a><h3>shell_util_set_hidden_from_pick ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_util_set_hidden_from_pick     (<em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> hidden</code></em>);</pre>
+<p>
+If <em class="parameter"><code>hidden</code></em> is <code class="literal">TRUE</code>, hide <em class="parameter"><code>actor</code></em> from pick even with a mode of
+<code class="literal">CLUTTER_PICK_ALL</code>; if <em class="parameter"><code>hidden</code></em> is <code class="literal">FALSE</code>, unhide <em class="parameter"><code>actor</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>A <span class="type">ClutterActor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hidden</code></em> :</span></p></td>
+<td>Whether <em class="parameter"><code>actor</code></em> should be hidden from pick</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-util-wifexited"></a><h3>shell_util_wifexited ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_util_wifexited                (<em class="parameter"><code><span class="type">int</span> status</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *exit</code></em>);</pre>
+<p>
+Implements libc standard WIFEXITED, that cannot be used JS
+code.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>the status returned by <code class="function">wait()</code> or <code class="function">waitpid()</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>exit</code></em> :</span></p></td>
+<td>the actual exit status of the process. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the process exited normally, FALSE otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-write-soup-message-to-stream"></a><h3>shell_write_soup_message_to_stream ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_write_soup_message_to_stream  (<em class="parameter"><code><span class="type">GOutputStream</span> *stream</code></em>,
+                                                         <em class="parameter"><code><span class="type">SoupMessage</span> *message</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Write a string to a GOutputStream as binary data. This is a
+workaround for the lack of proper binary strings in GJS.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream</code></em> :</span></p></td>
+<td>a <span class="type">GOutputStream</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>a <span class="type">SoupMessage</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>location to store GError</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-write-string-to-stream"></a><h3>shell_write_string_to_stream ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_write_string_to_stream        (<em class="parameter"><code><span class="type">GOutputStream</span> *stream</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *str</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Write a string to a GOutputStream as UTF-8. This is a workaround
+for not having binary buffers in GJS.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream</code></em> :</span></p></td>
+<td>a <span class="type">GOutputStream</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>a UTF-8 string to write to <em class="parameter"><code>stream</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>location to store GError</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if write succeeded</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

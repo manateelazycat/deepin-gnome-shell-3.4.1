@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellAppSystem</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch03.html" title="Search">
+<link rel="prev" href="ch03.html" title="Search">
+<link rel="next" href="ShellContactSystem.html" title="ShellContactSystem">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch03.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="ShellContactSystem.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#ShellAppSystem.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#ShellAppSystem.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#ShellAppSystem.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#ShellAppSystem.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="ShellAppSystem"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ShellAppSystem.top_of_page"></a>ShellAppSystem</span></h2>
+<p>ShellAppSystem</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="ShellAppSystem.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="ShellAppSystem.html#ShellAppSystem-struct" title="struct ShellAppSystem">ShellAppSystem</a>;
+struct              <a class="link" href="ShellAppSystem.html#ShellAppSystemClass" title="struct ShellAppSystemClass">ShellAppSystemClass</a>;
+<span class="returnvalue">GSList</span> *            <a class="link" href="ShellAppSystem.html#shell-app-system-get-all" title="shell_app_system_get_all ()">shell_app_system_get_all</a>            (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>);
+<a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="returnvalue">ShellAppSystem</span></a> *    <a class="link" href="ShellAppSystem.html#shell-app-system-get-default" title="shell_app_system_get_default ()">shell_app_system_get_default</a>        (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="ShellAppSystem.html#shell-app-system-get-running" title="shell_app_system_get_running ()">shell_app_system_get_running</a>        (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *self</code></em>);
+<span class="returnvalue">GMenuTree</span> *         <a class="link" href="ShellAppSystem.html#shell-app-system-get-settings-tree" title="shell_app_system_get_settings_tree ()">shell_app_system_get_settings_tree</a>  (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>);
+<span class="returnvalue">GMenuTree</span> *         <a class="link" href="ShellAppSystem.html#shell-app-system-get-tree" title="shell_app_system_get_tree ()">shell_app_system_get_tree</a>           (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="ShellAppSystem.html#shell-app-system-initial-search" title="shell_app_system_initial_search ()">shell_app_system_initial_search</a>     (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *terms</code></em>);
+<span class="returnvalue">ShellApp</span> *          <a class="link" href="ShellAppSystem.html#shell-app-system-lookup-app" title="shell_app_system_lookup_app ()">shell_app_system_lookup_app</a>         (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);
+<span class="returnvalue">ShellApp</span> *          <a class="link" href="ShellAppSystem.html#shell-app-system-lookup-app-by-tree-entry" title="shell_app_system_lookup_app_by_tree_entry ()">shell_app_system_lookup_app_by_tree_entry</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code><span class="type">GMenuTreeEntry</span> *entry</code></em>);
+<span class="returnvalue">ShellApp</span> *          <a class="link" href="ShellAppSystem.html#shell-app-system-lookup-app-for-path" title="shell_app_system_lookup_app_for_path ()">shell_app_system_lookup_app_for_path</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *desktop_path</code></em>);
+<span class="returnvalue">ShellApp</span> *          <a class="link" href="ShellAppSystem.html#shell-app-system-lookup-heuristic-basename" title="shell_app_system_lookup_heuristic_basename ()">shell_app_system_lookup_heuristic_basename</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);
+<span class="returnvalue">ShellApp</span> *          <a class="link" href="ShellAppSystem.html#shell-app-system-lookup-setting" title="shell_app_system_lookup_setting ()">shell_app_system_lookup_setting</a>     (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="ShellAppSystem.html#shell-app-system-search-settings" title="shell_app_system_search_settings ()">shell_app_system_search_settings</a>    (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *terms</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="ShellAppSystem.html#shell-app-system-subsearch" title="shell_app_system_subsearch ()">shell_app_system_subsearch</a>          (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *previous_results</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *terms</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellAppSystem.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----ShellAppSystem
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellAppSystem.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="ShellAppSystem.html#ShellAppSystem-app-state-changed" title='The "app-state-changed" signal'>app-state-changed</a>"                              : <code class="literal">Run Last</code>
+  "<a class="link" href="ShellAppSystem.html#ShellAppSystem-installed-changed" title='The "installed-changed" signal'>installed-changed</a>"                              : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellAppSystem.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="ShellAppSystem.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellAppSystem-struct"></a><h3>struct ShellAppSystem</h3>
+<pre class="programlisting">struct ShellAppSystem;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellAppSystemClass"></a><h3>struct ShellAppSystemClass</h3>
+<pre class="programlisting">struct ShellAppSystemClass {
+  GObjectClass parent_class;
+
+  void (*installed_changed)(ShellAppSystem *appsys, gpointer user_data);
+  void (*favorites_changed)(ShellAppSystem *appsys, gpointer user_data);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-get-all"></a><h3>shell_app_system_get_all ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_app_system_get_all            (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>All installed applications. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ShellApp]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-get-default"></a><h3>shell_app_system_get_default ()</h3>
+<pre class="programlisting"><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="returnvalue">ShellAppSystem</span></a> *    shell_app_system_get_default        (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The global <a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> singleton. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-get-running"></a><h3>shell_app_system_get_running ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_app_system_get_running        (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *self</code></em>);</pre>
+<p>
+Returns the set of applications which currently have at least one
+open window in the given context.  The returned list will be sorted
+by <a class="link" href="shell-ShellApp.html#shell-app-compare" title="shell_app_compare ()"><code class="function">shell_app_compare()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>A <a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Active applications. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ShellApp][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-get-settings-tree"></a><h3>shell_app_system_get_settings_tree ()</h3>
+<pre class="programlisting"><span class="returnvalue">GMenuTree</span> *         shell_app_system_get_settings_tree  (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The <span class="type">GMenuTree</span> for apps. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-get-tree"></a><h3>shell_app_system_get_tree ()</h3>
+<pre class="programlisting"><span class="returnvalue">GMenuTree</span> *         shell_app_system_get_tree           (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The <span class="type">GMenuTree</span> for apps. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-initial-search"></a><h3>shell_app_system_initial_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_app_system_initial_search     (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *terms</code></em>);</pre>
+<p>
+Search through applications for the given search terms.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>system</code></em> :</span></p></td>
+<td>A <a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>terms</code></em> :</span></p></td>
+<td>List of terms, logical AND. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>List of applications. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ShellApp]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-lookup-app"></a><h3>shell_app_system_lookup_app ()</h3>
+<pre class="programlisting"><span class="returnvalue">ShellApp</span> *          shell_app_system_lookup_app         (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
+<p>
+Find a <span class="type">ShellApp</span> corresponding to an id.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The <span class="type">ShellApp</span> for id, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if none. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-lookup-app-by-tree-entry"></a><h3>shell_app_system_lookup_app_by_tree_entry ()</h3>
+<pre class="programlisting"><span class="returnvalue">ShellApp</span> *          shell_app_system_lookup_app_by_tree_entry
+                                                        (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code><span class="type">GMenuTreeEntry</span> *entry</code></em>);</pre>
+<p>
+Find a <span class="type">ShellApp</span> corresponding to a <span class="type">GMenuTreeEntry</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>system</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <span class="type">GMenuTreeEntry</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The <span class="type">ShellApp</span> for <em class="parameter"><code>entry</code></em>, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if none. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-lookup-app-for-path"></a><h3>shell_app_system_lookup_app_for_path ()</h3>
+<pre class="programlisting"><span class="returnvalue">ShellApp</span> *          shell_app_system_lookup_app_for_path
+                                                        (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *desktop_path</code></em>);</pre>
+<p>
+Find or create a <span class="type">ShellApp</span> corresponding to a given absolute file
+name which must be in the standard paths (XDG_DATA_DIRS).  For
+files outside the datadirs, this function returns <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>system</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>desktop_path</code></em> :</span></p></td>
+<td>UTF-8 encoded absolute file name. <span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> utf8]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The <span class="type">ShellApp</span> for id, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if none. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-lookup-heuristic-basename"></a><h3>shell_app_system_lookup_heuristic_basename ()</h3>
+<pre class="programlisting"><span class="returnvalue">ShellApp</span> *          shell_app_system_lookup_heuristic_basename
+                                                        (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
+<p>
+Find a valid application corresponding to a given
+heuristically determined application identifier
+string, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if none.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>system</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>Probable application identifier</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A <span class="type">ShellApp</span> for <em class="parameter"><code>name</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-lookup-setting"></a><h3>shell_app_system_lookup_setting ()</h3>
+<pre class="programlisting"><span class="returnvalue">ShellApp</span> *          shell_app_system_lookup_setting     (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>desktop file id</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Application in gnomecc.menu, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if none. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-search-settings"></a><h3>shell_app_system_search_settings ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_app_system_search_settings    (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *terms</code></em>);</pre>
+<p>
+Search through settings for the given search terms.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>system</code></em> :</span></p></td>
+<td>A <a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>terms</code></em> :</span></p></td>
+<td>List of terms, logical AND. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>List of setting applications. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ShellApp]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-app-system-subsearch"></a><h3>shell_app_system_subsearch ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_app_system_subsearch          (<em class="parameter"><code><a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *system</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *previous_results</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *terms</code></em>);</pre>
+<p>
+Search through a previous result set; for more information, see
+js/ui/search.js.  Note the value of <em class="parameter"><code>prefs</code></em> must be
+the same as passed to <a class="link" href="ShellAppSystem.html#shell-app-system-initial-search" title="shell_app_system_initial_search ()"><code class="function">shell_app_system_initial_search()</code></a>.  Note that returned
+strings are only valid until a return to the main loop.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>system</code></em> :</span></p></td>
+<td>A <a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>previous_results</code></em> :</span></p></td>
+<td>List of previous results. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ShellApp]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>terms</code></em> :</span></p></td>
+<td>List of terms, logical AND. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>List of application identifiers. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ShellApp]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ShellAppSystem.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ShellAppSystem-app-state-changed"></a><h3>The <code class="literal">"app-state-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *shellappsystem,
+                                                        <span class="type">ShellApp</span>       *arg1,
+                                                        <span class="type">gpointer</span>        user_data)           : <code class="literal">Run Last</code></pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellAppSystem-installed-changed"></a><h3>The <code class="literal">"installed-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellAppSystem.html" title="ShellAppSystem"><span class="type">ShellAppSystem</span></a> *shellappsystem,
+                                                        <span class="type">gpointer</span>        user_data)           : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

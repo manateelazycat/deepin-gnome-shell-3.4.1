@@ -1,0 +1,944 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellGlobal</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="ch06.html" title="Integration helpers and utilities">
+<link rel="next" href="shell-ShellWM.html" title="ShellWM">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch06.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="shell-ShellWM.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-ShellGlobal.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-ShellGlobal.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#shell-ShellGlobal.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-ShellGlobal"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-ShellGlobal.top_of_page"></a>ShellGlobal</span></h2>
+<p>ShellGlobal</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-ShellGlobal.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellCursor"></a><a name="ShellSessionType"></a><a name="ShellStageInputMode"></a><pre class="synopsis">enum                <a class="link" href="shell-ShellGlobal.html#ShellCursor-enum" title="enum ShellCursor">ShellCursor</a>;
+struct              <a class="link" href="shell-ShellGlobal.html#ShellGlobalClass" title="struct ShellGlobalClass">ShellGlobalClass</a>;
+<span class="returnvalue">void</span>                (<a class="link" href="shell-ShellGlobal.html#ShellLeisureFunction" title="ShellLeisureFunction ()">*ShellLeisureFunction</a>)             (<em class="parameter"><code><span class="type">gpointer</span> data</code></em>);
+                    <a class="link" href="shell-ShellGlobal.html#ShellMemoryInfo" title="ShellMemoryInfo">ShellMemoryInfo</a>;
+enum                <a class="link" href="shell-ShellGlobal.html#ShellSessionType-enum" title="enum ShellSessionType">ShellSessionType</a>;
+enum                <a class="link" href="shell-ShellGlobal.html#ShellStageInputMode-enum" title="enum ShellStageInputMode">ShellStageInputMode</a>;
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-ShellGlobal.html#shell-global-begin-modal" title="shell_global_begin_modal ()">shell_global_begin_modal</a>            (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaModalOptions</span> options</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-begin-work" title="shell_global_begin_work ()">shell_global_begin_work</a>             (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-cancel-theme-sound" title="shell_global_cancel_theme_sound ()">shell_global_cancel_theme_sound</a>     (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> id</code></em>);
+<span class="returnvalue">GAppLaunchContext</span> * <a class="link" href="shell-ShellGlobal.html#shell-global-create-app-launch-context" title="shell_global_create_app_launch_context ()">shell_global_create_app_launch_context</a>
+                                                        (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">guint32</span>             <a class="link" href="shell-ShellGlobal.html#shell-global-create-pointer-barrier" title="shell_global_create_pointer_barrier ()">shell_global_create_pointer_barrier</a> (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> x1</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> y1</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> x2</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> y2</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> directions</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-destroy-pointer-barrier" title="shell_global_destroy_pointer_barrier ()">shell_global_destroy_pointer_barrier</a>
+                                                        (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> barrier</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-end-modal" title="shell_global_end_modal ()">shell_global_end_modal</a>              (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-end-work" title="shell_global_end_work ()">shell_global_end_work</a>               (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-gc" title="shell_global_gc ()">shell_global_gc</a>                     (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">ShellGlobal</span> *       <a class="link" href="shell-ShellGlobal.html#shell-global-get" title="shell_global_get ()">shell_global_get</a>                    (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">guint32</span>             <a class="link" href="shell-ShellGlobal.html#shell-global-get-current-time" title="shell_global_get_current_time ()">shell_global_get_current_time</a>       (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">MetaDisplay</span> *       <a class="link" href="shell-ShellGlobal.html#shell-global-get-display" title="shell_global_get_display ()">shell_global_get_display</a>            (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">GdkScreen</span> *         <a class="link" href="shell-ShellGlobal.html#shell-global-get-gdk-screen" title="shell_global_get_gdk_screen ()">shell_global_get_gdk_screen</a>         (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-get-memory-info" title="shell_global_get_memory_info ()">shell_global_get_memory_info</a>        (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellGlobal.html#ShellMemoryInfo" title="ShellMemoryInfo"><span class="type">ShellMemoryInfo</span></a> *meminfo</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-get-pointer" title="shell_global_get_pointer ()">shell_global_get_pointer</a>            (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *x</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *y</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterModifierType</span> *mods</code></em>);
+<span class="returnvalue">MetaScreen</span> *        <a class="link" href="shell-ShellGlobal.html#shell-global-get-screen" title="shell_global_get_screen ()">shell_global_get_screen</a>             (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<a class="link" href="shell-ShellGlobal.html#ShellSessionType"><span class="returnvalue">ShellSessionType</span></a>    <a class="link" href="shell-ShellGlobal.html#shell-global-get-session-type" title="shell_global_get_session_type ()">shell_global_get_session_type</a>       (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">GSettings</span> *         <a class="link" href="shell-ShellGlobal.html#shell-global-get-settings" title="shell_global_get_settings ()">shell_global_get_settings</a>           (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">ClutterStage</span> *      <a class="link" href="shell-ShellGlobal.html#shell-global-get-stage" title="shell_global_get_stage ()">shell_global_get_stage</a>              (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">GList</span> *             <a class="link" href="shell-ShellGlobal.html#shell-global-get-window-actors" title="shell_global_get_window_actors ()">shell_global_get_window_actors</a>      (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-init-xdnd" title="shell_global_init_xdnd ()">shell_global_init_xdnd</a>              (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-launch-calendar-server" title="shell_global_launch_calendar_server ()">shell_global_launch_calendar_server</a> (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-maybe-gc" title="shell_global_maybe_gc ()">shell_global_maybe_gc</a>               (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-notify-error" title="shell_global_notify_error ()">shell_global_notify_error</a>           (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *msg</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *details</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-play-theme-sound" title="shell_global_play_theme_sound ()">shell_global_play_theme_sound</a>       (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> id</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-reexec-self" title="shell_global_reexec_self ()">shell_global_reexec_self</a>            (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-run-at-leisure" title="shell_global_run_at_leisure ()">shell_global_run_at_leisure</a>         (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellGlobal.html#ShellLeisureFunction" title="ShellLeisureFunction ()"><span class="type">ShellLeisureFunction</span></a> func</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> notify</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-set-cursor" title="shell_global_set_cursor ()">shell_global_set_cursor</a>             (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellGlobal.html#ShellCursor"><span class="type">ShellCursor</span></a> type</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-set-stage-input-mode" title="shell_global_set_stage_input_mode ()">shell_global_set_stage_input_mode</a>   (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellGlobal.html#ShellStageInputMode"><span class="type">ShellStageInputMode</span></a> mode</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-set-stage-input-region" title="shell_global_set_stage_input_region ()">shell_global_set_stage_input_region</a> (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *rectangles</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-sync-pointer" title="shell_global_sync_pointer ()">shell_global_sync_pointer</a>           (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellGlobal.html#shell-global-unset-cursor" title="shell_global_unset_cursor ()">shell_global_unset_cursor</a>           (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-ShellGlobal.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GEnum
+   +----ShellCursor
+</pre>
+<pre class="synopsis">
+  GEnum
+   +----ShellSessionType
+</pre>
+<pre class="synopsis">
+  GEnum
+   +----ShellStageInputMode
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-ShellGlobal.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="shell-ShellGlobal.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellCursor-enum"></a><h3>enum ShellCursor</h3>
+<pre class="programlisting">typedef enum {
+  SHELL_CURSOR_DND_IN_DRAG,
+  SHELL_CURSOR_DND_UNSUPPORTED_TARGET,
+  SHELL_CURSOR_DND_MOVE,
+  SHELL_CURSOR_DND_COPY,
+  SHELL_CURSOR_POINTING_HAND
+} ShellCursor;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellGlobalClass"></a><h3>struct ShellGlobalClass</h3>
+<pre class="programlisting">struct ShellGlobalClass {
+  GObjectClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellLeisureFunction"></a><h3>ShellLeisureFunction ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*ShellLeisureFunction)             (<em class="parameter"><code><span class="type">gpointer</span> data</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellMemoryInfo"></a><h3>ShellMemoryInfo</h3>
+<pre class="programlisting">typedef struct {
+  guint glibc_uordblks;
+
+  guint js_bytes;
+
+  guint gjs_boxed;
+  guint gjs_gobject;
+  guint gjs_function;
+  guint gjs_closure;
+
+  /* 32 bit to avoid js conversion problems with 64 bit */
+  guint  last_gc_seconds_ago;
+} ShellMemoryInfo;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellSessionType-enum"></a><h3>enum ShellSessionType</h3>
+<pre class="programlisting">typedef enum {
+  SHELL_SESSION_USER,
+  SHELL_SESSION_GDM
+} ShellSessionType;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellStageInputMode-enum"></a><h3>enum ShellStageInputMode</h3>
+<pre class="programlisting">typedef enum {
+  SHELL_STAGE_INPUT_MODE_NONREACTIVE,
+  SHELL_STAGE_INPUT_MODE_NORMAL,
+  SHELL_STAGE_INPUT_MODE_FOCUSED,
+  SHELL_STAGE_INPUT_MODE_FULLSCREEN
+} ShellStageInputMode;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-begin-modal"></a><h3>shell_global_begin_modal ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_global_begin_modal            (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaModalOptions</span> options</code></em>);</pre>
+<p>
+Grabs the keyboard and mouse to the stage window. The stage will
+receive all keyboard and mouse events until <a class="link" href="shell-ShellGlobal.html#shell-global-end-modal" title="shell_global_end_modal ()"><code class="function">shell_global_end_modal()</code></a>
+is called. This is used to implement "modes" for the shell, such as the
+overview mode or the "looking glass" debug overlay, that block
+application and normal key shortcuts.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>a <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if we succesfully entered the mode. <code class="literal">FALSE</code> if we couldn't
+enter the mode. Failure may occur because an application has the pointer
+or keyboard grabbed, because Mutter is in a mode itself like moving a
+window or alt-Tab window selection, or because <a class="link" href="shell-ShellGlobal.html#shell-global-begin-modal" title="shell_global_begin_modal ()"><code class="function">shell_global_begin_modal()</code></a>
+was previouly called.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-begin-work"></a><h3>shell_global_begin_work ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_begin_work             (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Marks that we are currently doing work. This is used to to track
+whether we are busy for the purposes of <a class="link" href="shell-ShellGlobal.html#shell-global-run-at-leisure" title="shell_global_run_at_leisure ()"><code class="function">shell_global_run_at_leisure()</code></a>.
+A count is kept and <a class="link" href="shell-ShellGlobal.html#shell-global-end-work" title="shell_global_end_work ()"><code class="function">shell_global_end_work()</code></a> must be called exactly
+as many times as <a class="link" href="shell-ShellGlobal.html#shell-global-begin-work" title="shell_global_begin_work ()"><code class="function">shell_global_begin_work()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-cancel-theme-sound"></a><h3>shell_global_cancel_theme_sound ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_cancel_theme_sound     (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> id</code></em>);</pre>
+<p>
+Cancels a sound notification.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>the id previously passed to <a class="link" href="shell-ShellGlobal.html#shell-global-play-theme-sound" title="shell_global_play_theme_sound ()"><code class="function">shell_global_play_theme_sound()</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-create-app-launch-context"></a><h3>shell_global_create_app_launch_context ()</h3>
+<pre class="programlisting"><span class="returnvalue">GAppLaunchContext</span> * shell_global_create_app_launch_context
+                                                        (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Create a <span class="type">GAppLaunchContext</span> set up with the correct timestamp, and
+targeted to activate on the current workspace.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>A <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A new <span class="type">GAppLaunchContext</span>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-create-pointer-barrier"></a><h3>shell_global_create_pointer_barrier ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>             shell_global_create_pointer_barrier (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> x1</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> y1</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> x2</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> y2</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> directions</code></em>);</pre>
+<p>
+If supported by X creates a pointer barrier.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>a <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x1</code></em> :</span></p></td>
+<td>left X coordinate</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y1</code></em> :</span></p></td>
+<td>top Y coordinate</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x2</code></em> :</span></p></td>
+<td>right X coordinate</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y2</code></em> :</span></p></td>
+<td>bottom Y coordinate</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>directions</code></em> :</span></p></td>
+<td>The directions we're allowed to pass through</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>value you can pass to <a class="link" href="shell-ShellGlobal.html#shell-global-destroy-pointer-barrier" title="shell_global_destroy_pointer_barrier ()"><code class="function">shell_global_destroy_pointer_barrier()</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-destroy-pointer-barrier"></a><h3>shell_global_destroy_pointer_barrier ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_destroy_pointer_barrier
+                                                        (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> barrier</code></em>);</pre>
+<p>
+Destroys the <em class="parameter"><code>barrier</code></em> created by <a class="link" href="shell-ShellGlobal.html#shell-global-create-pointer-barrier" title="shell_global_create_pointer_barrier ()"><code class="function">shell_global_create_pointer_barrier()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>a <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>barrier</code></em> :</span></p></td>
+<td>a pointer barrier</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-end-modal"></a><h3>shell_global_end_modal ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_end_modal              (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>);</pre>
+<p>
+Undoes the effect of <a class="link" href="shell-ShellGlobal.html#shell-global-begin-modal" title="shell_global_begin_modal ()"><code class="function">shell_global_begin_modal()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>a <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-end-work"></a><h3>shell_global_end_work ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_end_work               (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Marks the end of work that we started with <a class="link" href="shell-ShellGlobal.html#shell-global-begin-work" title="shell_global_begin_work ()"><code class="function">shell_global_begin_work()</code></a>.
+If no other work is ongoing and functions have been added with
+<a class="link" href="shell-ShellGlobal.html#shell-global-run-at-leisure" title="shell_global_run_at_leisure ()"><code class="function">shell_global_run_at_leisure()</code></a>, they will be run at the next
+opportunity.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-gc"></a><h3>shell_global_gc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_gc                     (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Start a garbage collection process.  For more information, see
+https://developer.mozilla.org/En/JS_GC
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>A <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get"></a><h3>shell_global_get ()</h3>
+<pre class="programlisting"><span class="returnvalue">ShellGlobal</span> *       shell_global_get                    (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Gets the singleton global object that represents the desktop.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the singleton global object. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-current-time"></a><h3>shell_global_get_current_time ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>             shell_global_get_current_time       (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>A <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the current X server time from the current Clutter, Gdk, or X
+event. If called from outside an event handler, this may return
+<code class="literal">Clutter</code>.CURRENT_TIME (aka 0), or it may return a slightly
+out-of-date timestamp.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-display"></a><h3>shell_global_get_display ()</h3>
+<pre class="programlisting"><span class="returnvalue">MetaDisplay</span> *       shell_global_get_display            (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The default <span class="type">MetaDisplay</span>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-gdk-screen"></a><h3>shell_global_get_gdk_screen ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdkScreen</span> *         shell_global_get_gdk_screen         (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Gdk screen object for the shell. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-memory-info"></a><h3>shell_global_get_memory_info ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_get_memory_info        (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellGlobal.html#ShellMemoryInfo" title="ShellMemoryInfo"><span class="type">ShellMemoryInfo</span></a> *meminfo</code></em>);</pre>
+<p>
+Load process-global data about memory usage.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>meminfo</code></em> :</span></p></td>
+<td>Output location for memory information. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-pointer"></a><h3>shell_global_get_pointer ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_get_pointer            (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *x</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *y</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterModifierType</span> *mods</code></em>);</pre>
+<p>
+Gets the pointer coordinates and current modifier key state.
+This is a wrapper around <code class="function">gdk_display_get_pointer()</code> that strips
+out any un-declared modifier flags, to make gjs happy; see
+https://bugzilla.gnome.org/show_bug.cgi?id=597292.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>the X coordinate of the pointer, in global coordinates. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>the Y coordinate of the pointer, in global coordinates. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mods</code></em> :</span></p></td>
+<td>the current set of modifier keys that are pressed down. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-screen"></a><h3>shell_global_get_screen ()</h3>
+<pre class="programlisting"><span class="returnvalue">MetaScreen</span> *        shell_global_get_screen             (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The default <span class="type">MetaScreen</span>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-session-type"></a><h3>shell_global_get_session_type ()</h3>
+<pre class="programlisting"><a class="link" href="shell-ShellGlobal.html#ShellSessionType"><span class="returnvalue">ShellSessionType</span></a>    shell_global_get_session_type       (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Gets the type of session gnome-shell provides.
+</p>
+<p>
+The type determines what UI elements are displayed,
+what keybindings work, and generally how the shell
+behaves.
+</p>
+<p>
+A session type of <span class="type">SHELL_SESSION_USER</span> means gnome-shell
+will enable the activities overview, status menu, run dialog,
+etc. This is the default.
+</p>
+<p>
+A session type of <span class="type">SHELL_SESSION_GDM</span> means gnome-shell
+will enable a login dialog and run in a more confined
+way. This type is suitable for the display manager.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>The <span class="type">ShellGlobal</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the type of session gnome-shell is providing.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-settings"></a><h3>shell_global_get_settings ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSettings</span> *         shell_global_get_settings           (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Get the global GSettings instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>A <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The GSettings object. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-stage"></a><h3>shell_global_get_stage ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterStage</span> *      shell_global_get_stage              (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The default <span class="type">ClutterStage</span>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-get-window-actors"></a><h3>shell_global_get_window_actors ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *             shell_global_get_window_actors      (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Gets the list of <span class="type">MetaWindowActor</span> for the plugin's screen
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the list of windows. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Meta.WindowActor][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-init-xdnd"></a><h3>shell_global_init_xdnd ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_init_xdnd              (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Enables tracking of Xdnd events
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-launch-calendar-server"></a><h3>shell_global_launch_calendar_server ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_launch_calendar_server (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Launch the gnome-shell-calendar-server helper.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>The <span class="type">ShellGlobal</span>.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-maybe-gc"></a><h3>shell_global_maybe_gc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_maybe_gc               (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Start a garbage collection process when it would free up enough memory
+to be worth the amount of time it would take
+https://developer.mozilla.org/en/SpiderMonkey/JSAPI_Reference/JS_MaybeGC
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>A <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-notify-error"></a><h3>shell_global_notify_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_notify_error           (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *msg</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *details</code></em>);</pre>
+<p>
+Show a system error notification.  Use this function
+when a user-initiated action results in a non-fatal problem
+from causes that may not be under system control.  For
+example, an application crash.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>a <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td>Error message</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>details</code></em> :</span></p></td>
+<td>Error details</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-play-theme-sound"></a><h3>shell_global_play_theme_sound ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_play_theme_sound       (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> id</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>
+Plays a simple sound picked according to Freedesktop sound theme.
+Really just a workaround for libcanberra not being introspected.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>an id, used to cancel later (0 if not needed)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the sound name</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-reexec-self"></a><h3>shell_global_reexec_self ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_reexec_self            (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Restart the current process.  Only intended for development purposes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>A <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-run-at-leisure"></a><h3>shell_global_run_at_leisure ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_run_at_leisure         (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellGlobal.html#ShellLeisureFunction" title="ShellLeisureFunction ()"><span class="type">ShellLeisureFunction</span></a> func</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> notify</code></em>);</pre>
+<p>
+Schedules a function to be called the next time the shell is idle.
+Idle means here no animations, no redrawing, and no ongoing background
+work. Since there is currently no way to hook into the Clutter master
+clock and know when is running, the implementation here is somewhat
+approximation. Animations done through the shell's Tweener module will
+be handled properly, but other animations may be detected as terminating
+early if they can be drawn fast enough so that the event loop goes idle
+between frames.
+</p>
+<p>
+The intent of this function is for performance measurement runs
+where a number of actions should be run serially and each action is
+timed individually. Using this function for other purposes will
+interfere with the ability to use it for performance measurement so
+should be avoided.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>function to call at leisure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>data to pass to <em class="parameter"><code>func</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>notify</code></em> :</span></p></td>
+<td>function to call to free <em class="parameter"><code>user_data</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-set-cursor"></a><h3>shell_global_set_cursor ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_set_cursor             (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellGlobal.html#ShellCursor"><span class="type">ShellCursor</span></a> type</code></em>);</pre>
+<p>
+Set the cursor on the stage window.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>A <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the type of the cursor</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-set-stage-input-mode"></a><h3>shell_global_set_stage_input_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_set_stage_input_mode   (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellGlobal.html#ShellStageInputMode"><span class="type">ShellStageInputMode</span></a> mode</code></em>);</pre>
+<p>
+Sets the input mode of the stage; when <em class="parameter"><code>mode</code></em> is
+<code class="literal">SHELL_STAGE_INPUT_MODE_NONREACTIVE</code>, then the stage does not absorb
+any clicks, but just passes them through to underlying windows.
+When it is <code class="literal">SHELL_STAGE_INPUT_MODE_NORMAL</code>, then the stage accepts
+clicks in the region defined by
+<a class="link" href="shell-ShellGlobal.html#shell-global-set-stage-input-region" title="shell_global_set_stage_input_region ()"><code class="function">shell_global_set_stage_input_region()</code></a> but passes through clicks
+outside that region. When it is <code class="literal">SHELL_STAGE_INPUT_MODE_FULLSCREEN</code>,
+the stage absorbs all input.
+</p>
+<p>
+When the input mode is <code class="literal">SHELL_STAGE_INPUT_MODE_FOCUSED</code>, the pointer
+is handled as with <code class="literal">SHELL_STAGE_INPUT_MODE_NORMAL</code>, but additionally
+the stage window has the keyboard focus. If the stage loses the
+focus (eg, because the user clicked into a window) the input mode
+will revert to <code class="literal">SHELL_STAGE_INPUT_MODE_NORMAL</code>.
+</p>
+<p>
+Note that whenever a mutter-internal Gtk widget has a pointer grab,
+the shell behaves as though it was in
+<code class="literal">SHELL_STAGE_INPUT_MODE_NONREACTIVE</code>, to ensure that the widget gets
+any clicks it is expecting.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mode</code></em> :</span></p></td>
+<td>the stage input mode</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-set-stage-input-region"></a><h3>shell_global_set_stage_input_region ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_set_stage_input_region (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>,
+                                                         <em class="parameter"><code><span class="type">GSList</span> *rectangles</code></em>);</pre>
+<p>
+Sets the area of the stage that is responsive to mouse clicks when
+the stage mode is <code class="literal">SHELL_STAGE_INPUT_MODE_NORMAL</code> (but does not change the
+current stage mode).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rectangles</code></em> :</span></p></td>
+<td>a list of <span class="type">MetaRectangle</span>
+describing the input region. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Meta.Rectangle]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-sync-pointer"></a><h3>shell_global_sync_pointer ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_sync_pointer           (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Ensures that clutter is aware of the current pointer position,
+causing enter and leave events to be emitted if the pointer moved
+behind our back (ie, during a pointer grab).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>the <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-global-unset-cursor"></a><h3>shell_global_unset_cursor ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_global_unset_cursor           (<em class="parameter"><code><span class="type">ShellGlobal</span> *global</code></em>);</pre>
+<p>
+Unset the cursor on the stage window.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>global</code></em> :</span></p></td>
+<td>A <span class="type">ShellGlobal</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

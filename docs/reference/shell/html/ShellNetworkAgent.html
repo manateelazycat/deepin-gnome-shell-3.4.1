@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellNetworkAgent</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="shell-shell-mobile-providers.html" title="shell-mobile-providers">
+<link rel="next" href="shell-shell-polkit-authentication-agent.html" title="shell-polkit-authentication-agent">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="shell-shell-mobile-providers.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="shell-shell-polkit-authentication-agent.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#ShellNetworkAgent.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#ShellNetworkAgent.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#ShellNetworkAgent.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#ShellNetworkAgent.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="ShellNetworkAgent"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ShellNetworkAgent.top_of_page"></a>ShellNetworkAgent</span></h2>
+<p>ShellNetworkAgent</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="ShellNetworkAgent.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellNetworkAgentResponse"></a><pre class="synopsis">#define             <a class="link" href="ShellNetworkAgent.html#SHELL-KEYRING-SK-TAG:CAPS" title="SHELL_KEYRING_SK_TAG">SHELL_KEYRING_SK_TAG</a>
+#define             <a class="link" href="ShellNetworkAgent.html#SHELL-KEYRING-SN-TAG:CAPS" title="SHELL_KEYRING_SN_TAG">SHELL_KEYRING_SN_TAG</a>
+#define             <a class="link" href="ShellNetworkAgent.html#SHELL-KEYRING-UUID-TAG:CAPS" title="SHELL_KEYRING_UUID_TAG">SHELL_KEYRING_UUID_TAG</a>
+struct              <a class="link" href="ShellNetworkAgent.html#ShellNetworkAgent-struct" title="struct ShellNetworkAgent">ShellNetworkAgent</a>;
+struct              <a class="link" href="ShellNetworkAgent.html#ShellNetworkAgentClass" title="struct ShellNetworkAgentClass">ShellNetworkAgentClass</a>;
+enum                <a class="link" href="ShellNetworkAgent.html#ShellNetworkAgentResponse-enum" title="enum ShellNetworkAgentResponse">ShellNetworkAgentResponse</a>;
+<a class="link" href="ShellNetworkAgent.html" title="ShellNetworkAgent"><span class="returnvalue">ShellNetworkAgent</span></a> * <a class="link" href="ShellNetworkAgent.html#shell-network-agent-new" title="shell_network_agent_new ()">shell_network_agent_new</a>             (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="ShellNetworkAgent.html#shell-network-agent-respond" title="shell_network_agent_respond ()">shell_network_agent_respond</a>         (<em class="parameter"><code><a class="link" href="ShellNetworkAgent.html" title="ShellNetworkAgent"><span class="type">ShellNetworkAgent</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">gchar</span> *request_id</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="ShellNetworkAgent.html#ShellNetworkAgentResponse"><span class="type">ShellNetworkAgentResponse</span></a> response</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="ShellNetworkAgent.html#shell-network-agent-set-password" title="shell_network_agent_set_password ()">shell_network_agent_set_password</a>    (<em class="parameter"><code><a class="link" href="ShellNetworkAgent.html" title="ShellNetworkAgent"><span class="type">ShellNetworkAgent</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">gchar</span> *request_id</code></em>,
+                                                         <em class="parameter"><code><span class="type">gchar</span> *setting_key</code></em>,
+                                                         <em class="parameter"><code><span class="type">gchar</span> *setting_value</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellNetworkAgent.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----NMSecretAgent
+         +----ShellNetworkAgent
+</pre>
+<pre class="synopsis">
+  GEnum
+   +----ShellNetworkAgentResponse
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellNetworkAgent.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="ShellNetworkAgent.html#ShellNetworkAgent-cancel-request" title='The "cancel-request" signal'>cancel-request</a>"                                 
+  "<a class="link" href="ShellNetworkAgent.html#ShellNetworkAgent-new-request" title='The "new-request" signal'>new-request</a>"                                    
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellNetworkAgent.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="ShellNetworkAgent.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="SHELL-KEYRING-SK-TAG:CAPS"></a><h3>SHELL_KEYRING_SK_TAG</h3>
+<pre class="programlisting">#define SHELL_KEYRING_SK_TAG "setting-key"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SHELL-KEYRING-SN-TAG:CAPS"></a><h3>SHELL_KEYRING_SN_TAG</h3>
+<pre class="programlisting">#define SHELL_KEYRING_SN_TAG "setting-name"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SHELL-KEYRING-UUID-TAG:CAPS"></a><h3>SHELL_KEYRING_UUID_TAG</h3>
+<pre class="programlisting">#define SHELL_KEYRING_UUID_TAG "connection-uuid"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellNetworkAgent-struct"></a><h3>struct ShellNetworkAgent</h3>
+<pre class="programlisting">struct ShellNetworkAgent;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellNetworkAgentClass"></a><h3>struct ShellNetworkAgentClass</h3>
+<pre class="programlisting">struct ShellNetworkAgentClass {
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellNetworkAgentResponse-enum"></a><h3>enum ShellNetworkAgentResponse</h3>
+<pre class="programlisting">typedef enum {
+  SHELL_NETWORK_AGENT_CONFIRMED,
+  SHELL_NETWORK_AGENT_USER_CANCELED,
+  SHELL_NETWORK_AGENT_INTERNAL_ERROR
+} ShellNetworkAgentResponse;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-network-agent-new"></a><h3>shell_network_agent_new ()</h3>
+<pre class="programlisting"><a class="link" href="ShellNetworkAgent.html" title="ShellNetworkAgent"><span class="returnvalue">ShellNetworkAgent</span></a> * shell_network_agent_new             (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-network-agent-respond"></a><h3>shell_network_agent_respond ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_network_agent_respond         (<em class="parameter"><code><a class="link" href="ShellNetworkAgent.html" title="ShellNetworkAgent"><span class="type">ShellNetworkAgent</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">gchar</span> *request_id</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="ShellNetworkAgent.html#ShellNetworkAgentResponse"><span class="type">ShellNetworkAgentResponse</span></a> response</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-network-agent-set-password"></a><h3>shell_network_agent_set_password ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_network_agent_set_password    (<em class="parameter"><code><a class="link" href="ShellNetworkAgent.html" title="ShellNetworkAgent"><span class="type">ShellNetworkAgent</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">gchar</span> *request_id</code></em>,
+                                                         <em class="parameter"><code><span class="type">gchar</span> *setting_key</code></em>,
+                                                         <em class="parameter"><code><span class="type">gchar</span> *setting_value</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ShellNetworkAgent.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ShellNetworkAgent-cancel-request"></a><h3>The <code class="literal">"cancel-request"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellNetworkAgent.html" title="ShellNetworkAgent"><span class="type">ShellNetworkAgent</span></a> *shellnetworkagent,
+                                                        <span class="type">gchar</span>             *arg1,
+                                                        <span class="type">gpointer</span>           user_data)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellNetworkAgent-new-request"></a><h3>The <code class="literal">"new-request"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellNetworkAgent.html" title="ShellNetworkAgent"><span class="type">ShellNetworkAgent</span></a> *shellnetworkagent,
+                                                        <span class="type">gchar</span>             *arg1,
+                                                        <span class="type">NMConnection</span>      *arg2,
+                                                        <span class="type">gchar</span>             *arg3,
+                                                        <span class="type">GStrv</span>              arg4,
+                                                        <span class="type">gint</span>               arg5,
+                                                        <span class="type">gpointer</span>           user_data)</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

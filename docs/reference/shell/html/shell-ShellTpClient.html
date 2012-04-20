@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellTpClient</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="shell-shell-polkit-authentication-agent.html" title="shell-polkit-authentication-agent">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="shell-shell-polkit-authentication-agent.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-ShellTpClient.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-ShellTpClient.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-ShellTpClient"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-ShellTpClient.top_of_page"></a>ShellTpClient</span></h2>
+<p>ShellTpClient</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-ShellTpClient.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><span class="returnvalue">void</span>                (<a class="link" href="shell-ShellTpClient.html#ShellTpClientApproveChannelsImpl" title="ShellTpClientApproveChannelsImpl ()">*ShellTpClientApproveChannelsImpl</a>) (<em class="parameter"><code><span class="type">ShellTpClient</span> *client</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAccount</span> *account</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpConnection</span> *connection</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *channels</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpChannelDispatchOperation</span> *dispatch_operation</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAddDispatchOperationContext</span> *context</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);
+struct              <a class="link" href="shell-ShellTpClient.html#ShellTpClientClass" title="struct ShellTpClientClass">ShellTpClientClass</a>;
+<span class="returnvalue">void</span>                (<a class="link" href="shell-ShellTpClient.html#ShellTpClientContactListChangedImpl" title="ShellTpClientContactListChangedImpl ()">*ShellTpClientContactListChangedImpl</a>)
+                                                        (<em class="parameter"><code><span class="type">TpConnection</span> *connection</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *added</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *removed</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);
+<span class="returnvalue">void</span>                (<a class="link" href="shell-ShellTpClient.html#ShellTpClientHandleChannelsImpl" title="ShellTpClientHandleChannelsImpl ()">*ShellTpClientHandleChannelsImpl</a>)  (<em class="parameter"><code><span class="type">ShellTpClient</span> *client</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAccount</span> *account</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpConnection</span> *connection</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *channels</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *requests_satisfied</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint64</span> user_action_time</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpHandleChannelsContext</span> *context</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);
+<span class="returnvalue">void</span>                (<a class="link" href="shell-ShellTpClient.html#ShellTpClientObserveChannelsImpl" title="ShellTpClientObserveChannelsImpl ()">*ShellTpClientObserveChannelsImpl</a>) (<em class="parameter"><code><span class="type">ShellTpClient</span> *client</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAccount</span> *account</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpConnection</span> *connection</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *channels</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpChannelDispatchOperation</span> *dispatch_operation</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *requests</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpObserveChannelsContext</span> *context</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellTpClient.html#shell-decline-dispatch-op" title="shell_decline_dispatch_op ()">shell_decline_dispatch_op</a>           (<em class="parameter"><code><span class="type">TpAddDispatchOperationContext</span> *context</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *message</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellTpClient.html#shell-get-contact-events" title="shell_get_contact_events ()">shell_get_contact_events</a>            (<em class="parameter"><code><span class="type">TplLogManager</span> *log_manager</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAccount</span> *account</code></em>,
+                                                         <em class="parameter"><code><span class="type">TplEntity</span> *entity</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> num_events</code></em>,
+                                                         <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellTpClient.html#shell-tp-client-grab-contact-list-changed" title="shell_tp_client_grab_contact_list_changed ()">shell_tp_client_grab_contact_list_changed</a>
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpConnection</span> *conn</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellTpClient.html#shell-tp-client-set-approve-channels-func" title="shell_tp_client_set_approve_channels_func ()">shell_tp_client_set_approve_channels_func</a>
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellTpClient.html#ShellTpClientApproveChannelsImpl" title="ShellTpClientApproveChannelsImpl ()"><span class="type">ShellTpClientApproveChannelsImpl</span></a> approve_impl</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellTpClient.html#shell-tp-client-set-contact-list-changed-func" title="shell_tp_client_set_contact_list_changed_func ()">shell_tp_client_set_contact_list_changed_func</a>
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellTpClient.html#ShellTpClientContactListChangedImpl" title="ShellTpClientContactListChangedImpl ()"><span class="type">ShellTpClientContactListChangedImpl</span></a> contact_list_changed_impl</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellTpClient.html#shell-tp-client-set-handle-channels-func" title="shell_tp_client_set_handle_channels_func ()">shell_tp_client_set_handle_channels_func</a>
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellTpClient.html#ShellTpClientHandleChannelsImpl" title="ShellTpClientHandleChannelsImpl ()"><span class="type">ShellTpClientHandleChannelsImpl</span></a> handle_channels_impl</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellTpClient.html#shell-tp-client-set-observe-channels-func" title="shell_tp_client_set_observe_channels_func ()">shell_tp_client_set_observe_channels_func</a>
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellTpClient.html#ShellTpClientObserveChannelsImpl" title="ShellTpClientObserveChannelsImpl ()"><span class="type">ShellTpClientObserveChannelsImpl</span></a> observe_impl</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-ShellTpClient.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="shell-ShellTpClient.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellTpClientApproveChannelsImpl"></a><h3>ShellTpClientApproveChannelsImpl ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*ShellTpClientApproveChannelsImpl) (<em class="parameter"><code><span class="type">ShellTpClient</span> *client</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAccount</span> *account</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpConnection</span> *connection</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *channels</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpChannelDispatchOperation</span> *dispatch_operation</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAddDispatchOperationContext</span> *context</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>
+Signature of the implementation of the AddDispatchOperation method.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
+<td>a <span class="type">ShellTpClient</span> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>account</code></em> :</span></p></td>
+<td>a <span class="type">TpAccount</span> having <code class="literal">TP_ACCOUNT_FEATURE_CORE</code> prepared if possible</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td>a <span class="type">TpConnection</span> having <code class="literal">TP_CONNECTION_FEATURE_CORE</code> prepared
+if possible</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>channels</code></em> :</span></p></td>
+<td>a <span class="type">GList</span> of <span class="type">TpChannel</span>,
+all having <code class="literal">TP_CHANNEL_FEATURE_CORE</code> prepared if possible. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> TelepathyGLib.Channel]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dispatch_operation</code></em> :</span></p></td>
+<td>a <span class="type">TpChannelDispatchOperation</span> or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>;
+the dispatch_operation is not guaranteed to be prepared. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>a <span class="type">TpAddDispatchOperationContext</span> representing the context of this
+D-Bus call</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTpClientClass"></a><h3>struct ShellTpClientClass</h3>
+<pre class="programlisting">struct ShellTpClientClass {
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTpClientContactListChangedImpl"></a><h3>ShellTpClientContactListChangedImpl ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*ShellTpClientContactListChangedImpl)
+                                                        (<em class="parameter"><code><span class="type">TpConnection</span> *connection</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *added</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *removed</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>
+Signature of the implementation of the ContactListChanged method.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td>a <span class="type">TpConnection</span> having <code class="literal">TP_CONNECTION_FEATURE_CORE</code> prepared
+if possible</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>added</code></em> :</span></p></td>
+<td>a <span class="type">GPtrArray</span> of added <span class="type">TpContact</span>. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> TelepathyGLib.Contact]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>removed</code></em> :</span></p></td>
+<td>a <span class="type">GPtrArray</span> of removed <span class="type">TpContact</span>. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> TelepathyGLib.Contact]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTpClientHandleChannelsImpl"></a><h3>ShellTpClientHandleChannelsImpl ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*ShellTpClientHandleChannelsImpl)  (<em class="parameter"><code><span class="type">ShellTpClient</span> *client</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAccount</span> *account</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpConnection</span> *connection</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *channels</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *requests_satisfied</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint64</span> user_action_time</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpHandleChannelsContext</span> *context</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>
+Signature of the implementation of the HandleChannels method.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
+<td>a <span class="type">ShellTpClient</span> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>account</code></em> :</span></p></td>
+<td>a <span class="type">TpAccount</span> having <code class="literal">TP_ACCOUNT_FEATURE_CORE</code> prepared if possible</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td>a <span class="type">TpConnection</span> having <code class="literal">TP_CONNECTION_FEATURE_CORE</code> prepared
+if possible</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>channels</code></em> :</span></p></td>
+<td>a <span class="type">GList</span> of <span class="type">TpChannel</span>,
+all having <code class="literal">TP_CHANNEL_FEATURE_CORE</code> prepared if possible. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> TelepathyGLib.Channel]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>requests_satisfied</code></em> :</span></p></td>
+<td>a <span class="type">GList</span> of
+<span class="type">TpChannelRequest</span> having their object-path defined but are not guaranteed
+to be prepared. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> TelepathyGLib.ChannelRequest]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_action_time</code></em> :</span></p></td>
+<td>the time at which user action occurred, or one of the
+special values <code class="literal">TP_USER_ACTION_TIME_NOT_USER_ACTION</code> or
+<code class="literal">TP_USER_ACTION_TIME_CURRENT_TIME</code>
+(see <span class="type">"user-action-time"</span> for details)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>a <span class="type">TpHandleChannelsContext</span> representing the context of this
+D-Bus call</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTpClientObserveChannelsImpl"></a><h3>ShellTpClientObserveChannelsImpl ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*ShellTpClientObserveChannelsImpl) (<em class="parameter"><code><span class="type">ShellTpClient</span> *client</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAccount</span> *account</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpConnection</span> *connection</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *channels</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpChannelDispatchOperation</span> *dispatch_operation</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *requests</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpObserveChannelsContext</span> *context</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>
+Signature of the implementation of the ObserveChannels method.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
+<td>a <span class="type">ShellTpClient</span> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>account</code></em> :</span></p></td>
+<td>a <span class="type">TpAccount</span> having <code class="literal">TP_ACCOUNT_FEATURE_CORE</code> prepared if possible</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td>a <span class="type">TpConnection</span> having <code class="literal">TP_CONNECTION_FEATURE_CORE</code> prepared
+if possible</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>channels</code></em> :</span></p></td>
+<td>a <span class="type">GList</span> of <span class="type">TpChannel</span>,
+all having <code class="literal">TP_CHANNEL_FEATURE_CORE</code> prepared if possible. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> TelepathyGLib.Channel]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dispatch_operation</code></em> :</span></p></td>
+<td>a <span class="type">TpChannelDispatchOperation</span> or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>;
+the dispatch_operation is not guaranteed to be prepared. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>requests</code></em> :</span></p></td>
+<td>a <span class="type">GList</span> of
+<span class="type">TpChannelRequest</span>, all having their object-path defined but are not
+guaranteed to be prepared. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> TelepathyGLib.ChannelRequest]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>a <span class="type">TpObserveChannelsContext</span> representing the context of this
+D-Bus call</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-decline-dispatch-op"></a><h3>shell_decline_dispatch_op ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_decline_dispatch_op           (<em class="parameter"><code><span class="type">TpAddDispatchOperationContext</span> *context</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *message</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-get-contact-events"></a><h3>shell_get_contact_events ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_get_contact_events            (<em class="parameter"><code><span class="type">TplLogManager</span> *log_manager</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpAccount</span> *account</code></em>,
+                                                         <em class="parameter"><code><span class="type">TplEntity</span> *entity</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> num_events</code></em>,
+                                                         <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>);</pre>
+<p>
+Wrap tpl_log_manager_get_filtered_events_async because gjs cannot support
+multiple callbacks in the same function call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>log_manager</code></em> :</span></p></td>
+<td>A <span class="type">TplLogManager</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>account</code></em> :</span></p></td>
+<td>A <span class="type">TpAccount</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entity</code></em> :</span></p></td>
+<td>A <span class="type">TplEntity</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>num_events</code></em> :</span></p></td>
+<td>The number of events to retrieve</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>User callback to run when the contact is ready. <span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tp-client-grab-contact-list-changed"></a><h3>shell_tp_client_grab_contact_list_changed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_tp_client_grab_contact_list_changed
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">TpConnection</span> *conn</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tp-client-set-approve-channels-func"></a><h3>shell_tp_client_set_approve_channels_func ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_tp_client_set_approve_channels_func
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellTpClient.html#ShellTpClientApproveChannelsImpl" title="ShellTpClientApproveChannelsImpl ()"><span class="type">ShellTpClientApproveChannelsImpl</span></a> approve_impl</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tp-client-set-contact-list-changed-func"></a><h3>shell_tp_client_set_contact_list_changed_func ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_tp_client_set_contact_list_changed_func
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellTpClient.html#ShellTpClientContactListChangedImpl" title="ShellTpClientContactListChangedImpl ()"><span class="type">ShellTpClientContactListChangedImpl</span></a> contact_list_changed_impl</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tp-client-set-handle-channels-func"></a><h3>shell_tp_client_set_handle_channels_func ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_tp_client_set_handle_channels_func
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellTpClient.html#ShellTpClientHandleChannelsImpl" title="ShellTpClientHandleChannelsImpl ()"><span class="type">ShellTpClientHandleChannelsImpl</span></a> handle_channels_impl</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tp-client-set-observe-channels-func"></a><h3>shell_tp_client_set_observe_channels_func ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_tp_client_set_observe_channels_func
+                                                        (<em class="parameter"><code><span class="type">ShellTpClient</span> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="shell-ShellTpClient.html#ShellTpClientObserveChannelsImpl" title="ShellTpClientObserveChannelsImpl ()"><span class="type">ShellTpClientObserveChannelsImpl</span></a> observe_impl</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

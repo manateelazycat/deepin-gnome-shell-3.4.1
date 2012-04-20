@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>shell-xfixes-cursor</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="shell-ShellWM.html" title="ShellWM">
+<link rel="next" href="shell-shell-util.html" title="shell-util">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="shell-ShellWM.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="shell-shell-util.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-shell-xfixes-cursor.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-shell-xfixes-cursor.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#shell-shell-xfixes-cursor.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#shell-shell-xfixes-cursor.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#shell-shell-xfixes-cursor.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-shell-xfixes-cursor"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-shell-xfixes-cursor.top_of_page"></a>shell-xfixes-cursor</span></h2>
+<p>shell-xfixes-cursor — Capture/manipulate system mouse cursor.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-shell-xfixes-cursor.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellXFixesCursor"></a><pre class="synopsis">                    <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor-struct" title="ShellXFixesCursor">ShellXFixesCursor</a>;
+                    <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursorClass" title="ShellXFixesCursorClass">ShellXFixesCursorClass</a>;
+<a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="returnvalue">ShellXFixesCursor</span></a> * <a class="link" href="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-get-for-stage" title="shell_xfixes_cursor_get_for_stage ()">shell_xfixes_cursor_get_for_stage</a>   (<em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-get-hot-x" title="shell_xfixes_cursor_get_hot_x ()">shell_xfixes_cursor_get_hot_x</a>       (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-get-hot-y" title="shell_xfixes_cursor_get_hot_y ()">shell_xfixes_cursor_get_hot_y</a>       (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-hide" title="shell_xfixes_cursor_hide ()">shell_xfixes_cursor_hide</a>            (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-show" title="shell_xfixes_cursor_show ()">shell_xfixes_cursor_show</a>            (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-update-texture-image" title="shell_xfixes_cursor_update_texture_image ()">shell_xfixes_cursor_update_texture_image</a>
+                                                        (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterTexture</span> *texture</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-xfixes-cursor.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----ShellXFixesCursor
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-xfixes-cursor.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor--stage" title='The "stage" property'>stage</a>"                    <span class="type">ClutterStage</span>*         : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-xfixes-cursor.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor-cursor-change" title='The "cursor-change" signal'>cursor-change</a>"                                  : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-xfixes-cursor.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> object uses the XFixes extension to show/hide the
+the system mouse pointer, to grab its image as it changes, and emit a
+notification when its image changes.
+</p>
+</div>
+<div class="refsect1">
+<a name="shell-shell-xfixes-cursor.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellXFixesCursor-struct"></a><h3>ShellXFixesCursor</h3>
+<pre class="programlisting">typedef struct _ShellXFixesCursor ShellXFixesCursor;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellXFixesCursorClass"></a><h3>ShellXFixesCursorClass</h3>
+<pre class="programlisting">typedef struct _ShellXFixesCursorClass ShellXFixesCursorClass;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-xfixes-cursor-get-for-stage"></a><h3>shell_xfixes_cursor_get_for_stage ()</h3>
+<pre class="programlisting"><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="returnvalue">ShellXFixesCursor</span></a> * shell_xfixes_cursor_get_for_stage   (<em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stage</code></em> :</span></p></td>
+<td>The <span class="type">ClutterStage</span> to get the cursor for. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> instance. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-xfixes-cursor-get-hot-x"></a><h3>shell_xfixes_cursor_get_hot_x ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 shell_xfixes_cursor_get_hot_x       (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xfixes_cursor</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the current mouse cursor's hot x-coordinate.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-xfixes-cursor-get-hot-y"></a><h3>shell_xfixes_cursor_get_hot_y ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 shell_xfixes_cursor_get_hot_y       (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xfixes_cursor</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the current mouse cursor's hot y-coordinate.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-xfixes-cursor-hide"></a><h3>shell_xfixes_cursor_hide ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_xfixes_cursor_hide            (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>);</pre>
+<p>
+Hide the system mouse cursor.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>xfixes_cursor</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-xfixes-cursor-show"></a><h3>shell_xfixes_cursor_show ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_xfixes_cursor_show            (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>);</pre>
+<p>
+Show the system mouse cursor to show
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>xfixes_cursor</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-xfixes-cursor-update-texture-image"></a><h3>shell_xfixes_cursor_update_texture_image ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_xfixes_cursor_update_texture_image
+                                                        (<em class="parameter"><code><a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *xfixes_cursor</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterTexture</span> *texture</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xfixes_cursor</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>texture</code></em> :</span></p></td>
+<td>ClutterTexture to update with the current sprite image.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="shell-shell-xfixes-cursor.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ShellXFixesCursor--stage"></a><h3>The <code class="literal">"stage"</code> property</h3>
+<pre class="programlisting">  "stage"                    <span class="type">ClutterStage</span>*         : Read / Write / Construct Only</pre>
+<p>Stage for mouse cursor.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="shell-shell-xfixes-cursor.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ShellXFixesCursor-cursor-change"></a><h3>The <code class="literal">"cursor-change"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="shell-shell-xfixes-cursor.html#ShellXFixesCursor"><span class="type">ShellXFixesCursor</span></a> *shellxfixescursor,
+                                                        <span class="type">gpointer</span>           user_data)              : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

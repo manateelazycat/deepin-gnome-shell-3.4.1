@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StBin</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="containers.html" title="Containers">
+<link rel="prev" href="containers.html" title="Containers">
+<link rel="next" href="StBoxLayout.html" title="StBoxLayout">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="containers.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="containers.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StBoxLayout.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StBin.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StBin.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StBin.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StBin.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StBin.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StBin"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StBin.top_of_page"></a>StBin</span></h2>
+<p>StBin — a simple container with one actor</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StBin.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StBin.html#StBin-struct" title="struct StBin">StBin</a>;
+struct              <a class="link" href="StBin.html#StBinClass" title="struct StBinClass">StBinClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="StBin.html#st-bin-get-alignment" title="st_bin_get_alignment ()">st_bin_get_alignment</a>                (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAlign</span> *x_align</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAlign</span> *y_align</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StBin.html#st-bin-get-child" title="st_bin_get_child ()">st_bin_get_child</a>                    (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StBin.html#st-bin-get-fill" title="st_bin_get_fill ()">st_bin_get_fill</a>                     (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> *x_fill</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> *y_fill</code></em>);
+<a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          <a class="link" href="StBin.html#st-bin-new" title="st_bin_new ()">st_bin_new</a>                          (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StBin.html#st-bin-set-alignment" title="st_bin_set_alignment ()">st_bin_set_alignment</a>                (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAlign</span> x_align</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAlign</span> y_align</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StBin.html#st-bin-set-child" title="st_bin_set_child ()">st_bin_set_child</a>                    (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *child</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StBin.html#st-bin-set-fill" title="st_bin_set_fill ()">st_bin_set_fill</a>                     (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> x_fill</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> y_fill</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StBin.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----StBin
+                           +----<a class="link" href="StButton.html" title="StButton">StButton</a>
+                           +----<a class="link" href="StScrollView.html" title="StScrollView">StScrollView</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="StBin.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StBin implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StBin.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StBin.html#StBin--child" title='The "child" property'>child</a>"                    <span class="type">ClutterActor</span>*         : Read / Write
+  "<a class="link" href="StBin.html#StBin--x-align" title='The "x-align" property'>x-align</a>"                  <span class="type">StAlign</span>               : Read / Write
+  "<a class="link" href="StBin.html#StBin--x-fill" title='The "x-fill" property'>x-fill</a>"                   <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="StBin.html#StBin--y-align" title='The "y-align" property'>y-align</a>"                  <span class="type">StAlign</span>               : Read / Write
+  "<a class="link" href="StBin.html#StBin--y-fill" title='The "y-fill" property'>y-fill</a>"                   <span class="type">gboolean</span>              : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="StBin.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> is a simple container capable of having only one
+<span class="type">ClutterActor</span> as a child.
+</p>
+<p>
+<a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> inherits from <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>, so it is fully themable.
+</p>
+</div>
+<div class="refsect1">
+<a name="StBin.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StBin-struct"></a><h3>struct StBin</h3>
+<pre class="programlisting">struct StBin;</pre>
+<p>
+The <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> struct contains only private data
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StBinClass"></a><h3>struct StBinClass</h3>
+<pre class="programlisting">struct StBinClass {
+};
+</pre>
+<p>
+The <a class="link" href="StBin.html#StBinClass" title="struct StBinClass"><span class="type">StBinClass</span></a> struct contains only private data
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-bin-get-alignment"></a><h3>st_bin_get_alignment ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_bin_get_alignment                (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAlign</span> *x_align</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAlign</span> *y_align</code></em>);</pre>
+<p>
+Retrieves the horizontal and vertical alignment of the child
+inside a <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>, as set by <a class="link" href="StBin.html#st-bin-set-alignment" title="st_bin_set_alignment ()"><code class="function">st_bin_set_alignment()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bin</code></em> :</span></p></td>
+<td>a <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_align</code></em> :</span></p></td>
+<td>return location for the horizontal alignment, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_align</code></em> :</span></p></td>
+<td>return location for the vertical alignment, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-bin-get-child"></a><h3>st_bin_get_child ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_bin_get_child                    (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>);</pre>
+<p>
+Retrieves a pointer to the child of <em class="parameter"><code>bin</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bin</code></em> :</span></p></td>
+<td>a <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a <span class="type">ClutterActor</span>, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-bin-get-fill"></a><h3>st_bin_get_fill ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_bin_get_fill                     (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> *x_fill</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> *y_fill</code></em>);</pre>
+<p>
+Retrieves the horizontal and vertical fill settings
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bin</code></em> :</span></p></td>
+<td>a <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_fill</code></em> :</span></p></td>
+<td>return location for the horizontal fill, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_fill</code></em> :</span></p></td>
+<td>return location for the vertical fill, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-bin-new"></a><h3>st_bin_new ()</h3>
+<pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          st_bin_new                          (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Creates a new <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>, a simple container for one child.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the newly created <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> actor</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-bin-set-alignment"></a><h3>st_bin_set_alignment ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_bin_set_alignment                (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAlign</span> x_align</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAlign</span> y_align</code></em>);</pre>
+<p>
+Sets the horizontal and vertical alignment of the child
+inside a <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bin</code></em> :</span></p></td>
+<td>a <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_align</code></em> :</span></p></td>
+<td>horizontal alignment</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_align</code></em> :</span></p></td>
+<td>vertical alignment</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-bin-set-child"></a><h3>st_bin_set_child ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_bin_set_child                    (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *child</code></em>);</pre>
+<p>
+Sets <em class="parameter"><code>child</code></em> as the child of <em class="parameter"><code>bin</code></em>.
+</p>
+<p>
+If <em class="parameter"><code>bin</code></em> already has a child, the previous child is removed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bin</code></em> :</span></p></td>
+<td>a <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>child</code></em> :</span></p></td>
+<td>a <span class="type">ClutterActor</span>, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-bin-set-fill"></a><h3>st_bin_set_fill ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_bin_set_fill                     (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> x_fill</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> y_fill</code></em>);</pre>
+<p>
+Sets whether the child of <em class="parameter"><code>bin</code></em> should fill out the horizontal
+and/or vertical allocation of the parent
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bin</code></em> :</span></p></td>
+<td>a <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_fill</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the child should fill horizontally the <em class="parameter"><code>bin</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_fill</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the child should fill vertically the <em class="parameter"><code>bin</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StBin.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StBin--child"></a><h3>The <code class="literal">"child"</code> property</h3>
+<pre class="programlisting">  "child"                    <span class="type">ClutterActor</span>*         : Read / Write</pre>
+<p>
+The child <span class="type">ClutterActor</span> of the <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> container.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StBin--x-align"></a><h3>The <code class="literal">"x-align"</code> property</h3>
+<pre class="programlisting">  "x-align"                  <span class="type">StAlign</span>               : Read / Write</pre>
+<p>
+The horizontal alignment of the <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> child.
+</p>
+<p>Default value: ST_ALIGN_MIDDLE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StBin--x-fill"></a><h3>The <code class="literal">"x-fill"</code> property</h3>
+<pre class="programlisting">  "x-fill"                   <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+Whether the child should fill the horizontal allocation
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StBin--y-align"></a><h3>The <code class="literal">"y-align"</code> property</h3>
+<pre class="programlisting">  "y-align"                  <span class="type">StAlign</span>               : Read / Write</pre>
+<p>
+The vertical alignment of the <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> child.
+</p>
+<p>Default value: ST_ALIGN_MIDDLE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StBin--y-fill"></a><h3>The <code class="literal">"y-fill"</code> property</h3>
+<pre class="programlisting">  "y-fill"                   <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+Whether the child should fill the vertical allocation
+</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

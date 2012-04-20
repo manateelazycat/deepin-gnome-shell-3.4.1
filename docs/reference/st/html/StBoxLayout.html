@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StBoxLayout</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="containers.html" title="Containers">
+<link rel="prev" href="StBin.html" title="StBin">
+<link rel="next" href="StScrollView.html" title="StScrollView">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StBin.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="containers.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StScrollView.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StBoxLayout.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StBoxLayout.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StBoxLayout.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StBoxLayout.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StBoxLayout.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StBoxLayout"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StBoxLayout.top_of_page"></a>StBoxLayout</span></h2>
+<p>StBoxLayout — a layout container arranging children in a single line</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StBoxLayout.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StBoxLayout.html#StBoxLayout-struct" title="struct StBoxLayout">StBoxLayout</a>;
+struct              <a class="link" href="StBoxLayout.html#StBoxLayoutClass" title="struct StBoxLayoutClass">StBoxLayoutClass</a>;
+<span class="returnvalue">gboolean</span>            <a class="link" href="StBoxLayout.html#st-box-layout-get-pack-start" title="st_box_layout_get_pack_start ()">st_box_layout_get_pack_start</a>        (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StBoxLayout.html#st-box-layout-get-vertical" title="st_box_layout_get_vertical ()">st_box_layout_get_vertical</a>          (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>);
+<a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          <a class="link" href="StBoxLayout.html#st-box-layout-new" title="st_box_layout_new ()">st_box_layout_new</a>                   (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StBoxLayout.html#st-box-layout-set-pack-start" title="st_box_layout_set_pack_start ()">st_box_layout_set_pack_start</a>        (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> pack_start</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StBoxLayout.html#st-box-layout-set-vertical" title="st_box_layout_set_vertical ()">st_box_layout_set_vertical</a>          (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> vertical</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StBoxLayout.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----StBoxLayout
+</pre>
+</div>
+<div class="refsect1">
+<a name="StBoxLayout.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StBoxLayout implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable,  AtkImplementorIface and  StScrollable.</p>
+</div>
+<div class="refsect1">
+<a name="StBoxLayout.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StBoxLayout.html#StBoxLayout--pack-start" title='The "pack-start" property'>pack-start</a>"               <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="StBoxLayout.html#StBoxLayout--vertical" title='The "vertical" property'>vertical</a>"                 <span class="type">gboolean</span>              : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="StBoxLayout.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> arranges its children along a single line, where each
+child can be allocated either its preferred size or larger if the expand
+option is set. If the fill option is set, the actor will be allocated more
+than its requested size. If the fill option is not set, but the expand option
+is enabled, then the position of the actor within the available space can
+be determined by the alignment child property.
+</p>
+</div>
+<div class="refsect1">
+<a name="StBoxLayout.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StBoxLayout-struct"></a><h3>struct StBoxLayout</h3>
+<pre class="programlisting">struct StBoxLayout;</pre>
+<p>
+The contents of this structure are private and should only be accessed
+through the public API.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StBoxLayoutClass"></a><h3>struct StBoxLayoutClass</h3>
+<pre class="programlisting">struct StBoxLayoutClass {
+  StWidgetClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-box-layout-get-pack-start"></a><h3>st_box_layout_get_pack_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_box_layout_get_pack_start        (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>);</pre>
+<p>
+Get the value of the <span class="type">"pack-start"</span> property.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>box</code></em> :</span></p></td>
+<td>A <a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if pack-start is enabled</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-box-layout-get-vertical"></a><h3>st_box_layout_get_vertical ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_box_layout_get_vertical          (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>);</pre>
+<p>
+Get the value of the <span class="type">"vertical"</span> property.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>box</code></em> :</span></p></td>
+<td>A <a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the layout is vertical</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-box-layout-new"></a><h3>st_box_layout_new ()</h3>
+<pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          st_box_layout_new                   (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Create a new <a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated <a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-box-layout-set-pack-start"></a><h3>st_box_layout_set_pack_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_box_layout_set_pack_start        (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> pack_start</code></em>);</pre>
+<p>
+Set the value of the <span class="type">"pack-start"</span> property.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>box</code></em> :</span></p></td>
+<td>A <a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pack_start</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the layout should use pack-start</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-box-layout-set-vertical"></a><h3>st_box_layout_set_vertical ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_box_layout_set_vertical          (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> vertical</code></em>);</pre>
+<p>
+Set the value of the <span class="type">"vertical"</span> property
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>box</code></em> :</span></p></td>
+<td>A <a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vertical</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the layout should be vertical</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StBoxLayout.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StBoxLayout--pack-start"></a><h3>The <code class="literal">"pack-start"</code> property</h3>
+<pre class="programlisting">  "pack-start"               <span class="type">gboolean</span>              : Read / Write</pre>
+<p>Whether to pack items at the start of the box.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StBoxLayout--vertical"></a><h3>The <code class="literal">"vertical"</code> property</h3>
+<pre class="programlisting">  "vertical"                 <span class="type">gboolean</span>              : Read / Write</pre>
+<p>Whether the layout should be vertical, ratherthan horizontal.</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellEmbeddedWindow</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch04.html" title="Tray Icons">
+<link rel="prev" href="ch04.html" title="Tray Icons">
+<link rel="next" href="ShellGtkEmbed.html" title="ShellGtkEmbed">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch04.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="ShellGtkEmbed.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#ShellEmbeddedWindow.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#ShellEmbeddedWindow.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#ShellEmbeddedWindow.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#ShellEmbeddedWindow.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#ShellEmbeddedWindow.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="ShellEmbeddedWindow"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ShellEmbeddedWindow.top_of_page"></a>ShellEmbeddedWindow</span></h2>
+<p>ShellEmbeddedWindow</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="ShellEmbeddedWindow.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="ShellEmbeddedWindow.html#ShellEmbeddedWindow-struct" title="struct ShellEmbeddedWindow">ShellEmbeddedWindow</a>;
+struct              <a class="link" href="ShellEmbeddedWindow.html#ShellEmbeddedWindowClass" title="struct ShellEmbeddedWindowClass">ShellEmbeddedWindowClass</a>;
+<span class="returnvalue">GtkWidget</span> *         <a class="link" href="ShellEmbeddedWindow.html#shell-embedded-window-new" title="shell_embedded_window_new ()">shell_embedded_window_new</a>           (<em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellEmbeddedWindow.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBin
+                           +----GtkWindow
+                                 +----ShellEmbeddedWindow
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellEmbeddedWindow.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+ShellEmbeddedWindow implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1">
+<a name="ShellEmbeddedWindow.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="ShellEmbeddedWindow.html#ShellEmbeddedWindow--stage" title='The "stage" property'>stage</a>"                    <span class="type">ClutterStage</span>*         : Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellEmbeddedWindow.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="ShellEmbeddedWindow.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellEmbeddedWindow-struct"></a><h3>struct ShellEmbeddedWindow</h3>
+<pre class="programlisting">struct ShellEmbeddedWindow;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellEmbeddedWindowClass"></a><h3>struct ShellEmbeddedWindowClass</h3>
+<pre class="programlisting">struct ShellEmbeddedWindowClass {
+  GtkWindowClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-embedded-window-new"></a><h3>shell_embedded_window_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkWidget</span> *         shell_embedded_window_new           (<em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ShellEmbeddedWindow.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ShellEmbeddedWindow--stage"></a><h3>The <code class="literal">"stage"</code> property</h3>
+<pre class="programlisting">  "stage"                    <span class="type">ClutterStage</span>*         : Write / Construct Only</pre>
+<p>ClutterStage to embed on.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

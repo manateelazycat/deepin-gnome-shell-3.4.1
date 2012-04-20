@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellGenericContainer</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch01.html" title="Actors">
+<link rel="prev" href="ch01.html" title="Actors">
+<link rel="next" href="ShellSlicer.html" title="ShellSlicer">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="ShellSlicer.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#ShellGenericContainer.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#ShellGenericContainer.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#ShellGenericContainer.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#ShellGenericContainer.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#ShellGenericContainer.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="ShellGenericContainer"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ShellGenericContainer.top_of_page"></a>ShellGenericContainer</span></h2>
+<p>ShellGenericContainer — A container class with signals for allocation</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="ShellGenericContainer.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellGenericContainerAllocation"></a><pre class="synopsis">struct              <a class="link" href="ShellGenericContainer.html#ShellGenericContainer-struct" title="struct ShellGenericContainer">ShellGenericContainer</a>;
+                    <a class="link" href="ShellGenericContainer.html#ShellGenericContainerAllocation-struct" title="ShellGenericContainerAllocation">ShellGenericContainerAllocation</a>;
+struct              <a class="link" href="ShellGenericContainer.html#ShellGenericContainerClass" title="struct ShellGenericContainerClass">ShellGenericContainerClass</a>;
+<span class="returnvalue">guint</span>               <a class="link" href="ShellGenericContainer.html#shell-generic-container-get-n-skip-paint" title="shell_generic_container_get_n_skip_paint ()">shell_generic_container_get_n_skip_paint</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> *self</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="ShellGenericContainer.html#shell-generic-container-get-skip-paint" title="shell_generic_container_get_skip_paint ()">shell_generic_container_get_skip_paint</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *child</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="ShellGenericContainer.html#shell-generic-container-set-skip-paint" title="shell_generic_container_set_skip_paint ()">shell_generic_container_set_skip_paint</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *child</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> skip</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellGenericContainer.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a href="/home/otaylor/gnome/install/share/gtk-doc/html/st/StWidget.html">StWidget</a>
+                     +----ShellGenericContainer
+</pre>
+<pre class="synopsis">
+  GBoxed
+   +----ShellGenericContainerAllocation
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellGenericContainer.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+ShellGenericContainer implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="ShellGenericContainer.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="ShellGenericContainer.html#ShellGenericContainer-allocate" title='The "allocate" signal'>allocate</a>"                                       : <code class="literal">Run Last</code>
+  "<a class="link" href="ShellGenericContainer.html#ShellGenericContainer-get-preferred-height" title='The "get-preferred-height" signal'>get-preferred-height</a>"                           : <code class="literal">Run Last</code>
+  "<a class="link" href="ShellGenericContainer.html#ShellGenericContainer-get-preferred-width" title='The "get-preferred-width" signal'>get-preferred-width</a>"                            : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellGenericContainer.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> is mainly a workaround for the current
+lack of GObject subclassing + vfunc overrides in gjs.  We
+implement the container interface, but proxy the virtual functions
+into signals, which gjs can catch.
+</p>
+<p>
+<a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> is an <a href="/home/otaylor/gnome/install/share/gtk-doc/html/st/StWidget.html"><span class="type">StWidget</span></a>, and automatically takes its
+borders and padding into account during size request and allocation.
+</p>
+</div>
+<div class="refsect1">
+<a name="ShellGenericContainer.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellGenericContainer-struct"></a><h3>struct ShellGenericContainer</h3>
+<pre class="programlisting">struct ShellGenericContainer;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellGenericContainerAllocation-struct"></a><h3>ShellGenericContainerAllocation</h3>
+<pre class="programlisting">typedef struct {
+  float min_size;
+  float natural_size;
+} ShellGenericContainerAllocation;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellGenericContainerClass"></a><h3>struct ShellGenericContainerClass</h3>
+<pre class="programlisting">struct ShellGenericContainerClass {
+    StWidgetClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-generic-container-get-n-skip-paint"></a><h3>shell_generic_container_get_n_skip_paint ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>               shell_generic_container_get_n_skip_paint
+                                                        (<em class="parameter"><code><a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>A <a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Number of children which will not be painted.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-generic-container-get-skip-paint"></a><h3>shell_generic_container_get_skip_paint ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_generic_container_get_skip_paint
+                                                        (<em class="parameter"><code><a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *child</code></em>);</pre>
+<p>
+Gets whether or not <em class="parameter"><code>actor</code></em> is skipped when painting.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>A <a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>child</code></em> :</span></p></td>
+<td>Child <span class="type">ClutterActor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> or <code class="literal">FALSE</code>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-generic-container-set-skip-paint"></a><h3>shell_generic_container_set_skip_paint ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_generic_container_set_skip_paint
+                                                        (<em class="parameter"><code><a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *child</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> skip</code></em>);</pre>
+<p>
+Set whether or not we should skip painting <em class="parameter"><code>actor</code></em>.  Workaround for
+lack of gjs ability to override _paint vfunc.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>A <a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>child</code></em> :</span></p></td>
+<td>Child <span class="type">ClutterActor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>skip</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if we should skip painting</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ShellGenericContainer.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ShellGenericContainer-allocate"></a><h3>The <code class="literal">"allocate"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a> *self,
+                                                        <span class="type">ClutterActorBox</span>       *box,
+                                                        <span class="type">ClutterAllocationFlags</span> flags,
+                                                        <span class="type">gpointer</span>               user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when <em class="parameter"><code>self</code></em> is allocated, after chaining up to the parent
+allocate method.
+</p>
+<p>
+Note that <em class="parameter"><code>box</code></em> is <em class="parameter"><code>self</code></em>'s content box (qv
+<a href="/home/otaylor/gnome/install/share/gtk-doc/html/st/st-st-theme-node.html#st-theme-node-get-content-box"><code class="function">st_theme_node_get_content_box()</code></a>), NOT its allocation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>the <a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>box</code></em> :</span></p></td>
+<td>
+<em class="parameter"><code>self</code></em>'s content box</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>the allocation flags.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellGenericContainer-get-preferred-height"></a><h3>The <code class="literal">"get-preferred-height"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>           *self,
+                                                        <span class="type">gfloat</span>                           for_width,
+                                                        <a class="link" href="ShellGenericContainer.html#ShellGenericContainerAllocation"><span class="type">ShellGenericContainerAllocation</span></a> *alloc,
+                                                        <span class="type">gpointer</span>                         user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when <code class="function">clutter_actor_get_preferred_height()</code> is called
+on <em class="parameter"><code>self</code></em>. You should fill in the fields of <em class="parameter"><code>alloc</code></em> with the
+your minimum and natural heights. <a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>
+will deal with taking its borders and padding into account
+for you.
+</p>
+<p>
+<em class="parameter"><code>alloc</code></em>'s fields are initialized to 0, so unless you have a fixed
+height specified (via <span class="type">"height"</span> or CSS), you must
+connect to this signal and fill in the values.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>the <a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>for_width</code></em> :</span></p></td>
+<td>as in <code class="function">clutter_actor_get_preferred_height()</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alloc</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellGenericContainer.html#ShellGenericContainerAllocation"><span class="type">ShellGenericContainerAllocation</span></a> to be filled in</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellGenericContainer-get-preferred-width"></a><h3>The <code class="literal">"get-preferred-width"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>           *self,
+                                                        <span class="type">gfloat</span>                           for_height,
+                                                        <a class="link" href="ShellGenericContainer.html#ShellGenericContainerAllocation"><span class="type">ShellGenericContainerAllocation</span></a> *alloc,
+                                                        <span class="type">gpointer</span>                         user_data)       : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when <code class="function">clutter_actor_get_preferred_width()</code> is called
+on <em class="parameter"><code>self</code></em>. You should fill in the fields of <em class="parameter"><code>alloc</code></em> with the
+your minimum and natural widths. <a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>
+will deal with taking its borders and padding into account
+for you.
+</p>
+<p>
+<em class="parameter"><code>alloc</code></em>'s fields are initialized to 0, so unless you have a fixed
+width specified (via <span class="type">"width"</span> or CSS), you must
+connect to this signal and fill in the values.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>the <a class="link" href="ShellGenericContainer.html" title="ShellGenericContainer"><span class="type">ShellGenericContainer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>for_height</code></em> :</span></p></td>
+<td>as in <code class="function">clutter_actor_get_preferred_width()</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alloc</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellGenericContainer.html#ShellGenericContainerAllocation"><span class="type">ShellGenericContainerAllocation</span></a> to be filled in</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

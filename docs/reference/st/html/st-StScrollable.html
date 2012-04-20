@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StScrollable</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="base.html" title="Abstract classes and Interfaces">
+<link rel="prev" href="StWidgetAccessible.html" title="StWidgetAccessible">
+<link rel="next" href="widgets.html" title="Widgets">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StWidgetAccessible.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="base.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="widgets.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#st-StScrollable.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#st-StScrollable.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="st-StScrollable"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="st-StScrollable.top_of_page"></a>StScrollable</span></h2>
+<p>StScrollable — A <span class="type">ClutterActor</span> that can be scrolled</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="st-StScrollable.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="st-StScrollable.html#StScrollableInterface" title="struct StScrollableInterface">StScrollableInterface</a>;
+<span class="returnvalue">void</span>                <a class="link" href="st-StScrollable.html#st-scrollable-get-adjustments" title="st_scrollable_get_adjustments ()">st_scrollable_get_adjustments</a>       (<em class="parameter"><code><span class="type">StScrollable</span> *scrollable</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAdjustment</span> **hadjustment</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAdjustment</span> **vadjustment</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="st-StScrollable.html#st-scrollable-set-adjustments" title="st_scrollable_set_adjustments ()">st_scrollable_set_adjustments</a>       (<em class="parameter"><code><span class="type">StScrollable</span> *scrollable</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAdjustment</span> *hadjustment</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAdjustment</span> *vadjustment</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="st-StScrollable.description"></a><h2>Description</h2>
+<p>
+The <span class="type">StScrollable</span> interface is exposed by actors that support scrolling.
+</p>
+<p>
+The interface contains methods for getting and setting the adjustments
+for scrolling; these adjustments will be used to hook the scrolled
+position up to scrollbars or other external controls. When a <span class="type">StScrollable</span>
+is added to a parent container, the parent container is responsible
+for setting the adjustments. The parent container then sets the adjustments
+back to <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> when the scrollable is removed.
+</p>
+<p>
+For <span class="type">StScrollable</span> supporting height-for-width size negotation, size
+negotation works as follows:
+</p>
+<p>
+In response to <code class="function">get_preferred_width()</code>, the scrollable should report
+the minimum width at which horizontal scrolling is needed for the
+preferred width, and natural width of the actor when not
+horizontally scrolled as the natural width.
+</p>
+<p>
+The for_width passed into <code class="function">get_preferred_height()</code> is the width at which
+the scrollable will be allocated; this will be smaller than the minimum
+width when scrolling horizontally, so the scrollable may want to adjust
+it up to the minimum width before computing a preferred height. (Other
+scrollables may want to fit as much content into the allocated area
+as possible and only scroll what absolutely needs to scroll - consider,
+for example, the line-wrapping behavior of a text editor where there
+is a long line without any spaces.) As for width, <code class="function">get_preferred_height()</code>
+should return the minimum size at which no scrolling is needed for the
+minimum height, and the natural size of the actor when not vertically scrolled
+as the natural height.
+</p>
+<p>
+In <code class="function">allocate()</code> the allocation box passed in will be actual allocated
+size of the actor so will be smaller than the reported minimum
+width and/or height when scrolling is present. Any scrollable actor
+must support being allocated at any size down to 0x0 without
+crashing, however if the actor has content around the scrolled area
+and has an absolute minimum size that's bigger than 0x0 its
+acceptable for it to misdraw between 0x0 and the absolute minimum
+size. It's up to the application author to avoid letting the user
+resize the scroll view small enough so that the scrolled area
+vanishes.
+</p>
+<p>
+In response to allocate, in addition to normal handling, the
+scrollable should also set the limits of the the horizontal and
+vertical adjustments that were set on it earlier. The standard
+settings are:
+</p>
+<p>
+ lower: 0
+ page_size: allocated size (width or height)
+ upper: MAX (total size of the scrolled area,allocated_size)
+ step_increment: natural row/column height or a fixed fraction of the page size
+ page_increment: page_size - step_increment
+</p>
+</div>
+<div class="refsect1">
+<a name="st-StScrollable.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StScrollableInterface"></a><h3>struct StScrollableInterface</h3>
+<pre class="programlisting">struct StScrollableInterface {
+  GTypeInterface parent;
+
+  void (* set_adjustments) (StScrollable  *scrollable,
+                            StAdjustment  *hadjustment,
+                            StAdjustment  *vadjustment);
+  void (* get_adjustments) (StScrollable  *scrollable,
+                            StAdjustment **hadjustment,
+                            StAdjustment **vadjustment);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scrollable-get-adjustments"></a><h3>st_scrollable_get_adjustments ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_scrollable_get_adjustments       (<em class="parameter"><code><span class="type">StScrollable</span> *scrollable</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAdjustment</span> **hadjustment</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAdjustment</span> **vadjustment</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-scrollable-set-adjustments"></a><h3>st_scrollable_set_adjustments ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_scrollable_set_adjustments       (<em class="parameter"><code><span class="type">StScrollable</span> *scrollable</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAdjustment</span> *hadjustment</code></em>,
+                                                         <em class="parameter"><code><span class="type">StAdjustment</span> *vadjustment</code></em>);</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

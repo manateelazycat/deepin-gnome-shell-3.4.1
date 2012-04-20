@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>shell-recorder</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch05.html" title="Recorder">
+<link rel="prev" href="ch05.html" title="Recorder">
+<link rel="next" href="ch06.html" title="Integration helpers and utilities">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch05.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="ch06.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-shell-recorder.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-shell-recorder.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#shell-shell-recorder.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#shell-shell-recorder.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-shell-recorder"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-shell-recorder.top_of_page"></a>shell-recorder</span></h2>
+<p>shell-recorder — Record from a <span class="type">ClutterStage</span></p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-shell-recorder.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellRecorder"></a><pre class="synopsis">                    <a class="link" href="shell-shell-recorder.html#ShellRecorder-struct" title="ShellRecorder">ShellRecorder</a>;
+                    <a class="link" href="shell-shell-recorder.html#ShellRecorderClass" title="ShellRecorderClass">ShellRecorderClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-recorder.html#shell-recorder-close" title="shell_recorder_close ()">shell_recorder_close</a>                (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-shell-recorder.html#shell-recorder-is-recording" title="shell_recorder_is_recording ()">shell_recorder_is_recording</a>         (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>);
+<a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="returnvalue">ShellRecorder</span></a> *     <a class="link" href="shell-shell-recorder.html#shell-recorder-new" title="shell_recorder_new ()">shell_recorder_new</a>                  (<em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-recorder.html#shell-recorder-pause" title="shell_recorder_pause ()">shell_recorder_pause</a>                (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="shell-shell-recorder.html#shell-recorder-record" title="shell_recorder_record ()">shell_recorder_record</a>               (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-recorder.html#shell-recorder-set-filename" title="shell_recorder_set_filename ()">shell_recorder_set_filename</a>         (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *filename</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-recorder.html#shell-recorder-set-framerate" title="shell_recorder_set_framerate ()">shell_recorder_set_framerate</a>        (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> framerate</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-recorder.html#shell-recorder-set-pipeline" title="shell_recorder_set_pipeline ()">shell_recorder_set_pipeline</a>         (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *pipeline</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-recorder.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----ShellRecorder
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-recorder.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="shell-shell-recorder.html#ShellRecorder--filename" title='The "filename" property'>filename</a>"                 <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="shell-shell-recorder.html#ShellRecorder--framerate" title='The "framerate" property'>framerate</a>"                <span class="type">gint</span>                  : Read / Write
+  "<a class="link" href="shell-shell-recorder.html#ShellRecorder--pipeline" title='The "pipeline" property'>pipeline</a>"                 <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="shell-shell-recorder.html#ShellRecorder--stage" title='The "stage" property'>stage</a>"                    <span class="type">ClutterStage</span>*         : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-recorder.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> object is used to make recordings ("screencasts")
+of a <span class="type">ClutterStage</span>. Recording is done via <span class="type">GStreamer</span>. The default is
+to encode as a Theora movie and write it to a file in the current
+directory named after the date, but the encoding and output can
+be configured.
+</p>
+</div>
+<div class="refsect1">
+<a name="shell-shell-recorder.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellRecorder-struct"></a><h3>ShellRecorder</h3>
+<pre class="programlisting">typedef struct _ShellRecorder ShellRecorder;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellRecorderClass"></a><h3>ShellRecorderClass</h3>
+<pre class="programlisting">typedef struct _ShellRecorderClass ShellRecorderClass;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-recorder-close"></a><h3>shell_recorder_close ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_recorder_close                (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>);</pre>
+<p>
+Stops recording. It's possible to call <a class="link" href="shell-shell-recorder.html#shell-recorder-record" title="shell_recorder_record ()"><code class="function">shell_recorder_record()</code></a>
+again to reopen a new recording stream, but unless change the
+recording filename, this may result in the old recording being
+overwritten.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>recorder</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-recorder-is-recording"></a><h3>shell_recorder_is_recording ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_recorder_is_recording         (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>);</pre>
+<p>
+Determine if recording is currently in progress. (The recorder
+is not paused or closed.)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the recorder is currently recording.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-recorder-new"></a><h3>shell_recorder_new ()</h3>
+<pre class="programlisting"><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="returnvalue">ShellRecorder</span></a> *     shell_recorder_new                  (<em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>);</pre>
+<p>
+Create a new <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> to record movies of a <span class="type">ClutterStage</span>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stage</code></em> :</span></p></td>
+<td>The <span class="type">ClutterStage</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The newly created <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> object</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-recorder-pause"></a><h3>shell_recorder_pause ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_recorder_pause                (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>);</pre>
+<p>
+Temporarily stop recording. If the specified filename includes
+the <code class="literal">c</code> escape, then the stream is closed and a new stream with
+an incremented counter will be created. Otherwise the stream
+is paused and will be continued when <a class="link" href="shell-shell-recorder.html#shell-recorder-record" title="shell_recorder_record ()"><code class="function">shell_recorder_record()</code></a>
+is next called.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>recorder</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-recorder-record"></a><h3>shell_recorder_record ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            shell_recorder_record               (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>);</pre>
+<p>
+Starts recording, or continues a recording that was previously
+paused. Starting the recording may fail if the output file
+cannot be opened, or if the output stream cannot be created
+for other reasons. In that case a warning is printed to
+stderr. There is no way currently to get details on how
+recording failed to start.
+</p>
+<p>
+An extra reference count is added to the recorder if recording
+is succesfully started; the recording object will not be freed
+until recording is stopped even if the creator no longer holds
+a reference. Recording is automatically stopped if the stage
+is destroyed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>recorder</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if recording was succesfully started</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-recorder-set-filename"></a><h3>shell_recorder_set_filename ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_recorder_set_filename         (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *filename</code></em>);</pre>
+<p>
+Sets the filename that will be used when creating output
+files. This is only used if the configured pipeline has an
+unconnected source pad (as the default pipeline does). If
+the pipeline is complete, then the filename is unused. The
+provided string is used as a template.It can contain
+the following escapes:
+</p>
+<p>
+<code class="literal">d</code>: The current date as YYYYYMMDD
+<code class="literal">u</code>: A string added to make the filename unique.
+    '', 'a', 'b', ... 'aa', 'ab', ..
+<code class="literal">c</code>: A counter that is updated (opening a new file) each
+    time the recording stream is paused.
+%%: A literal percent
+</p>
+<p>
+The default value is 'shell-<code class="literal">d</code>%u-<code class="literal">c</code>.ogg'.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>recorder</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>the filename template to use for output files,
+or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> for the defalt value.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-recorder-set-framerate"></a><h3>shell_recorder_set_framerate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_recorder_set_framerate        (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> framerate</code></em>);</pre>
+<p>
+Sets the number of frames per second we try to record. Less frames
+will be recorded when the screen doesn't need to be redrawn this
+quickly. (This value will also be set as the framerate for the
+GStreamer pipeline; whether that has an effect on the resulting
+video will depend on the details of the pipeline and the codec. The
+default encoding to webm format doesn't pay attention to the pipeline
+framerate.)
+</p>
+<p>
+The default value is 30.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>recorder</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>framerate</code></em> :</span></p></td>
+<td>Framerate used for resulting video in frames-per-second.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-recorder-set-pipeline"></a><h3>shell_recorder_set_pipeline ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_recorder_set_pipeline         (<em class="parameter"><code><a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a> *recorder</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *pipeline</code></em>);</pre>
+<p>
+Sets the GStreamer pipeline used to encode recordings.
+It follows the syntax used for gst-launch. The pipeline
+should have an unconnected sink pad where the recorded
+video is recorded. It will normally have a unconnected
+source pad; output from that pad will be written into the
+output file. (See <a class="link" href="shell-shell-recorder.html#shell-recorder-set-filename" title="shell_recorder_set_filename ()"><code class="function">shell_recorder_set_filename()</code></a>.) However
+the pipeline can also take care of its own output - this
+might be used to send the output to an icecast server
+via shout2send or similar.
+</p>
+<p>
+The default value is 'vp8enc quality=8 speed=6 threads=<code class="literal">T</code> ! queue ! webmmux'
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>recorder</code></em> :</span></p></td>
+<td>the <a class="link" href="shell-shell-recorder.html#ShellRecorder"><span class="type">ShellRecorder</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pipeline</code></em> :</span></p></td>
+<td>the GStreamer pipeline used to encode recordings
+or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> for the default value. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="shell-shell-recorder.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ShellRecorder--filename"></a><h3>The <code class="literal">"filename"</code> property</h3>
+<pre class="programlisting">  "filename"                 <span class="type">gchar</span>*                : Read / Write</pre>
+<p>The filename template to use for output files.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellRecorder--framerate"></a><h3>The <code class="literal">"framerate"</code> property</h3>
+<pre class="programlisting">  "framerate"                <span class="type">gint</span>                  : Read / Write</pre>
+<p>Framerate used for resulting video in frames-per-second.</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellRecorder--pipeline"></a><h3>The <code class="literal">"pipeline"</code> property</h3>
+<pre class="programlisting">  "pipeline"                 <span class="type">gchar</span>*                : Read / Write</pre>
+<p>GStreamer pipeline description to encode recordings.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellRecorder--stage"></a><h3>The <code class="literal">"stage"</code> property</h3>
+<pre class="programlisting">  "stage"                    <span class="type">ClutterStage</span>*         : Read / Write</pre>
+<p>Stage to record.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

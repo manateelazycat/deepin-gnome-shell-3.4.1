@@ -1,0 +1,1761 @@
+# Japanese translation of gnome-shell package.
+# Copyright (C) 2009-2012 the gnome-shell copyright holder.
+# This file is distributed under the same license as the gnome-shell package.
+# Nishio Futoshi <fut_nis@d3.dion.ne.jp>, 2010.
+# Kiyotaka NISHIBORI <ml.nishibori.kiyotaka@gmail.com>, 2011.
+# Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2011, 2012.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2011, 2012.
+# Hideki Yamane <henrich@debian.org>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-shell master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"shell&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-03-24 17:45+0000\n"
+"PO-Revision-Date: 2012-03-25 05:15+0900\n"
+"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-DamnedLies-Scope: partial\n"
+
+#: ../data/gnome-shell.desktop.in.in.h:1
+msgid "GNOME Shell"
+msgstr "GNOME Shell"
+
+#: ../data/gnome-shell.desktop.in.in.h:2
+msgid "Window management and application launching"
+msgstr "ウィンドウ管理とアプリケーションの起動"
+
+#: ../data/gnome-shell-extension-prefs.desktop.in.in.h:1
+#: ../js/extensionPrefs/main.js:153
+msgid "GNOME Shell Extension Preferences"
+msgstr "GNOME Shell 拡張機能設定"
+
+#: ../data/gnome-shell-extension-prefs.desktop.in.in.h:2
+msgid "Configure GNOME Shell Extensions"
+msgstr "GNOME Shell 拡張機能の設定を行います"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:1
+msgid "Enable internal tools useful for developers and testers from Alt-F2"
+msgstr "Alt-F2 から開発・テスト用の内部ツールを利用可能にする"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:2
+msgid ""
+"Allows access to internal debugging and monitoring tools using the Alt-F2 "
+"dialog."
+msgstr ""
+"Alt-F2 ダイアログを利用した内部のデバッグツールとモニターツールへのアクセスを"
+"許可します。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:3
+msgid "Uuids of extensions to enable"
+msgstr "有効にする拡張機能の UUID"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:4
+msgid ""
+"GNOME Shell extensions have a uuid property; this key lists extensions which "
+"should be loaded. Any extension that wants to be loaded needs to be in this "
+"list. You can also manipulate this list with the EnableExtension and "
+"DisableExtension DBus methods on org.gnome.Shell."
+msgstr ""
+"GNOME Shell の拡張機能には UUID プロパティがあり、このキーは、ロードしたい拡"
+"張機能の UUID のリストです。ロードしたい拡張機能はこのリストに含めなければな"
+"りません。このリストは org.gnome.Shell の EnableExtensions や "
+"DisableExtensions といった DBus メソッドでも操作できます。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:5
+msgid "Whether to collect stats about applications usage"
+msgstr "アプリケーション使用状況の 有効/無効"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:6
+msgid ""
+"The shell normally monitors active applications in order to present the most "
+"used ones (e.g. in launchers). While this data will be kept private, you may "
+"want to disable this for privacy reasons. Please note that doing so won't "
+"remove already saved data."
+msgstr ""
+"通常、「お気に入り」を把握するためにアプリケーションの使用状況が監視されてい"
+"ます。この情報が外部へ送信されることはありませんが、不安を感じるならば監視を"
+"無効にすることができます。なお既に収集された情報は消去できません。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:7
+msgid "List of desktop file IDs for favorite applications"
+msgstr "お気に入りのアプリケーションの .desktop ファイル ID の一覧"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:8
+msgid ""
+"The applications corresponding to these identifiers will be displayed in the "
+"favorites area."
+msgstr "これらの ID で示されるアプリケーションは「お気に入り」に表示されます。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:9
+msgid "disabled OpenSearch providers"
+msgstr "OpenSearch プロバイダーを無効にする"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:10
+msgid "History for command (Alt-F2) dialog"
+msgstr "コマンド (Alt-F2) ダイアログの履歴"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:11
+msgid "History for the looking glass dialog"
+msgstr "looking glass ダイアログの履歴"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:12
+msgid ""
+"Internally used to store the last IM presence explicitly set by the user. "
+"The value here is from the TpConnectionPresenceType enumeration."
+msgstr ""
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:13
+msgid ""
+"Internally used to store the last session presence status for the user. The "
+"value here is from the GsmPresenceStatus enumeration."
+msgstr ""
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:14
+msgid "Show the week date in the calendar"
+msgstr "暦週日付を表示"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:15
+msgid "If true, display the ISO week date in the calendar."
+msgstr "ISO 8601 方式の暦週日付を表示します。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:16
+msgid "Which keyboard to use"
+msgstr "使いたいキーボードの種類"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:17
+msgid "The type of keyboard to use."
+msgstr "使いたいキーボードの種類です。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:18
+msgid "Show time with seconds"
+msgstr "秒を表示"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:19
+msgid "If true, display seconds in time."
+msgstr "時刻を秒まで表示します。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:20
+msgid "Show date in clock"
+msgstr "日付を表示"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:21
+msgid "If true, display date in the clock, in addition to time."
+msgstr "日付と時刻を表示します。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:22
+msgid "Framerate used for recording screencasts."
+msgstr "スクリーンキャスト録画のフレームレート"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:23
+msgid ""
+"The framerate of the resulting screencast recordered by GNOME Shell's "
+"screencast recorder in frames-per-second."
+msgstr ""
+"GNOME Shell のスクリーンキャストレコーダーで録画するスクリーンキャストの 1秒"
+"あたりのフレーム数です。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:24
+msgid "The gstreamer pipeline used to encode the screencast"
+msgstr "スクリーンキャストのエンコードに使用する Gstreamer パイプライン"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:26
+#, no-c-format
+msgid ""
+"Sets the GStreamer pipeline used to encode recordings. It follows the syntax "
+"used for gst-launch. The pipeline should have an unconnected sink pad where "
+"the recorded video is recorded. It will normally have a unconnected source "
+"pad; output from that pad will be written into the output file. However the "
+"pipeline can also take care of its own output - this might be used to send "
+"the output to an icecast server via shout2send or similar. When unset or set "
+"to an empty value, the default pipeline will be used. This is currently "
+"'vp8enc quality=8 speed=6 threads=%T ! queue ! webmmux' and records to WEBM "
+"using the VP8 codec. %T is used as a placeholder for a guess at the optimal "
+"thread count on the system."
+msgstr ""
+"録画したものをエンコードするための Gstreamer パイプラインを設定します。構文"
+"は gst-launch のものに準拠します。パイプラインは未接続の録画用 sink pad を持"
+"つようにしてください。パイプラインは通常未接続の source pad を持ち、ファイル"
+"へ出力データを書き込みますが、出力方法については独自に定義することもできま"
+"す。shout2send プラグインやその類似プラグインを経由して icecast サーバーへ出"
+"力データを送信するときは、この方法をとります。値が設定されていないか、空の場"
+"合は、既定のパイプライン 'vp8enc quality=8 speed=6 threads=%T ! queue ! "
+"webmmux' が使用され、VP8 コーデックを使用した WebM 形式で録画します。 '%T' は"
+"システムの最適スレッド数の推量値を示すプレースホルダーです。"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:27
+msgid "File extension used for storing the screencast"
+msgstr "ファイルに保存するスクリーンキャストのファイル拡張子"
+
+#: ../data/org.gnome.shell.gschema.xml.in.h:28
+msgid ""
+"The filename for recorded screencasts will be a unique filename based on the "
+"current date, and use this extension. It should be changed when recording to "
+"a different container format."
+msgstr ""
+"録画したスクリーンキャストをファイルに保存する際は、日付を基にした固有の名前"
+"とこの拡張子をファイル名として使用します。異なる形式で録画するときは拡張子を"
+"変更する必要があります。"
+
+#: ../js/extensionPrefs/main.js:125
+#, c-format
+msgid "There was an error loading the preferences dialog for %s:"
+msgstr "%s の設定ダイアログのロード中にエラーが発生しました。"
+
+#: ../js/extensionPrefs/main.js:165
+msgid "<b>Extension</b>"
+msgstr "<b>拡張機能</b>"
+
+#: ../js/extensionPrefs/main.js:189
+msgid "Select an extension to configure using the combobox above."
+msgstr "設定する拡張機能を上部のコンボボックスから選択してください。"
+
+#: ../js/gdm/loginDialog.js:624
+msgid "Session..."
+msgstr "セッション..."
+
+#: ../js/gdm/loginDialog.js:786
+msgctxt "title"
+msgid "Sign In"
+msgstr "サインイン"
+
+#. Translators: this message is shown below the password entry field
+#. to indicate the user can swipe their finger instead
+#: ../js/gdm/loginDialog.js:831
+msgid "(or swipe finger)"
+msgstr "(あるいは指でスワイプする)"
+
+#. translators: this message is shown below the user list on the
+#. login screen. It can be activated to reveal an entry for
+#. manually entering the username.
+#: ../js/gdm/loginDialog.js:852
+msgid "Not listed?"
+msgstr "アカウントが見つかりませんか?"
+
+#: ../js/gdm/loginDialog.js:1020 ../js/ui/endSessionDialog.js:401
+#: ../js/ui/extensionSystem.js:399 ../js/ui/networkAgent.js:153
+#: ../js/ui/polkitAuthenticationAgent.js:175 ../js/ui/status/bluetooth.js:462
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: ../js/gdm/loginDialog.js:1025
+msgctxt "button"
+msgid "Sign In"
+msgstr "サインイン"
+
+#: ../js/gdm/loginDialog.js:1377
+msgid "Login Window"
+msgstr "ログインウィンドウ"
+
+#: ../js/gdm/powerMenu.js:155 ../js/ui/userMenu.js:597
+#: ../js/ui/userMenu.js:599 ../js/ui/userMenu.js:668
+msgid "Suspend"
+msgstr "サスペンド"
+
+#: ../js/gdm/powerMenu.js:160
+msgid "Restart"
+msgstr "再起動"
+
+#: ../js/gdm/powerMenu.js:165
+msgid "Power Off"
+msgstr "電源オフ"
+
+#: ../js/misc/util.js:92
+msgid "Command not found"
+msgstr "コマンドが見つかりません"
+
+#. Replace "Error invoking GLib.shell_parse_argv: " with
+#. something nicer
+#: ../js/misc/util.js:119
+msgid "Could not parse command:"
+msgstr "次のコマンドは解析できません:"
+
+#: ../js/misc/util.js:127
+#, c-format
+msgid "Execution of '%s' failed:"
+msgstr "'%s'の実行に失敗しました:"
+
+#. Translators: Filter to display all applications
+#: ../js/ui/appDisplay.js:255
+msgid "All"
+msgstr "すべて"
+
+#: ../js/ui/appDisplay.js:314
+msgid "APPLICATIONS"
+msgstr "アプリケーション"
+
+#: ../js/ui/appDisplay.js:375
+msgid "SETTINGS"
+msgstr "設定"
+
+#: ../js/ui/appDisplay.js:680
+msgid "New Window"
+msgstr "新しいウィンドウで開く"
+
+#: ../js/ui/appDisplay.js:683
+msgid "Remove from Favorites"
+msgstr "お気に入りから削除"
+
+#: ../js/ui/appDisplay.js:684
+msgid "Add to Favorites"
+msgstr "お気に入りに追加"
+
+#: ../js/ui/appFavorites.js:87
+#, c-format
+msgid "%s has been added to your favorites."
+msgstr "%s をお気に入りに追加しました。"
+
+#: ../js/ui/appFavorites.js:118
+#, c-format
+msgid "%s has been removed from your favorites."
+msgstr "%s をお気に入りから削除しました。"
+
+#: ../js/ui/autorunManager.js:265
+msgid "Removable Devices"
+msgstr "リムーバブルデバイス"
+
+#: ../js/ui/autorunManager.js:560
+#, c-format
+msgid "Open with %s"
+msgstr "%s で開く"
+
+#: ../js/ui/autorunManager.js:586
+msgid "Eject"
+msgstr "取り出し"
+
+#. Translators: Shown in calendar event list for all day events
+#. * Keep it short, best if you can use less then 10 characters
+#.
+#: ../js/ui/calendar.js:62
+msgctxt "event list time"
+msgid "All Day"
+msgstr "終日"
+
+#. Translators: Shown in calendar event list, if 24h format
+#: ../js/ui/calendar.js:67
+msgctxt "event list time"
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Transators: Shown in calendar event list, if 12h format
+#: ../js/ui/calendar.js:74
+msgctxt "event list time"
+msgid "%l:%M %p"
+msgstr "%p%l:%M"
+
+#. Translators: Calendar grid abbreviation for Sunday.
+#. *
+#. * NOTE: These grid abbreviations are always shown together
+#. * and in order, e.g. "S M T W T F S".
+#.
+#: ../js/ui/calendar.js:114
+msgctxt "grid sunday"
+msgid "S"
+msgstr "日"
+
+#. Translators: Calendar grid abbreviation for Monday
+#: ../js/ui/calendar.js:116
+msgctxt "grid monday"
+msgid "M"
+msgstr "月"
+
+#. Translators: Calendar grid abbreviation for Tuesday
+#: ../js/ui/calendar.js:118
+msgctxt "grid tuesday"
+msgid "T"
+msgstr "火"
+
+#. Translators: Calendar grid abbreviation for Wednesday
+#: ../js/ui/calendar.js:120
+msgctxt "grid wednesday"
+msgid "W"
+msgstr "水"
+
+#. Translators: Calendar grid abbreviation for Thursday
+#: ../js/ui/calendar.js:122
+msgctxt "grid thursday"
+msgid "T"
+msgstr "木"
+
+#. Translators: Calendar grid abbreviation for Friday
+#: ../js/ui/calendar.js:124
+msgctxt "grid friday"
+msgid "F"
+msgstr "金"
+
+#. Translators: Calendar grid abbreviation for Saturday
+#: ../js/ui/calendar.js:126
+msgctxt "grid saturday"
+msgid "S"
+msgstr "土"
+
+#. Translators: Event list abbreviation for Sunday.
+#. *
+#. * NOTE: These list abbreviations are normally not shown together
+#. * so they need to be unique (e.g. Tuesday and Thursday cannot
+#. * both be 'T').
+#.
+#: ../js/ui/calendar.js:139
+msgctxt "list sunday"
+msgid "Su"
+msgstr "日"
+
+#. Translators: Event list abbreviation for Monday
+#: ../js/ui/calendar.js:141
+msgctxt "list monday"
+msgid "M"
+msgstr "月"
+
+#. Translators: Event list abbreviation for Tuesday
+#: ../js/ui/calendar.js:143
+msgctxt "list tuesday"
+msgid "T"
+msgstr "火"
+
+#. Translators: Event list abbreviation for Wednesday
+#: ../js/ui/calendar.js:145
+msgctxt "list wednesday"
+msgid "W"
+msgstr "水"
+
+#. Translators: Event list abbreviation for Thursday
+#: ../js/ui/calendar.js:147
+msgctxt "list thursday"
+msgid "Th"
+msgstr "木"
+
+#. Translators: Event list abbreviation for Friday
+#: ../js/ui/calendar.js:149
+msgctxt "list friday"
+msgid "F"
+msgstr "金"
+
+#. Translators: Event list abbreviation for Saturday
+#: ../js/ui/calendar.js:151
+msgctxt "list saturday"
+msgid "S"
+msgstr "土"
+
+#. Translators: Text to show if there are no events
+#: ../js/ui/calendar.js:681
+msgid "Nothing Scheduled"
+msgstr "予定がありません"
+
+#. Translators: Shown on calendar heading when selected day occurs on current year
+#: ../js/ui/calendar.js:697
+msgctxt "calendar heading"
+msgid "%A, %B %d"
+msgstr "%B%e日 (%a)"
+
+#. Translators: Shown on calendar heading when selected day occurs on different year
+#: ../js/ui/calendar.js:700
+msgctxt "calendar heading"
+msgid "%A, %B %d, %Y"
+msgstr "%Y年%B%e日 (%a)"
+
+#: ../js/ui/calendar.js:710
+msgid "Today"
+msgstr "今日"
+
+#: ../js/ui/calendar.js:714
+msgid "Tomorrow"
+msgstr "明日"
+
+#: ../js/ui/calendar.js:723
+msgid "This week"
+msgstr "今週"
+
+#: ../js/ui/calendar.js:731
+msgid "Next week"
+msgstr "来週"
+
+#: ../js/ui/contactDisplay.js:66 ../js/ui/notificationDaemon.js:486
+#: ../js/ui/status/power.js:215 ../src/shell-app.c:374
+msgid "Unknown"
+msgstr "不明なデバイス"
+
+#: ../js/ui/contactDisplay.js:89 ../js/ui/userMenu.js:129
+msgid "Available"
+msgstr "在席中"
+
+#: ../js/ui/contactDisplay.js:94 ../js/ui/userMenu.js:138
+msgid "Away"
+msgstr "離席中"
+
+#: ../js/ui/contactDisplay.js:98 ../js/ui/userMenu.js:132
+msgid "Busy"
+msgstr "取り込み中"
+
+#: ../js/ui/contactDisplay.js:102
+msgid "Offline"
+msgstr "オフライン"
+
+#: ../js/ui/contactDisplay.js:153
+msgid "CONTACTS"
+msgstr "連絡先"
+
+#: ../js/ui/dash.js:229 ../js/ui/messageTray.js:1207
+msgid "Remove"
+msgstr "削除"
+
+#: ../js/ui/dateMenu.js:103
+msgid "Date and Time Settings"
+msgstr "日時の設定"
+
+#: ../js/ui/dateMenu.js:129
+msgid "Open Calendar"
+msgstr "カレンダーを開く"
+
+#. Translators: This is the time format with date used
+#. in 24-hour mode.
+#: ../js/ui/dateMenu.js:187
+msgid "%a %b %e, %R:%S"
+msgstr "%m/%d (%a) %R:%S"
+
+#: ../js/ui/dateMenu.js:188
+msgid "%a %b %e, %R"
+msgstr "%m/%d (%a) %R"
+
+#. Translators: This is the time format without date used
+#. in 24-hour mode.
+#: ../js/ui/dateMenu.js:192
+msgid "%a %R:%S"
+msgstr "%A %R:%S"
+
+#: ../js/ui/dateMenu.js:193
+msgid "%a %R"
+msgstr "%A %R"
+
+#. Translators: This is a time format with date used
+#. for AM/PM.
+#: ../js/ui/dateMenu.js:200
+msgid "%a %b %e, %l:%M:%S %p"
+msgstr "%B%e日 (%a) %p%l:%M:%S"
+
+#: ../js/ui/dateMenu.js:201
+msgid "%a %b %e, %l:%M %p"
+msgstr "%B%e日 (%a) %p%l:%M"
+
+#. Translators: This is a time format without date used
+#. for AM/PM.
+#: ../js/ui/dateMenu.js:205
+msgid "%a %l:%M:%S %p"
+msgstr "%A %p%l:%M:%S "
+
+#: ../js/ui/dateMenu.js:206
+msgid "%a %l:%M %p"
+msgstr "%A %p%l:%M"
+
+#. Translators: This is the date format to use when the calendar popup is
+#. * shown - it is shown just below the time in the shell (e.g. "Tue 9:29 AM").
+#.
+#: ../js/ui/dateMenu.js:217
+msgid "%A %B %e, %Y"
+msgstr "%Y年%B%e日 (%a)"
+
+#: ../js/ui/endSessionDialog.js:61
+#, c-format
+msgctxt "title"
+msgid "Log Out %s"
+msgstr "%s のログアウト"
+
+#: ../js/ui/endSessionDialog.js:62
+msgctxt "title"
+msgid "Log Out"
+msgstr "ログアウト"
+
+#: ../js/ui/endSessionDialog.js:63
+msgid "Click Log Out to quit these applications and log out of the system."
+msgstr ""
+"ログアウトをクリックすると、起動中のアプリケーションを終了しシステムからログ"
+"アウトします。"
+
+#: ../js/ui/endSessionDialog.js:65
+#, c-format
+msgid "%s will be logged out automatically in %d second."
+msgid_plural "%s will be logged out automatically in %d seconds."
+msgstr[0] "%s は %d 秒後に自動的にログアウトします。"
+
+#: ../js/ui/endSessionDialog.js:70
+#, c-format
+msgid "You will be logged out automatically in %d second."
+msgid_plural "You will be logged out automatically in %d seconds."
+msgstr[0] "%d 秒後に自動的にログアウトします。"
+
+#: ../js/ui/endSessionDialog.js:74
+msgid "Logging out of the system."
+msgstr "システムからログアウトします。"
+
+#: ../js/ui/endSessionDialog.js:76
+msgctxt "button"
+msgid "Log Out"
+msgstr "ログアウト"
+
+#: ../js/ui/endSessionDialog.js:81
+msgctxt "title"
+msgid "Power Off"
+msgstr "電源オフ"
+
+#: ../js/ui/endSessionDialog.js:82
+msgid "Click Power Off to quit these applications and power off the system."
+msgstr ""
+"電源オフをクリックすると、起動中のアプリケーションを終了しシステムの電源を切"
+"ります。"
+
+#: ../js/ui/endSessionDialog.js:84
+#, c-format
+msgid "The system will power off automatically in %d second."
+msgid_plural "The system will power off automatically in %d seconds."
+msgstr[0] "%d 秒後に自動的にシステムの電源を切ります。"
+
+#: ../js/ui/endSessionDialog.js:88
+msgid "Powering off the system."
+msgstr "システムの電源を切ります。"
+
+#: ../js/ui/endSessionDialog.js:90 ../js/ui/endSessionDialog.js:107
+msgctxt "button"
+msgid "Restart"
+msgstr "再起動"
+
+#: ../js/ui/endSessionDialog.js:92
+msgctxt "button"
+msgid "Power Off"
+msgstr "電源オフ"
+
+#: ../js/ui/endSessionDialog.js:98
+msgctxt "title"
+msgid "Restart"
+msgstr "再起動"
+
+#: ../js/ui/endSessionDialog.js:99
+msgid "Click Restart to quit these applications and restart the system."
+msgstr ""
+"再起動をクリックすると、起動中のアプリケーションを終了しシステムを再起動しま"
+"す。"
+
+#: ../js/ui/endSessionDialog.js:101
+#, c-format
+msgid "The system will restart automatically in %d second."
+msgid_plural "The system will restart automatically in %d seconds."
+msgstr[0] "%d 秒後にシステムを再起動します。"
+
+#: ../js/ui/endSessionDialog.js:105
+msgid "Restarting the system."
+msgstr "システムを再起動します。"
+
+#: ../js/ui/extensionSystem.js:403
+msgid "Install"
+msgstr "インストール"
+
+#: ../js/ui/extensionSystem.js:407
+#, c-format
+msgid "Download and install '%s' from extensions.gnome.org?"
+msgstr "extensions.gnome.org から '%s' をダウンロードしてインストールしますか?"
+
+#: ../js/ui/keyboard.js:327
+msgid "tray"
+msgstr "トレイ"
+
+#: ../js/ui/keyboard.js:544 ../js/ui/status/power.js:203
+msgid "Keyboard"
+msgstr "キーボード"
+
+#: ../js/ui/keyringPrompt.js:85 ../js/ui/polkitAuthenticationAgent.js:272
+msgid "Password:"
+msgstr "パスワード:"
+
+#: ../js/ui/keyringPrompt.js:101
+msgid "Type again:"
+msgstr "再入力:"
+
+#: ../js/ui/lookingGlass.js:725
+msgid "No extensions installed"
+msgstr "機能拡張はインストールされていません"
+
+#. Translators: argument is an extension UUID.
+#: ../js/ui/lookingGlass.js:779
+#, c-format
+msgid "%s has not emitted any errors."
+msgstr "%s は何もエラーを出力していません。"
+
+#: ../js/ui/lookingGlass.js:785
+msgid "Hide Errors"
+msgstr "エラーを非表示"
+
+#: ../js/ui/lookingGlass.js:789 ../js/ui/lookingGlass.js:840
+msgid "Show Errors"
+msgstr "エラーを表示"
+
+#: ../js/ui/lookingGlass.js:798
+msgid "Enabled"
+msgstr "利用可能にする"
+
+#. translators:
+#. * The device has been disabled
+#: ../js/ui/lookingGlass.js:801 ../src/gvc/gvc-mixer-control.c:1093
+msgid "Disabled"
+msgstr "利用不可能にする"
+
+#: ../js/ui/lookingGlass.js:803
+msgid "Error"
+msgstr "エラー"
+
+#: ../js/ui/lookingGlass.js:805
+msgid "Out of date"
+msgstr "最新ではありません"
+
+#: ../js/ui/lookingGlass.js:807
+msgid "Downloading"
+msgstr "ダウンロード中"
+
+#: ../js/ui/lookingGlass.js:828
+msgid "View Source"
+msgstr "ソースの表示"
+
+#: ../js/ui/lookingGlass.js:834
+msgid "Web Page"
+msgstr "ウェブページ"
+
+# %d %t はLC_TIME依存
+# 空白と非asciiを極力排除したい
+#. Translators: this is a filename used for screencast recording
+#: ../js/ui/main.js:118
+#, no-c-format
+msgid "Screencast from %d %t"
+msgstr "Screencast_from_%d_%t"
+
+#: ../js/ui/messageTray.js:1200
+msgid "Open"
+msgstr "開く"
+
+#: ../js/ui/messageTray.js:1217
+msgid "Unmute"
+msgstr "ミュート解除"
+
+#: ../js/ui/messageTray.js:1217
+msgid "Mute"
+msgstr "ミュート"
+
+#: ../js/ui/messageTray.js:2490
+msgid "System Information"
+msgstr "システム情報"
+
+#: ../js/ui/networkAgent.js:148
+msgid "Connect"
+msgstr "接続"
+
+#. Cisco LEAP
+#: ../js/ui/networkAgent.js:243 ../js/ui/networkAgent.js:255
+#: ../js/ui/networkAgent.js:282 ../js/ui/networkAgent.js:302
+#: ../js/ui/networkAgent.js:312
+msgid "Password: "
+msgstr "パスワード: "
+
+#. static WEP
+#: ../js/ui/networkAgent.js:248
+msgid "Key: "
+msgstr "キー: "
+
+#. TTLS and PEAP are actually much more complicated, but this complication
+#. is not visible here since we only care about phase2 authentication
+#. (and don't even care of which one)
+#: ../js/ui/networkAgent.js:280 ../js/ui/networkAgent.js:298
+msgid "Username: "
+msgstr "ユーザー名: "
+
+#: ../js/ui/networkAgent.js:286
+msgid "Identity: "
+msgstr "識別子: "
+
+#: ../js/ui/networkAgent.js:288
+msgid "Private key password: "
+msgstr "プライベートキーパスワード: "
+
+#: ../js/ui/networkAgent.js:300
+msgid "Service: "
+msgstr "サービス: "
+
+#: ../js/ui/networkAgent.js:329
+msgid "Authentication required by wireless network"
+msgstr "無線ネットワークでは認証が要求されます"
+
+#: ../js/ui/networkAgent.js:330
+#, c-format
+msgid ""
+"Passwords or encryption keys are required to access the wireless network '%"
+"s'."
+msgstr ""
+"無線ネットワーク '%s' にアクセスするにはパスワードか、または暗号化キーが必要"
+"です。"
+
+#: ../js/ui/networkAgent.js:334
+msgid "Wired 802.1X authentication"
+msgstr "有線 802.1X の認証"
+
+#: ../js/ui/networkAgent.js:336
+msgid "Network name: "
+msgstr "ネットワーク名: "
+
+#: ../js/ui/networkAgent.js:341
+msgid "DSL authentication"
+msgstr "DSL 認証"
+
+#: ../js/ui/networkAgent.js:348
+msgid "PIN code required"
+msgstr "PIN コードが必要です"
+
+#: ../js/ui/networkAgent.js:349
+msgid "PIN code is needed for the mobile broadband device"
+msgstr "モバイルブロードバンドデバイスには PIN コードが必要です"
+
+#: ../js/ui/networkAgent.js:350
+msgid "PIN: "
+msgstr "PIN 番号: "
+
+#: ../js/ui/networkAgent.js:356
+msgid "Mobile broadband network password"
+msgstr "モバイルブロードバンドネットワークのパスワード"
+
+#: ../js/ui/networkAgent.js:357
+#, c-format
+msgid "A password is required to connect to '%s'."
+msgstr "'%s' への接続にパスワードが必要です。"
+
+#: ../js/ui/overview.js:90
+msgid "Undo"
+msgstr "元に戻す"
+
+#: ../js/ui/overview.js:132
+msgid "Overview"
+msgstr "アクティビティ画面"
+
+#: ../js/ui/overview.js:202
+msgid "Windows"
+msgstr "ウィンドウ"
+
+#: ../js/ui/overview.js:205
+msgid "Applications"
+msgstr "アプリケーション"
+
+#. Translators: this is the name of the dock/favorites area on
+#. the left of the overview
+#: ../js/ui/overview.js:231
+msgid "Dash"
+msgstr "ダッシュボード"
+
+#: ../js/ui/panel.js:591
+msgid "Quit"
+msgstr "終了"
+
+#. Translators: If there is no suitable word for "Activities"
+#. in your language, you can use the word for "Overview".
+#: ../js/ui/panel.js:623
+msgid "Activities"
+msgstr "アクティビティ"
+
+#: ../js/ui/panel.js:998
+msgid "Top Bar"
+msgstr "トップバー"
+
+#: ../js/ui/placeDisplay.js:115
+#, c-format
+msgid "Failed to unmount '%s'"
+msgstr "'%s'のアンマウントに失敗しました"
+
+#: ../js/ui/placeDisplay.js:118
+msgid "Retry"
+msgstr "再試行"
+
+#: ../js/ui/placeDisplay.js:156
+msgid "Connect to..."
+msgstr "サーバーへ接続..."
+
+#: ../js/ui/placeDisplay.js:367
+msgid "PLACES & DEVICES"
+msgstr "場所とデバイス"
+
+#: ../js/ui/polkitAuthenticationAgent.js:71
+msgid "Authentication Required"
+msgstr "認証が要求されました"
+
+#: ../js/ui/polkitAuthenticationAgent.js:109
+msgid "Administrator"
+msgstr "管理者"
+
+#: ../js/ui/polkitAuthenticationAgent.js:179
+msgid "Authenticate"
+msgstr "認証"
+
+#. Translators: "that didn't work" refers to the fact that the
+#. * requested authentication was not gained; this can happen
+#. * because of an authentication error (like invalid password),
+#. * for instance.
+#: ../js/ui/polkitAuthenticationAgent.js:260
+msgid "Sorry, that didn't work. Please try again."
+msgstr "申し訳ありません、認証できませんでした。再試行してください。"
+
+#. Translators: this MUST be either "toggle-switch-us"
+#. (for toggle switches containing the English words
+#. "ON" and "OFF") or "toggle-switch-intl" (for toggle
+#. switches containing "◯" and "|"). Other values will
+#. simply result in invisible toggle switches.
+#: ../js/ui/popupMenu.js:724
+msgid "toggle-switch-us"
+msgstr "toggle-switch-us"
+
+#: ../js/ui/runDialog.js:205
+msgid "Please enter a command:"
+msgstr "コマンド:"
+
+#: ../js/ui/searchDisplay.js:332
+msgid "Searching..."
+msgstr "検索しています..."
+
+#: ../js/ui/searchDisplay.js:414
+msgid "No matching results."
+msgstr "一致するものがありません。"
+
+#: ../js/ui/shellEntry.js:26
+msgid "Copy"
+msgstr "コピー"
+
+#: ../js/ui/shellEntry.js:31
+msgid "Paste"
+msgstr "貼り付け"
+
+#: ../js/ui/shellEntry.js:77
+msgid "Show Text"
+msgstr "文字を表示"
+
+#: ../js/ui/shellEntry.js:79
+msgid "Hide Text"
+msgstr "文字を非表示"
+
+#: ../js/ui/shellMountOperation.js:271
+msgid "Wrong password, please try again"
+msgstr "パスワードが間違っています、再度試してください"
+
+#: ../js/ui/status/accessibility.js:47
+msgid "Accessibility"
+msgstr "アクセシビリティ"
+
+#: ../js/ui/status/accessibility.js:52
+msgid "Zoom"
+msgstr "ズーム"
+
+#. let screenReader = this._buildItem(_("Screen Reader"), APPLICATIONS_SCHEMA,
+#. 'screen-reader-enabled');
+#. this.menu.addMenuItem(screenReader);
+#: ../js/ui/status/accessibility.js:63
+msgid "Screen Keyboard"
+msgstr "スクリーンキーボード"
+
+#: ../js/ui/status/accessibility.js:67
+msgid "Visual Alerts"
+msgstr "視覚警告"
+
+#: ../js/ui/status/accessibility.js:70
+msgid "Sticky Keys"
+msgstr "固定キー"
+
+#: ../js/ui/status/accessibility.js:73
+msgid "Slow Keys"
+msgstr "スローキー"
+
+#: ../js/ui/status/accessibility.js:76
+msgid "Bounce Keys"
+msgstr "バウンスキー"
+
+#: ../js/ui/status/accessibility.js:79
+msgid "Mouse Keys"
+msgstr "マウスキー"
+
+#: ../js/ui/status/accessibility.js:83
+msgid "Universal Access Settings"
+msgstr "ユニバーサルアクセスの設定"
+
+#: ../js/ui/status/accessibility.js:117
+msgid "High Contrast"
+msgstr "ハイコントラスト"
+
+#: ../js/ui/status/accessibility.js:154
+msgid "Large Text"
+msgstr "大きな文字"
+
+#: ../js/ui/status/bluetooth.js:31 ../js/ui/status/bluetooth.js:35
+#: ../js/ui/status/bluetooth.js:258 ../js/ui/status/bluetooth.js:341
+#: ../js/ui/status/bluetooth.js:371 ../js/ui/status/bluetooth.js:407
+#: ../js/ui/status/bluetooth.js:436 ../js/ui/status/network.js:893
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ../js/ui/status/bluetooth.js:48
+msgid "Visibility"
+msgstr "検出可能にする"
+
+#: ../js/ui/status/bluetooth.js:62
+msgid "Send Files to Device..."
+msgstr "デバイスにファイルを送る..."
+
+#: ../js/ui/status/bluetooth.js:63
+msgid "Set up a New Device..."
+msgstr "新しいデバイスを設定..."
+
+#: ../js/ui/status/bluetooth.js:87
+msgid "Bluetooth Settings"
+msgstr "Bluetooth の設定"
+
+#. TRANSLATORS: this means that bluetooth was disabled by hardware rfkill
+#: ../js/ui/status/bluetooth.js:107 ../js/ui/status/network.js:256
+msgid "hardware disabled"
+msgstr "ハードウェア無効"
+
+#: ../js/ui/status/bluetooth.js:203
+msgid "Connection"
+msgstr "接続"
+
+#: ../js/ui/status/bluetooth.js:214 ../js/ui/status/network.js:491
+msgid "disconnecting..."
+msgstr "切断中..."
+
+#: ../js/ui/status/bluetooth.js:227 ../js/ui/status/network.js:497
+msgid "connecting..."
+msgstr "接続中..."
+
+#: ../js/ui/status/bluetooth.js:245
+msgid "Send Files..."
+msgstr "ファイルを送信..."
+
+#: ../js/ui/status/bluetooth.js:250
+msgid "Browse Files..."
+msgstr "ファイルを検索..."
+
+#: ../js/ui/status/bluetooth.js:259
+msgid "Error browsing device"
+msgstr "デバイスの通信エラー"
+
+#: ../js/ui/status/bluetooth.js:260
+#, c-format
+msgid "The requested device cannot be browsed, error is '%s'"
+msgstr "要求されたデバイスと通信できません。エラー内容: %s"
+
+#: ../js/ui/status/bluetooth.js:268
+msgid "Keyboard Settings"
+msgstr "キーボードの設定"
+
+#: ../js/ui/status/bluetooth.js:271
+msgid "Mouse Settings"
+msgstr "マウスの設定"
+
+#: ../js/ui/status/bluetooth.js:276 ../js/ui/status/volume.js:59
+msgid "Sound Settings"
+msgstr "サウンドの設定"
+
+#: ../js/ui/status/bluetooth.js:372
+#, c-format
+msgid "Authorization request from %s"
+msgstr "%s からアクセス許可の要求"
+
+#: ../js/ui/status/bluetooth.js:378
+#, c-format
+msgid "Device %s wants access to the service '%s'"
+msgstr "デバイス '%s' が サービス '%s' へのアクセスを要求しています"
+
+#: ../js/ui/status/bluetooth.js:380
+msgid "Always grant access"
+msgstr "許可"
+
+#: ../js/ui/status/bluetooth.js:381
+msgid "Grant this time only"
+msgstr "今回のみ許可"
+
+#: ../js/ui/status/bluetooth.js:382 ../js/ui/telepathyClient.js:1091
+msgid "Reject"
+msgstr "拒否"
+
+#: ../js/ui/status/bluetooth.js:408
+#, c-format
+msgid "Pairing confirmation for %s"
+msgstr "%s からペアリングの確認"
+
+#: ../js/ui/status/bluetooth.js:414 ../js/ui/status/bluetooth.js:444
+#, c-format
+msgid "Device %s wants to pair with this computer"
+msgstr "デバイス %s がこのコンピューターとのペアリングを要求しています"
+
+#: ../js/ui/status/bluetooth.js:415
+#, c-format
+msgid "Please confirm whether the PIN '%s' matches the one on the device."
+msgstr "'%s' がデバイスの PIN コードと一致しているか確認してください。"
+
+#: ../js/ui/status/bluetooth.js:417
+msgid "Matches"
+msgstr "一致"
+
+#: ../js/ui/status/bluetooth.js:418
+msgid "Does not match"
+msgstr "不一致"
+
+#: ../js/ui/status/bluetooth.js:437
+#, c-format
+msgid "Pairing request for %s"
+msgstr "%s からペアリングの要求"
+
+#: ../js/ui/status/bluetooth.js:445
+msgid "Please enter the PIN mentioned on the device."
+msgstr "デバイスの PIN コードを入力してください。"
+
+#: ../js/ui/status/bluetooth.js:461
+msgid "OK"
+msgstr "OK"
+
+#: ../js/ui/status/keyboard.js:68
+msgid "Show Keyboard Layout"
+msgstr "キーボードレイアウトの表示"
+
+#: ../js/ui/status/keyboard.js:73
+msgid "Region and Language Settings"
+msgstr "地域と言語の設定"
+
+#: ../js/ui/status/network.js:96
+msgid "<unknown>"
+msgstr "< 不明 >"
+
+#. Translators: this indicates that wireless or wwan is disabled by hardware killswitch
+#: ../js/ui/status/network.js:278
+msgid "disabled"
+msgstr "利用不可"
+
+#. Translators: this is for network devices that are physically present but are not
+#. under NetworkManager's control (and thus cannot be used in the menu)
+#: ../js/ui/status/network.js:489
+msgid "unmanaged"
+msgstr "管理対象外"
+
+#. Translators: this is for network connections that require some kind of key or password
+#: ../js/ui/status/network.js:500
+msgid "authentication required"
+msgstr "認証の要求"
+
+#. Translators: this is for devices that require some kind of firmware or kernel
+#. module, which is missing
+#: ../js/ui/status/network.js:510
+msgid "firmware missing"
+msgstr "ファームウェア未検出"
+
+#. Translators: this is for wired network devices that are physically disconnected
+#: ../js/ui/status/network.js:517
+msgid "cable unplugged"
+msgstr "ケーブル抜け"
+
+#. Translators: this is for a network device that cannot be activated (for example it
+#. is disabled by rfkill, or it has no coverage
+#: ../js/ui/status/network.js:522
+msgid "unavailable"
+msgstr "利用不可"
+
+#: ../js/ui/status/network.js:524
+msgid "connection failed"
+msgstr "接続失敗"
+
+#: ../js/ui/status/network.js:585 ../js/ui/status/network.js:1505
+msgid "More..."
+msgstr "その他..."
+
+#. TRANSLATORS: this is the indication that a connection for another logged in user is active,
+#. and we cannot access its settings (including the name)
+#: ../js/ui/status/network.js:621 ../js/ui/status/network.js:1440
+msgid "Connected (private)"
+msgstr "接続 (制限付)"
+
+#: ../js/ui/status/network.js:696
+msgid "Auto Ethernet"
+msgstr "自動イーサネット接続"
+
+#: ../js/ui/status/network.js:757
+msgid "Auto broadband"
+msgstr "自動ブロードバンド接続"
+
+#: ../js/ui/status/network.js:760
+msgid "Auto dial-up"
+msgstr "自動ダイヤルアップ"
+
+#. TRANSLATORS: this the automatic wireless connection name (including the network name)
+#: ../js/ui/status/network.js:879 ../js/ui/status/network.js:1452
+#, c-format
+msgid "Auto %s"
+msgstr "自動 %s"
+
+#: ../js/ui/status/network.js:881
+msgid "Auto bluetooth"
+msgstr "自動 Bluetooth 接続"
+
+#: ../js/ui/status/network.js:1454
+msgid "Auto wireless"
+msgstr "自動無線接続"
+
+#: ../js/ui/status/network.js:1541
+msgid "Network"
+msgstr "ネットワーク"
+
+#: ../js/ui/status/network.js:1548
+msgid "Enable networking"
+msgstr "ネットワークを利用可能にする"
+
+#: ../js/ui/status/network.js:1560
+msgid "Wired"
+msgstr "有線接続"
+
+#: ../js/ui/status/network.js:1571
+msgid "Wireless"
+msgstr "無線接続"
+
+#: ../js/ui/status/network.js:1581
+msgid "Mobile broadband"
+msgstr "モバイルブロードバンド"
+
+#: ../js/ui/status/network.js:1591
+msgid "VPN Connections"
+msgstr "VPN 接続"
+
+#: ../js/ui/status/network.js:1602
+msgid "Network Settings"
+msgstr "ネットワークの設定"
+
+#: ../js/ui/status/network.js:1739
+msgid "Connection failed"
+msgstr "接続失敗"
+
+#: ../js/ui/status/network.js:1740
+msgid "Activation of network connection failed"
+msgstr "ネットワーク接続を有効にできません"
+
+#: ../js/ui/status/network.js:1993
+msgid "Networking is disabled"
+msgstr "ネットワークを利用できません"
+
+#: ../js/ui/status/network.js:2117
+msgid "Network Manager"
+msgstr "ネットワークマネージャー"
+
+#: ../js/ui/status/power.js:59
+msgid "Battery"
+msgstr "バッテリー"
+
+#: ../js/ui/status/power.js:76
+msgid "Power Settings"
+msgstr "電源設定"
+
+#. 0 is reported when UPower does not have enough data
+#. to estimate battery life
+#: ../js/ui/status/power.js:98
+msgid "Estimating..."
+msgstr "推計しています..."
+
+#: ../js/ui/status/power.js:105
+#, c-format
+msgid "%d hour remaining"
+msgid_plural "%d hours remaining"
+msgstr[0] "残り %d時間"
+
+#. TRANSLATORS: this is a time string, as in "%d hours %d minutes remaining"
+#: ../js/ui/status/power.js:108
+#, c-format
+msgid "%d %s %d %s remaining"
+msgstr "残り %d%s %d%s"
+
+#: ../js/ui/status/power.js:110
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "時間"
+
+#: ../js/ui/status/power.js:110
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "分"
+
+#: ../js/ui/status/power.js:113
+#, c-format
+msgid "%d minute remaining"
+msgid_plural "%d minutes remaining"
+msgstr[0] "残り %d分"
+
+#: ../js/ui/status/power.js:116 ../js/ui/status/power.js:186
+#, c-format
+msgctxt "percent of battery remaining"
+msgid "%d%%"
+msgstr "%d%%"
+
+#: ../js/ui/status/power.js:193
+msgid "AC adapter"
+msgstr "AC アダプター"
+
+#: ../js/ui/status/power.js:195
+msgid "Laptop battery"
+msgstr "バッテリー"
+
+#: ../js/ui/status/power.js:197
+msgid "UPS"
+msgstr "UPS"
+
+#: ../js/ui/status/power.js:199
+msgid "Monitor"
+msgstr "モニター"
+
+#: ../js/ui/status/power.js:201
+msgid "Mouse"
+msgstr "マウス"
+
+#: ../js/ui/status/power.js:205
+msgid "PDA"
+msgstr "PDA"
+
+#: ../js/ui/status/power.js:207
+msgid "Cell phone"
+msgstr "携帯電話"
+
+#: ../js/ui/status/power.js:209
+msgid "Media player"
+msgstr "メディアプレイヤー"
+
+#: ../js/ui/status/power.js:211
+msgid "Tablet"
+msgstr "タブレット端末"
+
+#: ../js/ui/status/power.js:213
+msgid "Computer"
+msgstr "コンピューター"
+
+#. Translators: This is the label for audio volume
+#: ../js/ui/status/volume.js:25 ../js/ui/status/volume.js:39
+msgid "Volume"
+msgstr "音量"
+
+#: ../js/ui/status/volume.js:51
+msgid "Microphone"
+msgstr "マイク"
+
+#. FIXME: We don't have a 'chat room' icon (bgo #653737) use
+#. system-users for now as Empathy does.
+#: ../js/ui/telepathyClient.js:220
+msgid "Invitation"
+msgstr "招待"
+
+#. We got the TpContact
+#: ../js/ui/telepathyClient.js:271
+msgid "Call"
+msgstr "会話"
+
+#. We got the TpContact
+#: ../js/ui/telepathyClient.js:287
+msgid "File Transfer"
+msgstr "ファイル転送"
+
+#: ../js/ui/telepathyClient.js:369
+msgid "Subscription request"
+msgstr "登録のリクエスト"
+
+#: ../js/ui/telepathyClient.js:405
+msgid "Connection error"
+msgstr "接続エラー"
+
+#: ../js/ui/telepathyClient.js:663
+#, c-format
+msgid "%s is online."
+msgstr "%s はオンラインです。"
+
+#: ../js/ui/telepathyClient.js:667
+#, c-format
+msgid "%s is offline."
+msgstr "%s はオフラインです。"
+
+#: ../js/ui/telepathyClient.js:671
+#, c-format
+msgid "%s is away."
+msgstr "'%s' は離席中です。"
+
+#: ../js/ui/telepathyClient.js:674
+#, c-format
+msgid "%s is busy."
+msgstr "%s は取り込み中です。"
+
+#. Translators: this is a time format string followed by a date.
+#. If applicable, replace %X with a strftime format valid for your
+#. locale, without seconds.
+#: ../js/ui/telepathyClient.js:887
+#, no-c-format
+msgid "Sent at <b>%X</b> on <b>%A</b>"
+msgstr "<b>%A</b>の<b>%X</b>に送信"
+
+#. Translators: this is a time format in the style of "Wednesday, May 25",
+#. shown when you get a chat message in the same year.
+#: ../js/ui/telepathyClient.js:893
+#, no-c-format
+msgid "Sent on <b>%A</b>, <b>%B %d</b>"
+msgstr "<b>%b%e日</b> <b>%A</b>に送信"
+
+#. Translators: this is a time format in the style of "Wednesday, May 25, 2012",
+#. shown when you get a chat message in a different year.
+#: ../js/ui/telepathyClient.js:898
+#, no-c-format
+msgid "Sent on <b>%A</b>, <b>%B %d</b>, %Y"
+msgstr "<b>%Y年%b%e日</b> <b>%A</b>に送信"
+
+#. Translators: this is the other person changing their old IM name to their new
+#. IM name.
+#: ../js/ui/telepathyClient.js:940
+#, c-format
+msgid "%s is now known as %s"
+msgstr "%s は %s になりました"
+
+#. translators: argument is a room name like
+#. * room@jabber.org for example.
+#: ../js/ui/telepathyClient.js:1042
+#, c-format
+msgid "Invitation to %s"
+msgstr "%s への招待"
+
+#. translators: first argument is the name of a contact and the second
+#. * one the name of a room. "Alice is inviting you to join room@jabber.org
+#. * for example.
+#: ../js/ui/telepathyClient.js:1050
+#, c-format
+msgid "%s is inviting you to join %s"
+msgstr "%s さんがあなたを %s に招待しています"
+
+#: ../js/ui/telepathyClient.js:1052 ../js/ui/telepathyClient.js:1131
+#: ../js/ui/telepathyClient.js:1229
+msgid "Decline"
+msgstr "拒否する"
+
+#: ../js/ui/telepathyClient.js:1053 ../js/ui/telepathyClient.js:1132
+#: ../js/ui/telepathyClient.js:1230
+msgid "Accept"
+msgstr "受け入れる"
+
+#. translators: argument is a contact name like Alice for example.
+#: ../js/ui/telepathyClient.js:1083
+#, c-format
+msgid "Video call from %s"
+msgstr "%s さんからビデオでの呼び出し"
+
+#. translators: argument is a contact name like Alice for example.
+#: ../js/ui/telepathyClient.js:1086
+#, c-format
+msgid "Call from %s"
+msgstr "%s さんからの呼び出し"
+
+#. translators: this is a button label (verb), not a noun
+#: ../js/ui/telepathyClient.js:1093
+msgid "Answer"
+msgstr "応答"
+
+#. To translators: The first parameter is
+#. * the contact's alias and the second one is the
+#. * file name. The string will be something
+#. * like: "Alice is sending you test.ogg"
+#.
+#: ../js/ui/telepathyClient.js:1125
+#, c-format
+msgid "%s is sending you %s"
+msgstr "%s さんがあなたに %s を送信しようとしています"
+
+#. To translators: The parameter is the contact's alias
+#: ../js/ui/telepathyClient.js:1194
+#, c-format
+msgid "%s would like permission to see when you are online"
+msgstr ""
+"%s さんが、あなたがオンライン状態になったことを知る許可を欲しいと思っています"
+
+#: ../js/ui/telepathyClient.js:1287
+msgid "Network error"
+msgstr "ネットワークエラー"
+
+#: ../js/ui/telepathyClient.js:1289
+msgid "Authentication failed"
+msgstr "認証失敗"
+
+#: ../js/ui/telepathyClient.js:1291
+msgid "Encryption error"
+msgstr "暗号化のエラーです"
+
+#: ../js/ui/telepathyClient.js:1293
+msgid "Certificate not provided"
+msgstr "証明書がありません"
+
+#: ../js/ui/telepathyClient.js:1295
+msgid "Certificate untrusted"
+msgstr "信用のない証明書です"
+
+#: ../js/ui/telepathyClient.js:1297
+msgid "Certificate expired"
+msgstr "証明書の有効期限が切れています"
+
+#: ../js/ui/telepathyClient.js:1299
+msgid "Certificate not activated"
+msgstr "証明書は利用できません"
+
+#: ../js/ui/telepathyClient.js:1301
+msgid "Certificate hostname mismatch"
+msgstr "証明書のホスト名が一致しません"
+
+#: ../js/ui/telepathyClient.js:1303
+msgid "Certificate fingerprint mismatch"
+msgstr "証明書の指紋が一致しません"
+
+#: ../js/ui/telepathyClient.js:1305
+msgid "Certificate self-signed"
+msgstr "証明書自身の署名です"
+
+#: ../js/ui/telepathyClient.js:1307
+msgid "Status is set to offline"
+msgstr "状態はオフラインに設定されています"
+
+#: ../js/ui/telepathyClient.js:1309
+msgid "Encryption is not available"
+msgstr "暗号が利用できません"
+
+#: ../js/ui/telepathyClient.js:1311
+msgid "Certificate is invalid"
+msgstr "証明書が正しくありません"
+
+#: ../js/ui/telepathyClient.js:1313
+msgid "Connection has been refused"
+msgstr "接続が拒否されました"
+
+#: ../js/ui/telepathyClient.js:1315
+msgid "Connection can't be established"
+msgstr "接続を確立できませんでした"
+
+#: ../js/ui/telepathyClient.js:1317
+msgid "Connection has been lost"
+msgstr "接続が失われました"
+
+#: ../js/ui/telepathyClient.js:1319
+msgid "This account is already connected to the server"
+msgstr "このアカウントはすでにサーバーに接続済みです"
+
+#: ../js/ui/telepathyClient.js:1321
+msgid ""
+"Connection has been replaced by a new connection using the same resource"
+msgstr "接続は同じリソースを使って新しい接続で置き換わりました"
+
+#: ../js/ui/telepathyClient.js:1323
+msgid "The account already exists on the server"
+msgstr "アカウントがサーバーに既に存在しています"
+
+#: ../js/ui/telepathyClient.js:1325
+msgid "Server is currently too busy to handle the connection"
+msgstr "サーバーがビジー状態にあるため、この接続を処理できません"
+
+#: ../js/ui/telepathyClient.js:1327
+msgid "Certificate has been revoked"
+msgstr "証明書が無効化されました"
+
+#: ../js/ui/telepathyClient.js:1329
+msgid ""
+"Certificate uses an insecure cipher algorithm or is cryptographically weak"
+msgstr "証明書が安全でない暗号のアルゴリズムを使っているか、暗号的に弱いです"
+
+#: ../js/ui/telepathyClient.js:1331
+msgid ""
+"The length of the server certificate, or the depth of the server certificate "
+"chain, exceed the limits imposed by the cryptography library"
+msgstr ""
+"サーバー証明書の長さや、サーバー証明書のチェーンの深さが暗号ライブラリで規定"
+"されている長さを越えています"
+
+#: ../js/ui/telepathyClient.js:1333
+msgid "Internal error"
+msgstr "内部エラー"
+
+#. translators: argument is the account name, like
+#. * name@jabber.org for example.
+#: ../js/ui/telepathyClient.js:1343
+#, c-format
+msgid "Connection to %s failed"
+msgstr "%s に接続できません"
+
+#: ../js/ui/telepathyClient.js:1352
+msgid "Reconnect"
+msgstr "再接続"
+
+#: ../js/ui/telepathyClient.js:1353
+msgid "Edit account"
+msgstr "アカウントの編集"
+
+#: ../js/ui/telepathyClient.js:1399
+msgid "Unknown reason"
+msgstr "原因不明"
+
+#: ../js/ui/userMenu.js:135
+msgid "Hidden"
+msgstr "ステータスを隠す"
+
+#: ../js/ui/userMenu.js:141
+msgid "Idle"
+msgstr "待機中"
+
+#: ../js/ui/userMenu.js:144
+msgid "Unavailable"
+msgstr "オフライン"
+
+#: ../js/ui/userMenu.js:595 ../js/ui/userMenu.js:599 ../js/ui/userMenu.js:669
+msgid "Power Off..."
+msgstr "電源オフ..."
+
+#: ../js/ui/userMenu.js:631
+msgid "Notifications"
+msgstr "メッセージ通知"
+
+#: ../js/ui/userMenu.js:639
+msgid "Online Accounts"
+msgstr "オンラインアカウント"
+
+#: ../js/ui/userMenu.js:643
+msgid "System Settings"
+msgstr "システム設定"
+
+#: ../js/ui/userMenu.js:650
+msgid "Lock Screen"
+msgstr "画面のロック"
+
+#: ../js/ui/userMenu.js:655
+msgid "Switch User"
+msgstr "ユーザーの切り替え"
+
+#: ../js/ui/userMenu.js:660
+msgid "Log Out..."
+msgstr "ログアウト..."
+
+#: ../js/ui/userMenu.js:688
+msgid "Your chat status will be set to busy"
+msgstr "取り込み中に設定されます"
+
+#: ../js/ui/userMenu.js:689
+msgid ""
+"Notifications are now disabled, including chat messages. Your online status "
+"has been adjusted to let others know that you might not see their messages."
+msgstr ""
+"チャットなどの通知メッセージが表示されなくなります。オンライン状態が変更さ"
+"れ、あなたがメッセージに目を通せない状態にあることを、他の人が知ることができ"
+"ます。"
+
+#. Translators: this is the text displayed
+#. in the search entry when no search is
+#. active; it should not exceed ~30
+#. characters.
+#: ../js/ui/viewSelector.js:113
+msgid "Type to search..."
+msgstr "検索ワードを入力..."
+
+#: ../js/ui/viewSelector.js:131 ../src/shell-util.c:252
+msgid "Search"
+msgstr "検索"
+
+#: ../js/ui/wanda.js:124
+#, c-format
+msgid ""
+"Sorry, no wisdom for you today:\n"
+"%s"
+msgstr ""
+"すまない、今日は賢言がないのだ:\n"
+"%s"
+
+#: ../js/ui/wanda.js:128
+#, c-format
+msgid "%s the Oracle says"
+msgstr "預言者 %s 曰く"
+
+#: ../js/ui/wanda.js:168
+msgid "Your favorite Easter Egg"
+msgstr "あたなの好きなイースターエッグ"
+
+#: ../js/ui/windowAttentionHandler.js:19
+#, c-format
+msgid "'%s' is ready"
+msgstr "'%s' は準備完了です"
+
+#. translators:
+#. * The number of sound outputs on a particular device
+#: ../src/gvc/gvc-mixer-control.c:1100
+#, c-format
+msgid "%u Output"
+msgid_plural "%u Outputs"
+msgstr[0] "出力数: %u"
+
+#. translators:
+#. * The number of sound inputs on a particular device
+#: ../src/gvc/gvc-mixer-control.c:1110
+#, c-format
+msgid "%u Input"
+msgid_plural "%u Inputs"
+msgstr[0] "入力数: %u"
+
+#: ../src/gvc/gvc-mixer-control.c:1408
+msgid "System Sounds"
+msgstr "システムのサウンド"
+
+#: ../src/main.c:255
+msgid "Print version"
+msgstr "バージョンを表示"
+
+#: ../src/main.c:261
+msgid "Mode used by GDM for login screen"
+msgstr "ログイン画面で GDM が使用するモード"
+
+#: ../src/shell-app.c:619
+#, c-format
+msgid "Failed to launch '%s'"
+msgstr "'%s'の起動に失敗しました"
+
+#: ../src/shell-keyring-prompt.c:708
+msgid "Passwords do not match."
+msgstr "パスワードが一致しません。"
+
+#: ../src/shell-keyring-prompt.c:716
+msgid "Password cannot be blank"
+msgstr "パスワードを空白にすることはできません。"
+
+#: ../src/shell-mobile-providers.c:80
+msgid "United Kingdom"
+msgstr "英国"
+
+#: ../src/shell-mobile-providers.c:526
+msgid "Default"
+msgstr "既定"
+
+#: ../src/shell-polkit-authentication-agent.c:339
+msgid "Authentication dialog was dismissed by the user"
+msgstr "認証ダイアログはユーザーに拒否されました"
+
+#. Translators: this is the same string as the one found in
+#. * nautilus
+#: ../src/shell-util.c:97
+msgid "Home"
+msgstr "ホーム"
+
+#. Translators: this is the same string as the one found in
+#. * nautilus
+#: ../src/shell-util.c:106
+msgid "File System"
+msgstr "ファイルシステム"
+
+#. Translators: the first string is the name of a gvfs
+#. * method, and the second string is a path. For
+#. * example, "Trash: some-directory". It means that the
+#. * directory called "some-directory" is in the trash.
+#.
+#: ../src/shell-util.c:302
+#, c-format
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#~ msgid "RECENT ITEMS"
+#~ msgstr "最近使用した項目"

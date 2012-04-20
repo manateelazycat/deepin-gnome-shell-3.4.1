@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellTrayIcon</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch04.html" title="Tray Icons">
+<link rel="prev" href="ShellGtkEmbed.html" title="ShellGtkEmbed">
+<link rel="next" href="ShellTrayManager.html" title="ShellTrayManager">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ShellGtkEmbed.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="ShellTrayManager.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#ShellTrayIcon.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#ShellTrayIcon.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#ShellTrayIcon.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#ShellTrayIcon.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#ShellTrayIcon.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="ShellTrayIcon"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ShellTrayIcon.top_of_page"></a>ShellTrayIcon</span></h2>
+<p>ShellTrayIcon</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="ShellTrayIcon.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="ShellTrayIcon.html#ShellTrayIcon-struct" title="struct ShellTrayIcon">ShellTrayIcon</a>;
+struct              <a class="link" href="ShellTrayIcon.html#ShellTrayIconClass" title="struct ShellTrayIconClass">ShellTrayIconClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="ShellTrayIcon.html#shell-tray-icon-click" title="shell_tray_icon_click ()">shell_tray_icon_click</a>               (<em class="parameter"><code><a class="link" href="ShellTrayIcon.html" title="ShellTrayIcon"><span class="type">ShellTrayIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterEvent</span> *event</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="ShellTrayIcon.html#shell-tray-icon-new" title="shell_tray_icon_new ()">shell_tray_icon_new</a>                 (<em class="parameter"><code><a class="link" href="ShellEmbeddedWindow.html" title="ShellEmbeddedWindow"><span class="type">ShellEmbeddedWindow</span></a> *window</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellTrayIcon.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----ClutterTexture
+                     +----ClutterX11TexturePixmap
+                           +----<a class="link" href="ShellGtkEmbed.html" title="ShellGtkEmbed">ShellGtkEmbed</a>
+                                 +----ShellTrayIcon
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellTrayIcon.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+ShellTrayIcon implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="ShellTrayIcon.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="ShellTrayIcon.html#ShellTrayIcon--pid" title='The "pid" property'>pid</a>"                      <span class="type">guint</span>                 : Read
+  "<a class="link" href="ShellTrayIcon.html#ShellTrayIcon--title" title='The "title" property'>title</a>"                    <span class="type">gchar</span>*                : Read
+  "<a class="link" href="ShellTrayIcon.html#ShellTrayIcon--wm-class" title='The "wm-class" property'>wm-class</a>"                 <span class="type">gchar</span>*                : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellTrayIcon.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="ShellTrayIcon.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellTrayIcon-struct"></a><h3>struct ShellTrayIcon</h3>
+<pre class="programlisting">struct ShellTrayIcon;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTrayIconClass"></a><h3>struct ShellTrayIconClass</h3>
+<pre class="programlisting">struct ShellTrayIconClass {
+    ShellGtkEmbedClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tray-icon-click"></a><h3>shell_tray_icon_click ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_tray_icon_click               (<em class="parameter"><code><a class="link" href="ShellTrayIcon.html" title="ShellTrayIcon"><span class="type">ShellTrayIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterEvent</span> *event</code></em>);</pre>
+<p>
+Fakes a press and release on <em class="parameter"><code>icon</code></em>. <em class="parameter"><code>event</code></em> must be a
+<code class="literal">CLUTTER_BUTTON_RELEASE</code> event. Its relevant details will be passed
+on to the icon, but its coordinates will be ignored; the click is
+always made on the center of <em class="parameter"><code>icon</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellTrayIcon.html" title="ShellTrayIcon"><span class="type">ShellTrayIcon</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>event</code></em> :</span></p></td>
+<td>the <span class="type">ClutterEvent</span> triggering the fake click</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tray-icon-new"></a><h3>shell_tray_icon_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      shell_tray_icon_new                 (<em class="parameter"><code><a class="link" href="ShellEmbeddedWindow.html" title="ShellEmbeddedWindow"><span class="type">ShellEmbeddedWindow</span></a> *window</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ShellTrayIcon.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ShellTrayIcon--pid"></a><h3>The <code class="literal">"pid"</code> property</h3>
+<pre class="programlisting">  "pid"                      <span class="type">guint</span>                 : Read</pre>
+<p>The PID of the icon's application.</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTrayIcon--title"></a><h3>The <code class="literal">"title"</code> property</h3>
+<pre class="programlisting">  "title"                    <span class="type">gchar</span>*                : Read</pre>
+<p>The icon's window title.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTrayIcon--wm-class"></a><h3>The <code class="literal">"wm-class"</code> property</h3>
+<pre class="programlisting">  "wm-class"                 <span class="type">gchar</span>*                : Read</pre>
+<p>The icon's window WM_CLASS.</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

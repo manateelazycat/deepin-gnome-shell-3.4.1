@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StTextureCache</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="styling.html" title="Styling">
+<link rel="prev" href="StThemeNodeTransition.html" title="StThemeNodeTransition">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StThemeNodeTransition.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="styling.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StTextureCache.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StTextureCache.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StTextureCache.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StTextureCache.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StTextureCache"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StTextureCache.top_of_page"></a>StTextureCache</span></h2>
+<p>StTextureCache</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StTextureCache.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StTextureCache.html#StTextureCache-struct" title="struct StTextureCache">StTextureCache</a>;
+struct              <a class="link" href="StTextureCache.html#StTextureCacheClass" title="struct StTextureCacheClass">StTextureCacheClass</a>;
+<span class="returnvalue">CoglHandle</span>          (<a class="link" href="StTextureCache.html#StTextureCacheLoader" title="StTextureCacheLoader ()">*StTextureCacheLoader</a>)             (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                                         <em class="parameter"><code><span class="type">void</span> *data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+enum                <a class="link" href="StTextureCache.html#StTextureCachePolicy" title="enum StTextureCachePolicy">StTextureCachePolicy</a>;
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StTextureCache.html#st-texture-cache-bind-pixbuf-property" title="st_texture_cache_bind_pixbuf_property ()">st_texture_cache_bind_pixbuf_property</a>
+                                                        (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code><span class="type">GObject</span> *object</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>);
+<a class="link" href="StTextureCache.html" title="StTextureCache"><span class="returnvalue">StTextureCache</span></a> *    <a class="link" href="StTextureCache.html#st-texture-cache-get-default" title="st_texture_cache_get_default ()">st_texture_cache_get_default</a>        (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">CoglHandle</span>          <a class="link" href="StTextureCache.html#st-texture-cache-load" title="st_texture_cache_load ()">st_texture_cache_load</a>               (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="StTextureCache.html#StTextureCachePolicy" title="enum StTextureCachePolicy"><span class="type">StTextureCachePolicy</span></a> policy</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="StTextureCache.html#StTextureCacheLoader" title="StTextureCacheLoader ()"><span class="type">StTextureCacheLoader</span></a> load</code></em>,
+                                                         <em class="parameter"><code><span class="type">void</span> *data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">cairo_surface_t</span> *   <a class="link" href="StTextureCache.html#st-texture-cache-load-file-to-cairo-surface" title="st_texture_cache_load_file_to_cairo_surface ()">st_texture_cache_load_file_to_cairo_surface</a>
+                                                        (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *file_path</code></em>);
+<span class="returnvalue">CoglHandle</span>          <a class="link" href="StTextureCache.html#st-texture-cache-load-file-to-cogl-texture" title="st_texture_cache_load_file_to_cogl_texture ()">st_texture_cache_load_file_to_cogl_texture</a>
+                                                        (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *file_path</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StTextureCache.html#st-texture-cache-load-from-raw" title="st_texture_cache_load_from_raw ()">st_texture_cache_load_from_raw</a>      (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">guchar</span> *data</code></em>,
+                                                         <em class="parameter"><code><span class="type">gsize</span> len</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> has_alpha</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> width</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> height</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> rowstride</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> size</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StTextureCache.html#st-texture-cache-load-gicon" title="st_texture_cache_load_gicon ()">st_texture_cache_load_gicon</a>         (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *theme_node</code></em>,
+                                                         <em class="parameter"><code><span class="type">GIcon</span> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> size</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StTextureCache.html#st-texture-cache-load-icon-name" title="st_texture_cache_load_icon_name ()">st_texture_cache_load_icon_name</a>     (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *theme_node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                                                         <em class="parameter"><code><span class="type">StIconType</span> icon_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> size</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StTextureCache.html#st-texture-cache-load-sliced-image" title="st_texture_cache_load_sliced_image ()">st_texture_cache_load_sliced_image</a>  (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *path</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> grid_width</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> grid_height</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StTextureCache.html#st-texture-cache-load-uri-async" title="st_texture_cache_load_uri_async ()">st_texture_cache_load_uri_async</a>     (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> available_width</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> available_height</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StTextureCache.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----StTextureCache
+</pre>
+</div>
+<div class="refsect1">
+<a name="StTextureCache.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="StTextureCache.html#StTextureCache-icon-theme-changed" title='The "icon-theme-changed" signal'>icon-theme-changed</a>"                             : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="StTextureCache.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="StTextureCache.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StTextureCache-struct"></a><h3>struct StTextureCache</h3>
+<pre class="programlisting">struct StTextureCache;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTextureCacheClass"></a><h3>struct StTextureCacheClass</h3>
+<pre class="programlisting">struct StTextureCacheClass {
+  GObjectClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTextureCacheLoader"></a><h3>StTextureCacheLoader ()</h3>
+<pre class="programlisting"><span class="returnvalue">CoglHandle</span>          (*StTextureCacheLoader)             (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                                         <em class="parameter"><code><span class="type">void</span> *data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+See <a class="link" href="StTextureCache.html#st-texture-cache-load" title="st_texture_cache_load ()"><code class="function">st_texture_cache_load()</code></a>.  Implementations should return a
+texture handle for the given key, or set <em class="parameter"><code>error</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>a <a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>Unique identifier for this texture</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>Callback user data</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>A <span class="type">GError</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTextureCachePolicy"></a><h3>enum StTextureCachePolicy</h3>
+<pre class="programlisting">typedef enum {
+  ST_TEXTURE_CACHE_POLICY_NONE,
+  ST_TEXTURE_CACHE_POLICY_FOREVER
+} StTextureCachePolicy;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-bind-pixbuf-property"></a><h3>st_texture_cache_bind_pixbuf_property ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_texture_cache_bind_pixbuf_property
+                                                        (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code><span class="type">GObject</span> *object</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *property_name</code></em>);</pre>
+<p>
+Create a <span class="type">ClutterTexture</span> which tracks the <span class="type">GdkPixbuf</span> value of a GObject property
+named by <em class="parameter"><code>property_name</code></em>.  Unlike other methods in StTextureCache, the underlying
+CoglHandle is not shared by default with other invocations to this method.
+</p>
+<p>
+If the source object is destroyed, the texture will continue to show the last
+value of the property.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>A <span class="type">GObject</span> with a property <em class="parameter"><code>property_name</code></em> of type <span class="type">GdkPixbuf</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>Name of a property</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A new <span class="type">ClutterActor</span>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-get-default"></a><h3>st_texture_cache_get_default ()</h3>
+<pre class="programlisting"><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="returnvalue">StTextureCache</span></a> *    st_texture_cache_get_default        (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The global texture cache. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-load"></a><h3>st_texture_cache_load ()</h3>
+<pre class="programlisting"><span class="returnvalue">CoglHandle</span>          st_texture_cache_load               (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="StTextureCache.html#StTextureCachePolicy" title="enum StTextureCachePolicy"><span class="type">StTextureCachePolicy</span></a> policy</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="StTextureCache.html#StTextureCacheLoader" title="StTextureCacheLoader ()"><span class="type">StTextureCacheLoader</span></a> load</code></em>,
+                                                         <em class="parameter"><code><span class="type">void</span> *data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Load an arbitrary texture, caching it.  The string chosen for <em class="parameter"><code>key</code></em>
+should be of the form "type-prefix:type-uuid".  For example,
+"url:file:///usr/share/icons/hicolor/48x48/apps/firefox.png", or
+"stock-icon:gtk-ok".
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>A <a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>Arbitrary string used to refer to item</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>policy</code></em> :</span></p></td>
+<td>Caching policy</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>load</code></em> :</span></p></td>
+<td>Function to create the texture, if not already cached</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>User data passed to <em class="parameter"><code>load</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>A <span class="type">GError</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A newly-referenced handle to the texture. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-load-file-to-cairo-surface"></a><h3>st_texture_cache_load_file_to_cairo_surface ()</h3>
+<pre class="programlisting"><span class="returnvalue">cairo_surface_t</span> *   st_texture_cache_load_file_to_cairo_surface
+                                                        (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *file_path</code></em>);</pre>
+<p>
+This function synchronously loads the given file path
+into a cairo surface.  On error, a warning is emitted
+and <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> is returned.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>A <a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file_path</code></em> :</span></p></td>
+<td>Path to a file in supported image format</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <span class="type">cairo_surface_t</span>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-load-file-to-cogl-texture"></a><h3>st_texture_cache_load_file_to_cogl_texture ()</h3>
+<pre class="programlisting"><span class="returnvalue">CoglHandle</span>          st_texture_cache_load_file_to_cogl_texture
+                                                        (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *file_path</code></em>);</pre>
+<p>
+This function synchronously loads the given file path
+into a COGL texture.  On error, a warning is emitted
+and <code class="literal">COGL_INVALID_HANDLE</code> is returned.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>A <a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file_path</code></em> :</span></p></td>
+<td>Path to a file in supported image format</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <span class="type">CoglHandle</span>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-load-from-raw"></a><h3>st_texture_cache_load_from_raw ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_texture_cache_load_from_raw      (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">guchar</span> *data</code></em>,
+                                                         <em class="parameter"><code><span class="type">gsize</span> len</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> has_alpha</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> width</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> height</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> rowstride</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> size</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Creates (or retrieves from cache) an icon based on raw pixel data.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>a <a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>raw pixel data. <span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=len]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
+<td>the length of <em class="parameter"><code>data</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>has_alpha</code></em> :</span></p></td>
+<td>whether <em class="parameter"><code>data</code></em> includes an alpha channel</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>width in pixels of <em class="parameter"><code>data</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>width in pixels of <em class="parameter"><code>data</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rowstride</code></em> :</span></p></td>
+<td>rowstride of <em class="parameter"><code>data</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>size of icon to return</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <span class="type">ClutterActor</span> displaying a
+pixbuf created from <em class="parameter"><code>data</code></em> and the other parameters. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-load-gicon"></a><h3>st_texture_cache_load_gicon ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_texture_cache_load_gicon         (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *theme_node</code></em>,
+                                                         <em class="parameter"><code><span class="type">GIcon</span> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> size</code></em>);</pre>
+<p>
+This method returns a new <span class="type">ClutterActor</span> for a given <span class="type">GIcon</span>. If the
+icon isn't loaded already, the texture will be filled
+asynchronously.
+</p>
+<p>
+This will load <em class="parameter"><code>icon</code></em> as a full-color icon; if you want a symbolic
+icon, you must use <a class="link" href="StTextureCache.html#st-texture-cache-load-icon-name" title="st_texture_cache_load_icon_name ()"><code class="function">st_texture_cache_load_icon_name()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>The texture cache instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theme_node</code></em> :</span></p></td>
+<td>The <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> to use for colors, or NULL
+if the icon must not be recolored. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>the <span class="type">GIcon</span> to load</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>Size of themed</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A new <span class="type">ClutterActor</span> for the icon, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if not found. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-load-icon-name"></a><h3>st_texture_cache_load_icon_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_texture_cache_load_icon_name     (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a> *theme_node</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                                                         <em class="parameter"><code><span class="type">StIconType</span> icon_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> size</code></em>);</pre>
+<p>
+Load a themed icon into a texture. See the <span class="type">StIconType</span> documentation
+for an explanation of how <em class="parameter"><code>icon_type</code></em> affects the returned icon. The
+colors used for symbolic icons are derived from <em class="parameter"><code>theme_node</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>The texture cache instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theme_node</code></em> :</span></p></td>
+<td>a <a class="link" href="st-st-theme-node.html#StThemeNode"><span class="type">StThemeNode</span></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>Name of a themed icon</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon_type</code></em> :</span></p></td>
+<td>the type of icon to load</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>Size of themed icon</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A new <span class="type">ClutterTexture</span> for the icon. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-load-sliced-image"></a><h3>st_texture_cache_load_sliced_image ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_texture_cache_load_sliced_image  (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *path</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> grid_width</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> grid_height</code></em>);</pre>
+<p>
+This function reads a single image file which contains multiple images internally.
+The image file will be divided using <em class="parameter"><code>grid_width</code></em> and <em class="parameter"><code>grid_height</code></em>;
+note that the dimensions of the image loaded from <em class="parameter"><code>path</code></em> 
+should be a multiple of the specified grid dimensions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>A <a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>Path to a filename</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>grid_width</code></em> :</span></p></td>
+<td>Width in pixels</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>grid_height</code></em> :</span></p></td>
+<td>Height in pixels</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A new <span class="type">ClutterActor</span>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-texture-cache-load-uri-async"></a><h3>st_texture_cache_load_uri_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_texture_cache_load_uri_async     (<em class="parameter"><code><a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *cache</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> available_width</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> available_height</code></em>);</pre>
+<p>
+Asynchronously load an image.   Initially, the returned texture will have a natural
+size of zero.  At some later point, either the image will be loaded successfully
+and at that point size will be negotiated, or upon an error, no image will be set.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>The texture cache instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>uri of the image file from which to create a pixbuf</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>available_width</code></em> :</span></p></td>
+<td>available width for the image, can be -1 if not limited</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>available_height</code></em> :</span></p></td>
+<td>available height for the image, can be -1 if not limited</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A new <span class="type">ClutterActor</span> with no image loaded initially. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StTextureCache.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="StTextureCache-icon-theme-changed"></a><h3>The <code class="literal">"icon-theme-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StTextureCache.html" title="StTextureCache"><span class="type">StTextureCache</span></a> *sttexturecache,
+                                                        <span class="type">gpointer</span>        user_data)           : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

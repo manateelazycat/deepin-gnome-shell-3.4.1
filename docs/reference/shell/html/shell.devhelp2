@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Shell Reference Manual" link="index.html" author="" name="shell" version="2" language="c">
+  <chapters>
+    <sub name="Actors" link="ch01.html">
+      <sub name="ShellGenericContainer" link="ShellGenericContainer.html"/>
+      <sub name="ShellSlicer" link="ShellSlicer.html"/>
+      <sub name="ShellStack" link="ShellStack.html"/>
+    </sub>
+    <sub name="Application tracking" link="ch02.html">
+      <sub name="ShellApp" link="shell-ShellApp.html"/>
+      <sub name="ShellAppUsage" link="shell-ShellAppUsage.html"/>
+      <sub name="ShellWindowTracker" link="shell-ShellWindowTracker.html"/>
+    </sub>
+    <sub name="Search" link="ch03.html">
+      <sub name="ShellAppSystem" link="ShellAppSystem.html"/>
+      <sub name="ShellContactSystem" link="ShellContactSystem.html"/>
+    </sub>
+    <sub name="Tray Icons" link="ch04.html">
+      <sub name="ShellEmbeddedWindow" link="ShellEmbeddedWindow.html"/>
+      <sub name="ShellGtkEmbed" link="ShellGtkEmbed.html"/>
+      <sub name="ShellTrayIcon" link="ShellTrayIcon.html"/>
+      <sub name="ShellTrayManager" link="ShellTrayManager.html"/>
+    </sub>
+    <sub name="Recorder" link="ch05.html">
+      <sub name="shell-recorder" link="shell-shell-recorder.html"/>
+    </sub>
+    <sub name="Integration helpers and utilities" link="ch06.html">
+      <sub name="ShellGlobal" link="shell-ShellGlobal.html"/>
+      <sub name="ShellWM" link="shell-ShellWM.html"/>
+      <sub name="shell-xfixes-cursor" link="shell-shell-xfixes-cursor.html"/>
+      <sub name="shell-util" link="shell-shell-util.html"/>
+      <sub name="ShellMountOperation" link="ShellMountOperation.html"/>
+      <sub name="shell-mobile-providers" link="shell-shell-mobile-providers.html"/>
+      <sub name="ShellNetworkAgent" link="ShellNetworkAgent.html"/>
+      <sub name="shell-polkit-authentication-agent" link="shell-shell-polkit-authentication-agent.html"/>
+      <sub name="ShellTpClient" link="shell-ShellTpClient.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="struct" name="struct ShellGenericContainer" link="ShellGenericContainer.html#ShellGenericContainer-struct"/>
+    <keyword type="struct" name="ShellGenericContainerAllocation" link="ShellGenericContainer.html#ShellGenericContainerAllocation-struct"/>
+    <keyword type="struct" name="struct ShellGenericContainerClass" link="ShellGenericContainer.html#ShellGenericContainerClass"/>
+    <keyword type="function" name="shell_generic_container_get_n_skip_paint ()" link="ShellGenericContainer.html#shell-generic-container-get-n-skip-paint"/>
+    <keyword type="function" name="shell_generic_container_get_skip_paint ()" link="ShellGenericContainer.html#shell-generic-container-get-skip-paint"/>
+    <keyword type="function" name="shell_generic_container_set_skip_paint ()" link="ShellGenericContainer.html#shell-generic-container-set-skip-paint"/>
+    <keyword type="signal" name="The &quot;allocate&quot; signal" link="ShellGenericContainer.html#ShellGenericContainer-allocate"/>
+    <keyword type="signal" name="The &quot;get-preferred-height&quot; signal" link="ShellGenericContainer.html#ShellGenericContainer-get-preferred-height"/>
+    <keyword type="signal" name="The &quot;get-preferred-width&quot; signal" link="ShellGenericContainer.html#ShellGenericContainer-get-preferred-width"/>
+    <keyword type="struct" name="struct ShellSlicer" link="ShellSlicer.html#ShellSlicer-struct"/>
+    <keyword type="struct" name="struct ShellSlicerClass" link="ShellSlicer.html#ShellSlicerClass"/>
+    <keyword type="struct" name="struct ShellStack" link="ShellStack.html#ShellStack-struct"/>
+    <keyword type="struct" name="struct ShellStackClass" link="ShellStack.html#ShellStackClass"/>
+    <keyword type="struct" name="ShellAppAction" link="shell-ShellApp.html#ShellAppAction"/>
+    <keyword type="struct" name="struct ShellAppClass" link="shell-ShellApp.html#ShellAppClass"/>
+    <keyword type="enum" name="enum ShellAppState" link="shell-ShellApp.html#ShellAppState-enum"/>
+    <keyword type="function" name="shell_app_activate ()" link="shell-ShellApp.html#shell-app-activate"/>
+    <keyword type="function" name="shell_app_activate_full ()" link="shell-ShellApp.html#shell-app-activate-full"/>
+    <keyword type="function" name="shell_app_activate_window ()" link="shell-ShellApp.html#shell-app-activate-window"/>
+    <keyword type="function" name="shell_app_compare ()" link="shell-ShellApp.html#shell-app-compare"/>
+    <keyword type="function" name="shell_app_compare_by_name ()" link="shell-ShellApp.html#shell-app-compare-by-name"/>
+    <keyword type="function" name="shell_app_create_icon_texture ()" link="shell-ShellApp.html#shell-app-create-icon-texture"/>
+    <keyword type="function" name="shell_app_get_app_info ()" link="shell-ShellApp.html#shell-app-get-app-info"/>
+    <keyword type="function" name="shell_app_get_description ()" link="shell-ShellApp.html#shell-app-get-description"/>
+    <keyword type="function" name="shell_app_get_faded_icon ()" link="shell-ShellApp.html#shell-app-get-faded-icon"/>
+    <keyword type="function" name="shell_app_get_id ()" link="shell-ShellApp.html#shell-app-get-id"/>
+    <keyword type="function" name="shell_app_get_n_windows ()" link="shell-ShellApp.html#shell-app-get-n-windows"/>
+    <keyword type="function" name="shell_app_get_name ()" link="shell-ShellApp.html#shell-app-get-name"/>
+    <keyword type="function" name="shell_app_get_pids ()" link="shell-ShellApp.html#shell-app-get-pids"/>
+    <keyword type="function" name="shell_app_get_state ()" link="shell-ShellApp.html#shell-app-get-state"/>
+    <keyword type="function" name="shell_app_get_tree_entry ()" link="shell-ShellApp.html#shell-app-get-tree-entry"/>
+    <keyword type="function" name="shell_app_get_windows ()" link="shell-ShellApp.html#shell-app-get-windows"/>
+    <keyword type="function" name="shell_app_is_on_workspace ()" link="shell-ShellApp.html#shell-app-is-on-workspace"/>
+    <keyword type="function" name="shell_app_is_window_backed ()" link="shell-ShellApp.html#shell-app-is-window-backed"/>
+    <keyword type="function" name="shell_app_launch ()" link="shell-ShellApp.html#shell-app-launch"/>
+    <keyword type="function" name="shell_app_open_new_window ()" link="shell-ShellApp.html#shell-app-open-new-window"/>
+    <keyword type="function" name="shell_app_request_quit ()" link="shell-ShellApp.html#shell-app-request-quit"/>
+    <keyword type="function" name="shell_app_update_window_actions ()" link="shell-ShellApp.html#shell-app-update-window-actions"/>
+    <keyword type="struct" name="struct ShellAppUsageClass" link="shell-ShellAppUsage.html#ShellAppUsageClass"/>
+    <keyword type="function" name="shell_app_usage_compare ()" link="shell-ShellAppUsage.html#shell-app-usage-compare"/>
+    <keyword type="function" name="shell_app_usage_get_default ()" link="shell-ShellAppUsage.html#shell-app-usage-get-default"/>
+    <keyword type="function" name="shell_app_usage_get_most_used ()" link="shell-ShellAppUsage.html#shell-app-usage-get-most-used"/>
+    <keyword type="struct" name="ShellStartupSequence" link="shell-ShellWindowTracker.html#ShellStartupSequence-struct"/>
+    <keyword type="struct" name="struct ShellWindowTrackerClass" link="shell-ShellWindowTracker.html#ShellWindowTrackerClass"/>
+    <keyword type="function" name="shell_startup_sequence_create_icon ()" link="shell-ShellWindowTracker.html#shell-startup-sequence-create-icon"/>
+    <keyword type="function" name="shell_startup_sequence_get_app ()" link="shell-ShellWindowTracker.html#shell-startup-sequence-get-app"/>
+    <keyword type="function" name="shell_startup_sequence_get_completed ()" link="shell-ShellWindowTracker.html#shell-startup-sequence-get-completed"/>
+    <keyword type="function" name="shell_startup_sequence_get_id ()" link="shell-ShellWindowTracker.html#shell-startup-sequence-get-id"/>
+    <keyword type="function" name="shell_startup_sequence_get_name ()" link="shell-ShellWindowTracker.html#shell-startup-sequence-get-name"/>
+    <keyword type="function" name="shell_startup_sequence_get_workspace ()" link="shell-ShellWindowTracker.html#shell-startup-sequence-get-workspace"/>
+    <keyword type="function" name="shell_window_tracker_get_app_from_pid ()" link="shell-ShellWindowTracker.html#shell-window-tracker-get-app-from-pid"/>
+    <keyword type="function" name="shell_window_tracker_get_default ()" link="shell-ShellWindowTracker.html#shell-window-tracker-get-default"/>
+    <keyword type="function" name="shell_window_tracker_get_startup_sequences ()" link="shell-ShellWindowTracker.html#shell-window-tracker-get-startup-sequences"/>
+    <keyword type="function" name="shell_window_tracker_get_window_app ()" link="shell-ShellWindowTracker.html#shell-window-tracker-get-window-app"/>
+    <keyword type="function" name="shell_window_tracker_is_window_interesting ()" link="shell-ShellWindowTracker.html#shell-window-tracker-is-window-interesting"/>
+    <keyword type="struct" name="struct ShellAppSystem" link="ShellAppSystem.html#ShellAppSystem-struct"/>
+    <keyword type="struct" name="struct ShellAppSystemClass" link="ShellAppSystem.html#ShellAppSystemClass"/>
+    <keyword type="function" name="shell_app_system_get_all ()" link="ShellAppSystem.html#shell-app-system-get-all"/>
+    <keyword type="function" name="shell_app_system_get_default ()" link="ShellAppSystem.html#shell-app-system-get-default"/>
+    <keyword type="function" name="shell_app_system_get_running ()" link="ShellAppSystem.html#shell-app-system-get-running"/>
+    <keyword type="function" name="shell_app_system_get_settings_tree ()" link="ShellAppSystem.html#shell-app-system-get-settings-tree"/>
+    <keyword type="function" name="shell_app_system_get_tree ()" link="ShellAppSystem.html#shell-app-system-get-tree"/>
+    <keyword type="function" name="shell_app_system_initial_search ()" link="ShellAppSystem.html#shell-app-system-initial-search"/>
+    <keyword type="function" name="shell_app_system_lookup_app ()" link="ShellAppSystem.html#shell-app-system-lookup-app"/>
+    <keyword type="function" name="shell_app_system_lookup_app_by_tree_entry ()" link="ShellAppSystem.html#shell-app-system-lookup-app-by-tree-entry"/>
+    <keyword type="function" name="shell_app_system_lookup_app_for_path ()" link="ShellAppSystem.html#shell-app-system-lookup-app-for-path"/>
+    <keyword type="function" name="shell_app_system_lookup_heuristic_basename ()" link="ShellAppSystem.html#shell-app-system-lookup-heuristic-basename"/>
+    <keyword type="function" name="shell_app_system_lookup_setting ()" link="ShellAppSystem.html#shell-app-system-lookup-setting"/>
+    <keyword type="function" name="shell_app_system_search_settings ()" link="ShellAppSystem.html#shell-app-system-search-settings"/>
+    <keyword type="function" name="shell_app_system_subsearch ()" link="ShellAppSystem.html#shell-app-system-subsearch"/>
+    <keyword type="signal" name="The &quot;app-state-changed&quot; signal" link="ShellAppSystem.html#ShellAppSystem-app-state-changed"/>
+    <keyword type="signal" name="The &quot;installed-changed&quot; signal" link="ShellAppSystem.html#ShellAppSystem-installed-changed"/>
+    <keyword type="struct" name="struct ShellContactSystem" link="ShellContactSystem.html#ShellContactSystem-struct"/>
+    <keyword type="struct" name="struct ShellContactSystemClass" link="ShellContactSystem.html#ShellContactSystemClass"/>
+    <keyword type="function" name="shell_contact_system_get_all ()" link="ShellContactSystem.html#shell-contact-system-get-all"/>
+    <keyword type="function" name="shell_contact_system_get_default ()" link="ShellContactSystem.html#shell-contact-system-get-default"/>
+    <keyword type="function" name="shell_contact_system_get_email_for_display ()" link="ShellContactSystem.html#shell-contact-system-get-email-for-display"/>
+    <keyword type="function" name="shell_contact_system_get_individual ()" link="ShellContactSystem.html#shell-contact-system-get-individual"/>
+    <keyword type="function" name="shell_contact_system_initial_search ()" link="ShellContactSystem.html#shell-contact-system-initial-search"/>
+    <keyword type="function" name="shell_contact_system_subsearch ()" link="ShellContactSystem.html#shell-contact-system-subsearch"/>
+    <keyword type="struct" name="struct ShellEmbeddedWindow" link="ShellEmbeddedWindow.html#ShellEmbeddedWindow-struct"/>
+    <keyword type="struct" name="struct ShellEmbeddedWindowClass" link="ShellEmbeddedWindow.html#ShellEmbeddedWindowClass"/>
+    <keyword type="function" name="shell_embedded_window_new ()" link="ShellEmbeddedWindow.html#shell-embedded-window-new"/>
+    <keyword type="property" name="The &quot;stage&quot; property" link="ShellEmbeddedWindow.html#ShellEmbeddedWindow--stage"/>
+    <keyword type="struct" name="struct ShellGtkEmbed" link="ShellGtkEmbed.html#ShellGtkEmbed-struct"/>
+    <keyword type="struct" name="struct ShellGtkEmbedClass" link="ShellGtkEmbed.html#ShellGtkEmbedClass"/>
+    <keyword type="function" name="shell_gtk_embed_new ()" link="ShellGtkEmbed.html#shell-gtk-embed-new"/>
+    <keyword type="property" name="The &quot;window&quot; property" link="ShellGtkEmbed.html#ShellGtkEmbed--window"/>
+    <keyword type="struct" name="struct ShellTrayIcon" link="ShellTrayIcon.html#ShellTrayIcon-struct"/>
+    <keyword type="struct" name="struct ShellTrayIconClass" link="ShellTrayIcon.html#ShellTrayIconClass"/>
+    <keyword type="function" name="shell_tray_icon_click ()" link="ShellTrayIcon.html#shell-tray-icon-click"/>
+    <keyword type="function" name="shell_tray_icon_new ()" link="ShellTrayIcon.html#shell-tray-icon-new"/>
+    <keyword type="property" name="The &quot;pid&quot; property" link="ShellTrayIcon.html#ShellTrayIcon--pid"/>
+    <keyword type="property" name="The &quot;title&quot; property" link="ShellTrayIcon.html#ShellTrayIcon--title"/>
+    <keyword type="property" name="The &quot;wm-class&quot; property" link="ShellTrayIcon.html#ShellTrayIcon--wm-class"/>
+    <keyword type="struct" name="struct ShellTrayManager" link="ShellTrayManager.html#ShellTrayManager-struct"/>
+    <keyword type="struct" name="struct ShellTrayManagerClass" link="ShellTrayManager.html#ShellTrayManagerClass"/>
+    <keyword type="function" name="shell_tray_manager_manage_stage ()" link="ShellTrayManager.html#shell-tray-manager-manage-stage"/>
+    <keyword type="function" name="shell_tray_manager_new ()" link="ShellTrayManager.html#shell-tray-manager-new"/>
+    <keyword type="property" name="The &quot;bg-color&quot; property" link="ShellTrayManager.html#ShellTrayManager--bg-color"/>
+    <keyword type="signal" name="The &quot;tray-icon-added&quot; signal" link="ShellTrayManager.html#ShellTrayManager-tray-icon-added"/>
+    <keyword type="signal" name="The &quot;tray-icon-removed&quot; signal" link="ShellTrayManager.html#ShellTrayManager-tray-icon-removed"/>
+    <keyword type="struct" name="ShellRecorder" link="shell-shell-recorder.html#ShellRecorder-struct"/>
+    <keyword type="struct" name="ShellRecorderClass" link="shell-shell-recorder.html#ShellRecorderClass"/>
+    <keyword type="function" name="shell_recorder_close ()" link="shell-shell-recorder.html#shell-recorder-close"/>
+    <keyword type="function" name="shell_recorder_is_recording ()" link="shell-shell-recorder.html#shell-recorder-is-recording"/>
+    <keyword type="function" name="shell_recorder_new ()" link="shell-shell-recorder.html#shell-recorder-new"/>
+    <keyword type="function" name="shell_recorder_pause ()" link="shell-shell-recorder.html#shell-recorder-pause"/>
+    <keyword type="function" name="shell_recorder_record ()" link="shell-shell-recorder.html#shell-recorder-record"/>
+    <keyword type="function" name="shell_recorder_set_filename ()" link="shell-shell-recorder.html#shell-recorder-set-filename"/>
+    <keyword type="function" name="shell_recorder_set_framerate ()" link="shell-shell-recorder.html#shell-recorder-set-framerate"/>
+    <keyword type="function" name="shell_recorder_set_pipeline ()" link="shell-shell-recorder.html#shell-recorder-set-pipeline"/>
+    <keyword type="property" name="The &quot;filename&quot; property" link="shell-shell-recorder.html#ShellRecorder--filename"/>
+    <keyword type="property" name="The &quot;framerate&quot; property" link="shell-shell-recorder.html#ShellRecorder--framerate"/>
+    <keyword type="property" name="The &quot;pipeline&quot; property" link="shell-shell-recorder.html#ShellRecorder--pipeline"/>
+    <keyword type="property" name="The &quot;stage&quot; property" link="shell-shell-recorder.html#ShellRecorder--stage"/>
+    <keyword type="enum" name="enum ShellCursor" link="shell-ShellGlobal.html#ShellCursor-enum"/>
+    <keyword type="struct" name="struct ShellGlobalClass" link="shell-ShellGlobal.html#ShellGlobalClass"/>
+    <keyword type="function" name="ShellLeisureFunction ()" link="shell-ShellGlobal.html#ShellLeisureFunction"/>
+    <keyword type="struct" name="ShellMemoryInfo" link="shell-ShellGlobal.html#ShellMemoryInfo"/>
+    <keyword type="enum" name="enum ShellSessionType" link="shell-ShellGlobal.html#ShellSessionType-enum"/>
+    <keyword type="enum" name="enum ShellStageInputMode" link="shell-ShellGlobal.html#ShellStageInputMode-enum"/>
+    <keyword type="function" name="shell_global_begin_modal ()" link="shell-ShellGlobal.html#shell-global-begin-modal"/>
+    <keyword type="function" name="shell_global_begin_work ()" link="shell-ShellGlobal.html#shell-global-begin-work"/>
+    <keyword type="function" name="shell_global_cancel_theme_sound ()" link="shell-ShellGlobal.html#shell-global-cancel-theme-sound"/>
+    <keyword type="function" name="shell_global_create_app_launch_context ()" link="shell-ShellGlobal.html#shell-global-create-app-launch-context"/>
+    <keyword type="function" name="shell_global_create_pointer_barrier ()" link="shell-ShellGlobal.html#shell-global-create-pointer-barrier"/>
+    <keyword type="function" name="shell_global_destroy_pointer_barrier ()" link="shell-ShellGlobal.html#shell-global-destroy-pointer-barrier"/>
+    <keyword type="function" name="shell_global_end_modal ()" link="shell-ShellGlobal.html#shell-global-end-modal"/>
+    <keyword type="function" name="shell_global_end_work ()" link="shell-ShellGlobal.html#shell-global-end-work"/>
+    <keyword type="function" name="shell_global_gc ()" link="shell-ShellGlobal.html#shell-global-gc"/>
+    <keyword type="function" name="shell_global_get ()" link="shell-ShellGlobal.html#shell-global-get"/>
+    <keyword type="function" name="shell_global_get_current_time ()" link="shell-ShellGlobal.html#shell-global-get-current-time"/>
+    <keyword type="function" name="shell_global_get_display ()" link="shell-ShellGlobal.html#shell-global-get-display"/>
+    <keyword type="function" name="shell_global_get_gdk_screen ()" link="shell-ShellGlobal.html#shell-global-get-gdk-screen"/>
+    <keyword type="function" name="shell_global_get_memory_info ()" link="shell-ShellGlobal.html#shell-global-get-memory-info"/>
+    <keyword type="function" name="shell_global_get_pointer ()" link="shell-ShellGlobal.html#shell-global-get-pointer"/>
+    <keyword type="function" name="shell_global_get_screen ()" link="shell-ShellGlobal.html#shell-global-get-screen"/>
+    <keyword type="function" name="shell_global_get_session_type ()" link="shell-ShellGlobal.html#shell-global-get-session-type"/>
+    <keyword type="function" name="shell_global_get_settings ()" link="shell-ShellGlobal.html#shell-global-get-settings"/>
+    <keyword type="function" name="shell_global_get_stage ()" link="shell-ShellGlobal.html#shell-global-get-stage"/>
+    <keyword type="function" name="shell_global_get_window_actors ()" link="shell-ShellGlobal.html#shell-global-get-window-actors"/>
+    <keyword type="function" name="shell_global_init_xdnd ()" link="shell-ShellGlobal.html#shell-global-init-xdnd"/>
+    <keyword type="function" name="shell_global_launch_calendar_server ()" link="shell-ShellGlobal.html#shell-global-launch-calendar-server"/>
+    <keyword type="function" name="shell_global_maybe_gc ()" link="shell-ShellGlobal.html#shell-global-maybe-gc"/>
+    <keyword type="function" name="shell_global_notify_error ()" link="shell-ShellGlobal.html#shell-global-notify-error"/>
+    <keyword type="function" name="shell_global_play_theme_sound ()" link="shell-ShellGlobal.html#shell-global-play-theme-sound"/>
+    <keyword type="function" name="shell_global_reexec_self ()" link="shell-ShellGlobal.html#shell-global-reexec-self"/>
+    <keyword type="function" name="shell_global_run_at_leisure ()" link="shell-ShellGlobal.html#shell-global-run-at-leisure"/>
+    <keyword type="function" name="shell_global_set_cursor ()" link="shell-ShellGlobal.html#shell-global-set-cursor"/>
+    <keyword type="function" name="shell_global_set_stage_input_mode ()" link="shell-ShellGlobal.html#shell-global-set-stage-input-mode"/>
+    <keyword type="function" name="shell_global_set_stage_input_region ()" link="shell-ShellGlobal.html#shell-global-set-stage-input-region"/>
+    <keyword type="function" name="shell_global_sync_pointer ()" link="shell-ShellGlobal.html#shell-global-sync-pointer"/>
+    <keyword type="function" name="shell_global_unset_cursor ()" link="shell-ShellGlobal.html#shell-global-unset-cursor"/>
+    <keyword type="struct" name="struct ShellWMClass" link="shell-ShellWM.html#ShellWMClass"/>
+    <keyword type="function" name="shell_wm_completed_destroy ()" link="shell-ShellWM.html#shell-wm-completed-destroy"/>
+    <keyword type="function" name="shell_wm_completed_map ()" link="shell-ShellWM.html#shell-wm-completed-map"/>
+    <keyword type="function" name="shell_wm_completed_maximize ()" link="shell-ShellWM.html#shell-wm-completed-maximize"/>
+    <keyword type="function" name="shell_wm_completed_minimize ()" link="shell-ShellWM.html#shell-wm-completed-minimize"/>
+    <keyword type="function" name="shell_wm_completed_switch_workspace ()" link="shell-ShellWM.html#shell-wm-completed-switch-workspace"/>
+    <keyword type="function" name="shell_wm_completed_unmaximize ()" link="shell-ShellWM.html#shell-wm-completed-unmaximize"/>
+    <keyword type="function" name="shell_wm_new ()" link="shell-ShellWM.html#shell-wm-new"/>
+    <keyword type="struct" name="ShellXFixesCursor" link="shell-shell-xfixes-cursor.html#ShellXFixesCursor-struct"/>
+    <keyword type="struct" name="ShellXFixesCursorClass" link="shell-shell-xfixes-cursor.html#ShellXFixesCursorClass"/>
+    <keyword type="function" name="shell_xfixes_cursor_get_for_stage ()" link="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-get-for-stage"/>
+    <keyword type="function" name="shell_xfixes_cursor_get_hot_x ()" link="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-get-hot-x"/>
+    <keyword type="function" name="shell_xfixes_cursor_get_hot_y ()" link="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-get-hot-y"/>
+    <keyword type="function" name="shell_xfixes_cursor_hide ()" link="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-hide"/>
+    <keyword type="function" name="shell_xfixes_cursor_show ()" link="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-show"/>
+    <keyword type="function" name="shell_xfixes_cursor_update_texture_image ()" link="shell-shell-xfixes-cursor.html#shell-xfixes-cursor-update-texture-image"/>
+    <keyword type="property" name="The &quot;stage&quot; property" link="shell-shell-xfixes-cursor.html#ShellXFixesCursor--stage"/>
+    <keyword type="signal" name="The &quot;cursor-change&quot; signal" link="shell-shell-xfixes-cursor.html#ShellXFixesCursor-cursor-change"/>
+    <keyword type="function" name="shell_get_file_contents_utf8_sync ()" link="shell-shell-util.html#shell-get-file-contents-utf8-sync"/>
+    <keyword type="function" name="shell_parse_search_provider ()" link="shell-shell-util.html#shell-parse-search-provider"/>
+    <keyword type="function" name="shell_session_is_active_for_systemd ()" link="shell-shell-util.html#shell-session-is-active-for-systemd"/>
+    <keyword type="function" name="shell_shader_effect_set_double_uniform ()" link="shell-shell-util.html#shell-shader-effect-set-double-uniform"/>
+    <keyword type="function" name="shell_util_format_date ()" link="shell-shell-util.html#shell-util-format-date"/>
+    <keyword type="function" name="shell_util_get_icon_for_uri ()" link="shell-shell-util.html#shell-util-get-icon-for-uri"/>
+    <keyword type="function" name="shell_util_get_label_for_uri ()" link="shell-shell-util.html#shell-util-get-label-for-uri"/>
+    <keyword type="function" name="shell_util_get_transformed_allocation ()" link="shell-shell-util.html#shell-util-get-transformed-allocation"/>
+    <keyword type="function" name="shell_util_get_week_start ()" link="shell-shell-util.html#shell-util-get-week-start"/>
+    <keyword type="function" name="shell_util_normalize_and_casefold ()" link="shell-shell-util.html#shell-util-normalize-and-casefold"/>
+    <keyword type="function" name="shell_util_set_hidden_from_pick ()" link="shell-shell-util.html#shell-util-set-hidden-from-pick"/>
+    <keyword type="function" name="shell_util_wifexited ()" link="shell-shell-util.html#shell-util-wifexited"/>
+    <keyword type="function" name="shell_write_soup_message_to_stream ()" link="shell-shell-util.html#shell-write-soup-message-to-stream"/>
+    <keyword type="function" name="shell_write_string_to_stream ()" link="shell-shell-util.html#shell-write-string-to-stream"/>
+    <keyword type="struct" name="struct ShellMountOperation" link="ShellMountOperation.html#ShellMountOperation-struct"/>
+    <keyword type="struct" name="struct ShellMountOperationClass" link="ShellMountOperation.html#ShellMountOperationClass"/>
+    <keyword type="function" name="shell_mount_operation_get_show_processes_choices ()" link="ShellMountOperation.html#shell-mount-operation-get-show-processes-choices"/>
+    <keyword type="function" name="shell_mount_operation_get_show_processes_message ()" link="ShellMountOperation.html#shell-mount-operation-get-show-processes-message"/>
+    <keyword type="function" name="shell_mount_operation_get_show_processes_pids ()" link="ShellMountOperation.html#shell-mount-operation-get-show-processes-pids"/>
+    <keyword type="function" name="shell_mount_operation_new ()" link="ShellMountOperation.html#shell-mount-operation-new"/>
+    <keyword type="signal" name="The &quot;show-processes-2&quot; signal" link="ShellMountOperation.html#ShellMountOperation-show-processes-2"/>
+    <keyword type="struct" name="ShellGsmMccMnc" link="shell-shell-mobile-providers.html#ShellGsmMccMnc-struct"/>
+    <keyword type="struct" name="ShellMobileAccessMethod" link="shell-shell-mobile-providers.html#ShellMobileAccessMethod-struct"/>
+    <keyword type="enum" name="enum ShellMobileAccessMethodType" link="shell-shell-mobile-providers.html#ShellMobileAccessMethodType-enum"/>
+    <keyword type="struct" name="ShellMobileProvider" link="shell-shell-mobile-providers.html#ShellMobileProvider-struct"/>
+    <keyword type="function" name="shell_mobile_access_method_ref ()" link="shell-shell-mobile-providers.html#shell-mobile-access-method-ref"/>
+    <keyword type="function" name="shell_mobile_access_method_unref ()" link="shell-shell-mobile-providers.html#shell-mobile-access-method-unref"/>
+    <keyword type="function" name="shell_mobile_provider_get_cdma_sid ()" link="shell-shell-mobile-providers.html#shell-mobile-provider-get-cdma-sid"/>
+    <keyword type="function" name="shell_mobile_provider_get_gsm_mcc_mnc ()" link="shell-shell-mobile-providers.html#shell-mobile-provider-get-gsm-mcc-mnc"/>
+    <keyword type="function" name="shell_mobile_provider_ref ()" link="shell-shell-mobile-providers.html#shell-mobile-provider-ref"/>
+    <keyword type="function" name="shell_mobile_provider_unref ()" link="shell-shell-mobile-providers.html#shell-mobile-provider-unref"/>
+    <keyword type="function" name="shell_mobile_providers_dump ()" link="shell-shell-mobile-providers.html#shell-mobile-providers-dump"/>
+    <keyword type="function" name="shell_mobile_providers_parse ()" link="shell-shell-mobile-providers.html#shell-mobile-providers-parse"/>
+    <keyword type="macro" name="SHELL_KEYRING_SK_TAG" link="ShellNetworkAgent.html#SHELL-KEYRING-SK-TAG:CAPS"/>
+    <keyword type="macro" name="SHELL_KEYRING_SN_TAG" link="ShellNetworkAgent.html#SHELL-KEYRING-SN-TAG:CAPS"/>
+    <keyword type="macro" name="SHELL_KEYRING_UUID_TAG" link="ShellNetworkAgent.html#SHELL-KEYRING-UUID-TAG:CAPS"/>
+    <keyword type="struct" name="struct ShellNetworkAgent" link="ShellNetworkAgent.html#ShellNetworkAgent-struct"/>
+    <keyword type="struct" name="struct ShellNetworkAgentClass" link="ShellNetworkAgent.html#ShellNetworkAgentClass"/>
+    <keyword type="enum" name="enum ShellNetworkAgentResponse" link="ShellNetworkAgent.html#ShellNetworkAgentResponse-enum"/>
+    <keyword type="function" name="shell_network_agent_new ()" link="ShellNetworkAgent.html#shell-network-agent-new"/>
+    <keyword type="function" name="shell_network_agent_respond ()" link="ShellNetworkAgent.html#shell-network-agent-respond"/>
+    <keyword type="function" name="shell_network_agent_set_password ()" link="ShellNetworkAgent.html#shell-network-agent-set-password"/>
+    <keyword type="signal" name="The &quot;cancel-request&quot; signal" link="ShellNetworkAgent.html#ShellNetworkAgent-cancel-request"/>
+    <keyword type="signal" name="The &quot;new-request&quot; signal" link="ShellNetworkAgent.html#ShellNetworkAgent-new-request"/>
+    <keyword type="struct" name="ShellPolkitAuthenticationAgent" link="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent-struct"/>
+    <keyword type="struct" name="ShellPolkitAuthenticationAgentClass" link="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgentClass"/>
+    <keyword type="function" name="shell_polkit_authentication_agent_complete ()" link="shell-shell-polkit-authentication-agent.html#shell-polkit-authentication-agent-complete"/>
+    <keyword type="function" name="shell_polkit_authentication_agent_new ()" link="shell-shell-polkit-authentication-agent.html#shell-polkit-authentication-agent-new"/>
+    <keyword type="signal" name="The &quot;cancel&quot; signal" link="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent-cancel"/>
+    <keyword type="signal" name="The &quot;initiate&quot; signal" link="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent-initiate"/>
+    <keyword type="function" name="ShellTpClientApproveChannelsImpl ()" link="shell-ShellTpClient.html#ShellTpClientApproveChannelsImpl"/>
+    <keyword type="struct" name="struct ShellTpClientClass" link="shell-ShellTpClient.html#ShellTpClientClass"/>
+    <keyword type="function" name="ShellTpClientContactListChangedImpl ()" link="shell-ShellTpClient.html#ShellTpClientContactListChangedImpl"/>
+    <keyword type="function" name="ShellTpClientHandleChannelsImpl ()" link="shell-ShellTpClient.html#ShellTpClientHandleChannelsImpl"/>
+    <keyword type="function" name="ShellTpClientObserveChannelsImpl ()" link="shell-ShellTpClient.html#ShellTpClientObserveChannelsImpl"/>
+    <keyword type="function" name="shell_decline_dispatch_op ()" link="shell-ShellTpClient.html#shell-decline-dispatch-op"/>
+    <keyword type="function" name="shell_get_contact_events ()" link="shell-ShellTpClient.html#shell-get-contact-events"/>
+    <keyword type="function" name="shell_tp_client_grab_contact_list_changed ()" link="shell-ShellTpClient.html#shell-tp-client-grab-contact-list-changed"/>
+    <keyword type="function" name="shell_tp_client_set_approve_channels_func ()" link="shell-ShellTpClient.html#shell-tp-client-set-approve-channels-func"/>
+    <keyword type="function" name="shell_tp_client_set_contact_list_changed_func ()" link="shell-ShellTpClient.html#shell-tp-client-set-contact-list-changed-func"/>
+    <keyword type="function" name="shell_tp_client_set_handle_channels_func ()" link="shell-ShellTpClient.html#shell-tp-client-set-handle-channels-func"/>
+    <keyword type="function" name="shell_tp_client_set_observe_channels_func ()" link="shell-ShellTpClient.html#shell-tp-client-set-observe-channels-func"/>
+  </functions>
+</book>

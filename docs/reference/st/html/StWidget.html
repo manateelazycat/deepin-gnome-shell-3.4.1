@@ -1,0 +1,1358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StWidget</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="base.html" title="Abstract classes and Interfaces">
+<link rel="prev" href="base.html" title="Abstract classes and Interfaces">
+<link rel="next" href="StWidgetAccessible.html" title="StWidgetAccessible">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="base.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="base.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StWidgetAccessible.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StWidget.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StWidget.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StWidget.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StWidget.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StWidget.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#StWidget.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StWidget"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StWidget.top_of_page"></a>StWidget</span></h2>
+<p>StWidget — Base class for stylable actors</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StWidget.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StWidget.html#StWidget-struct" title="struct StWidget">StWidget</a>;
+struct              <a class="link" href="StWidget.html#StWidgetClass" title="struct StWidgetClass">StWidgetClass</a>;
+<span class="returnvalue">char</span> *              <a class="link" href="StWidget.html#st-describe-actor" title="st_describe_actor ()">st_describe_actor</a>                   (<em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>);
+<span class="returnvalue">gfloat</span>              <a class="link" href="StWidget.html#st-get-slow-down-factor" title="st_get_slow_down_factor ()">st_get_slow_down_factor</a>             (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-set-slow-down-factor" title="st_set_slow_down_factor ()">st_set_slow_down_factor</a>             (<em class="parameter"><code><span class="type">gfloat</span> factor</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-add-accessible-state" title="st_widget_add_accessible_state ()">st_widget_add_accessible_state</a>      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">AtkStateType</span> state</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-add-style-class-name" title="st_widget_add_style_class_name ()">st_widget_add_style_class_name</a>      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style_class</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-add-style-pseudo-class" title="st_widget_add_style_pseudo_class ()">st_widget_add_style_pseudo_class</a>    (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *pseudo_class</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-ensure-style" title="st_widget_ensure_style ()">st_widget_ensure_style</a>              (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StWidget.html#st-widget-get-accessible-name" title="st_widget_get_accessible_name ()">st_widget_get_accessible_name</a>       (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">AtkRole</span>             <a class="link" href="StWidget.html#st-widget-get-accessible-role" title="st_widget_get_accessible_role ()">st_widget_get_accessible_role</a>       (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StWidget.html#st-widget-get-can-focus" title="st_widget_get_can_focus ()">st_widget_get_can_focus</a>             (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">GList</span> *             <a class="link" href="StWidget.html#st-widget-get-focus-chain" title="st_widget_get_focus_chain ()">st_widget_get_focus_chain</a>           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StWidget.html#st-widget-get-hover" title="st_widget_get_hover ()">st_widget_get_hover</a>                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StWidget.html#st-widget-get-label-actor" title="st_widget_get_label_actor ()">st_widget_get_label_actor</a>           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StWidget.html#st-widget-get-style" title="st_widget_get_style ()">st_widget_get_style</a>                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StWidget.html#st-widget-get-style-class-name" title="st_widget_get_style_class_name ()">st_widget_get_style_class_name</a>      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StWidget.html#st-widget-get-style-pseudo-class" title="st_widget_get_style_pseudo_class ()">st_widget_get_style_pseudo_class</a>    (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>);
+<a class="link" href="st-st-theme-node.html#StTheme"><span class="returnvalue">StTheme</span></a> *           <a class="link" href="StWidget.html#st-widget-get-theme" title="st_widget_get_theme ()">st_widget_get_theme</a>                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>);
+<a class="link" href="st-st-theme-node.html#StThemeNode"><span class="returnvalue">StThemeNode</span></a> *       <a class="link" href="StWidget.html#st-widget-get-theme-node" title="st_widget_get_theme_node ()">st_widget_get_theme_node</a>            (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StWidget.html#st-widget-get-track-hover" title="st_widget_get_track_hover ()">st_widget_get_track_hover</a>           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StWidget.html#st-widget-has-style-class-name" title="st_widget_has_style_class_name ()">st_widget_has_style_class_name</a>      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style_class</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StWidget.html#st-widget-has-style-pseudo-class" title="st_widget_has_style_pseudo_class ()">st_widget_has_style_pseudo_class</a>    (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *pseudo_class</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StWidget.html#st-widget-navigate-focus" title="st_widget_navigate_focus ()">st_widget_navigate_focus</a>            (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *from</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkDirectionType</span> direction</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> wrap_around</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-paint-background" title="st_widget_paint_background ()">st_widget_paint_background</a>          (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<a class="link" href="st-st-theme-node.html#StThemeNode"><span class="returnvalue">StThemeNode</span></a> *       <a class="link" href="StWidget.html#st-widget-peek-theme-node" title="st_widget_peek_theme_node ()">st_widget_peek_theme_node</a>           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-remove-accessible-state" title="st_widget_remove_accessible_state ()">st_widget_remove_accessible_state</a>   (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">AtkStateType</span> state</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-remove-style-class-name" title="st_widget_remove_style_class_name ()">st_widget_remove_style_class_name</a>   (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style_class</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-remove-style-pseudo-class" title="st_widget_remove_style_pseudo_class ()">st_widget_remove_style_pseudo_class</a> (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *pseudo_class</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-accessible-name" title="st_widget_set_accessible_name ()">st_widget_set_accessible_name</a>       (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-accessible-role" title="st_widget_set_accessible_role ()">st_widget_set_accessible_role</a>       (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">AtkRole</span> role</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-can-focus" title="st_widget_set_can_focus ()">st_widget_set_can_focus</a>             (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> can_focus</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-hover" title="st_widget_set_hover ()">st_widget_set_hover</a>                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> hover</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-label-actor" title="st_widget_set_label_actor ()">st_widget_set_label_actor</a>           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *label</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-style" title="st_widget_set_style ()">st_widget_set_style</a>                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-style-class-name" title="st_widget_set_style_class_name ()">st_widget_set_style_class_name</a>      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style_class_list</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-style-pseudo-class" title="st_widget_set_style_pseudo_class ()">st_widget_set_style_pseudo_class</a>    (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *pseudo_class_list</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-theme" title="st_widget_set_theme ()">st_widget_set_theme</a>                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StTheme"><span class="type">StTheme</span></a> *theme</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-set-track-hover" title="st_widget_set_track_hover ()">st_widget_set_track_hover</a>           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> track_hover</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-style-changed" title="st_widget_style_changed ()">st_widget_style_changed</a>             (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StWidget.html#st-widget-sync-hover" title="st_widget_sync_hover ()">st_widget_sync_hover</a>                (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StWidget.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----StWidget
+                     +----<a class="link" href="StBin.html" title="StBin">StBin</a>
+                     +----<a class="link" href="StBoxLayout.html" title="StBoxLayout">StBoxLayout</a>
+                     +----<a class="link" href="StDrawingArea.html" title="StDrawingArea">StDrawingArea</a>
+                     +----<a class="link" href="StEntry.html" title="StEntry">StEntry</a>
+                     +----<a class="link" href="StIcon.html" title="StIcon">StIcon</a>
+                     +----<a class="link" href="StLabel.html" title="StLabel">StLabel</a>
+                     +----StScrollBar
+                     +----<a class="link" href="StTable.html" title="StTable">StTable</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="StWidget.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StWidget implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StWidget.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StWidget.html#StWidget--accessible-name" title='The "accessible-name" property'>accessible-name</a>"          <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--accessible-role" title='The "accessible-role" property'>accessible-role</a>"          <span class="type">AtkRole</span>               : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--can-focus" title='The "can-focus" property'>can-focus</a>"                <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--hover" title='The "hover" property'>hover</a>"                    <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--label-actor" title='The "label-actor" property'>label-actor</a>"              <span class="type">ClutterActor</span>*         : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--pseudo-class" title='The "pseudo-class" property'>pseudo-class</a>"             <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--stylable" title='The "stylable" property'>stylable</a>"                 <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--style" title='The "style" property'>style</a>"                    <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--style-class" title='The "style-class" property'>style-class</a>"              <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--theme" title='The "theme" property'>theme</a>"                    <a class="link" href="st-st-theme-node.html#StTheme"><span class="type">StTheme</span></a>*              : Read / Write
+  "<a class="link" href="StWidget.html#StWidget--track-hover" title='The "track-hover" property'>track-hover</a>"              <span class="type">gboolean</span>              : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="StWidget.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="StWidget.html#StWidget-popup-menu" title='The "popup-menu" signal'>popup-menu</a>"                                     : <code class="literal">Run Last</code>
+  "<a class="link" href="StWidget.html#StWidget-style-changed" title='The "style-changed" signal'>style-changed</a>"                                  : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="StWidget.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> is a simple abstract class on top of <span class="type">ClutterActor</span>. It
+provides basic themeing properties.
+</p>
+<p>
+Actors in the St library should subclass <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> if they plan
+to obey to a certain <span class="type">StStyle</span>.
+</p>
+</div>
+<div class="refsect1">
+<a name="StWidget.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StWidget-struct"></a><h3>struct StWidget</h3>
+<pre class="programlisting">struct StWidget;</pre>
+<p>
+Base class for stylable actors. The contents of the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+structure are private and should only be accessed through the
+public API.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidgetClass"></a><h3>struct StWidgetClass</h3>
+<pre class="programlisting">struct StWidgetClass {
+};
+</pre>
+<p>
+Base class for stylable actors.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-describe-actor"></a><h3>st_describe_actor ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *              st_describe_actor                   (<em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>);</pre>
+<p>
+Creates a string describing <em class="parameter"><code>actor</code></em>, for use in debugging. This
+includes the class name and actor name (if any), plus if <em class="parameter"><code>actor</code></em>
+is an <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>, its style class and pseudo class names.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <span class="type">ClutterActor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the debug name.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-get-slow-down-factor"></a><h3>st_get_slow_down_factor ()</h3>
+<pre class="programlisting"><span class="returnvalue">gfloat</span>              st_get_slow_down_factor             (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the global factor applied to all animation durations</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-set-slow-down-factor"></a><h3>st_set_slow_down_factor ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_set_slow_down_factor             (<em class="parameter"><code><span class="type">gfloat</span> factor</code></em>);</pre>
+<p>
+Set a global factor applied to all animation durations
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>factor</code></em> :</span></p></td>
+<td>new slow-down factor</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-add-accessible-state"></a><h3>st_widget_add_accessible_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_add_accessible_state      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">AtkStateType</span> state</code></em>);</pre>
+<p>
+This method adds <em class="parameter"><code>state</code></em> as one of the accessible states for
+<em class="parameter"><code>widget</code></em>. The list of states of a widget describes the current state
+of user interface element <em class="parameter"><code>widget</code></em> and is provided so that assistive
+technologies know how to present <em class="parameter"><code>widget</code></em> to the user.
+</p>
+<p>
+Usually you will have no need to add accessible states for an
+object, as the accessible object can extract most of the states
+from the object itself (ie: a <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> knows when it is pressed).
+This method is only required when one cannot extract the
+information automatically from the object itself (i.e.: a generic
+container used as a toggle menu item will not automatically include
+the toggled state).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>state</code></em> :</span></p></td>
+<td>
+<span class="type">AtkStateType</span> state to add</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-add-style-class-name"></a><h3>st_widget_add_style_class_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_add_style_class_name      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style_class</code></em>);</pre>
+<p>
+Adds <em class="parameter"><code>style_class</code></em> to <em class="parameter"><code>actor</code></em>'s style class name list, if it is not
+already present.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style_class</code></em> :</span></p></td>
+<td>a style class name string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-add-style-pseudo-class"></a><h3>st_widget_add_style_pseudo_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_add_style_pseudo_class    (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *pseudo_class</code></em>);</pre>
+<p>
+Adds <em class="parameter"><code>pseudo_class</code></em> to <em class="parameter"><code>actor</code></em>'s pseudo class list, if it is not
+already present.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pseudo_class</code></em> :</span></p></td>
+<td>a pseudo class string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-ensure-style"></a><h3>st_widget_ensure_style ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_ensure_style              (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Ensures that <em class="parameter"><code>widget</code></em> has read its style information.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-accessible-name"></a><h3>st_widget_get_accessible_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_widget_get_accessible_name       (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Gets the accessible name for this widget. See
+<a class="link" href="StWidget.html#st-widget-set-accessible-name" title="st_widget_set_accessible_name ()"><code class="function">st_widget_set_accessible_name()</code></a> for more information.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>widget to get the accessible name for</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a character string representing the accessible name
+of the widget.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-accessible-role"></a><h3>st_widget_get_accessible_role ()</h3>
+<pre class="programlisting"><span class="returnvalue">AtkRole</span>             st_widget_get_accessible_role       (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Gets the <span class="type">AtkRole</span> for this widget. See
+<a class="link" href="StWidget.html#st-widget-set-accessible-role" title="st_widget_set_accessible_role ()"><code class="function">st_widget_set_accessible_role()</code></a> for more information.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>widget to get the accessible role for</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>accessible <span class="type">AtkRole</span> for this widget</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-can-focus"></a><h3>st_widget_get_can_focus ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_widget_get_can_focus             (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Returns the current value of the can-focus property. See
+<a class="link" href="StWidget.html#st-widget-set-can-focus" title="st_widget_set_can_focus ()"><code class="function">st_widget_set_can_focus()</code></a> for more information.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>current value of can-focus on <em class="parameter"><code>widget</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-focus-chain"></a><h3>st_widget_get_focus_chain ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *             st_widget_get_focus_chain           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Gets a list of the focusable children of <em class="parameter"><code>widget</code></em>, in "Tab"
+order. By default, this returns all visible
+(as in <code class="function">CLUTTER_ACTOR_IS_VISIBLE()</code>) children of <em class="parameter"><code>widget</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>An <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<em class="parameter"><code>widget</code></em>'s focusable children. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Clutter.Actor][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-hover"></a><h3>st_widget_get_hover ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_widget_get_hover                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+If <a class="link" href="StWidget.html#StWidget--track-hover" title='The "track-hover" property'><span class="type">"track-hover"</span></a> is set, this returns whether the pointer
+is currently over the widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>current value of hover on <em class="parameter"><code>widget</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-label-actor"></a><h3>st_widget_get_label_actor ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_widget_get_label_actor           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Gets the label that identifies <em class="parameter"><code>widget</code></em> if it is defined
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the label that identifies the widget. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-style"></a><h3>st_widget_get_style ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_widget_get_style                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>);</pre>
+<p>
+Get the current inline style string. See <a class="link" href="StWidget.html#st-widget-set-style" title="st_widget_set_style ()"><code class="function">st_widget_set_style()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The inline style string, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. The string is owned by the
+<a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> and should not be modified or freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-style-class-name"></a><h3>st_widget_get_style_class_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_widget_get_style_class_name      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>);</pre>
+<p>
+Get the current style class name
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the class name string. The string is owned by the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> and
+should not be modified or freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-style-pseudo-class"></a><h3>st_widget_get_style_pseudo_class ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_widget_get_style_pseudo_class    (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>);</pre>
+<p>
+Get the current style pseudo class list.
+</p>
+<p>
+Note that an actor can have multiple pseudo classes; if you just
+want to test for the presence of a specific pseudo class, use
+<a class="link" href="StWidget.html#st-widget-has-style-pseudo-class" title="st_widget_has_style_pseudo_class ()"><code class="function">st_widget_has_style_pseudo_class()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the pseudo class list string. The string is owned by the
+<a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> and should not be modified or freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-theme"></a><h3>st_widget_get_theme ()</h3>
+<pre class="programlisting"><a class="link" href="st-st-theme-node.html#StTheme"><span class="returnvalue">StTheme</span></a> *           st_widget_get_theme                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>);</pre>
+<p>
+Gets the overriding theme set on the actor. See <a class="link" href="StWidget.html#st-widget-set-theme" title="st_widget_set_theme ()"><code class="function">st_widget_set_theme()</code></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the overriding theme, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-theme-node"></a><h3>st_widget_get_theme_node ()</h3>
+<pre class="programlisting"><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="returnvalue">StThemeNode</span></a> *       st_widget_get_theme_node            (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Gets the theme node holding style information for the widget.
+The theme node is used to access standard and custom CSS
+properties of the widget.
+</p>
+<p>
+Note: it is a fatal error to call this on a widget that is
+ not been added to a stage.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the theme node for the widget.
+This is owned by the widget. When attributes of the widget
+or the environment that affect the styling change (for example
+the style_class property of the widget), it will be recreated,
+and the ::style-changed signal will be emitted on the widget. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-get-track-hover"></a><h3>st_widget_get_track_hover ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_widget_get_track_hover           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Returns the current value of the track-hover property. See
+<a class="link" href="StWidget.html#st-widget-set-track-hover" title="st_widget_set_track_hover ()"><code class="function">st_widget_set_track_hover()</code></a> for more information.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>current value of track-hover on <em class="parameter"><code>widget</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-has-style-class-name"></a><h3>st_widget_has_style_class_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_widget_has_style_class_name      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style_class</code></em>);</pre>
+<p>
+Tests if <em class="parameter"><code>actor</code></em>'s style class list includes <em class="parameter"><code>style_class</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style_class</code></em> :</span></p></td>
+<td>a style class string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>whether or not <em class="parameter"><code>actor</code></em>'s style class list includes
+<em class="parameter"><code>style_class</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-has-style-pseudo-class"></a><h3>st_widget_has_style_pseudo_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_widget_has_style_pseudo_class    (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *pseudo_class</code></em>);</pre>
+<p>
+Tests if <em class="parameter"><code>actor</code></em>'s pseudo class list includes <em class="parameter"><code>pseudo_class</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pseudo_class</code></em> :</span></p></td>
+<td>a pseudo class string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>whether or not <em class="parameter"><code>actor</code></em>'s pseudo class list includes
+<em class="parameter"><code>pseudo_class</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-navigate-focus"></a><h3>st_widget_navigate_focus ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_widget_navigate_focus            (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *from</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkDirectionType</span> direction</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> wrap_around</code></em>);</pre>
+<p>
+Tries to update the keyboard focus within <em class="parameter"><code>widget</code></em> in response to a
+keyboard event.
+</p>
+<p>
+If <em class="parameter"><code>from</code></em> is a descendant of <em class="parameter"><code>widget</code></em>, this attempts to move the
+keyboard focus to the next descendant of <em class="parameter"><code>widget</code></em> (in the order
+implied by <em class="parameter"><code>direction</code></em>) that has the <a class="link" href="StWidget.html#StWidget--can-focus" title='The "can-focus" property'><span class="type">"can-focus"</span></a> property
+set. If <em class="parameter"><code>from</code></em> is <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>, this attempts to focus either <em class="parameter"><code>widget</code></em>
+itself, or its first descendant in the order implied by
+<em class="parameter"><code>direction</code></em>. If <em class="parameter"><code>from</code></em> is outside of <em class="parameter"><code>widget</code></em>, it behaves as if it was
+a descendant if <em class="parameter"><code>direction</code></em> is one of the directional arrows and as
+if it was <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> otherwise.
+</p>
+<p>
+If a container type is marked <a class="link" href="StWidget.html#StWidget--can-focus" title='The "can-focus" property'><span class="type">"can-focus"</span></a>, the expected
+behavior is that it will only take up a single slot on the focus
+chain as a whole, rather than allowing navigation between its child
+actors (or having a distinction between itself being focused and
+one of its children being focused).
+</p>
+<p>
+Some widget classes might have slightly different behavior from the
+above, where that would make more sense.
+</p>
+<p>
+If <em class="parameter"><code>wrap_around</code></em> is <code class="literal">TRUE</code> and <em class="parameter"><code>from</code></em> is a child of <em class="parameter"><code>widget</code></em>, but the
+widget has no further children that can accept the focus in the
+given direction, then <a class="link" href="StWidget.html#st-widget-navigate-focus" title="st_widget_navigate_focus ()"><code class="function">st_widget_navigate_focus()</code></a> will try a second
+time, using a <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> <em class="parameter"><code>from</code></em>, which should cause it to reset the focus
+to the first available widget in the given direction.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>the "top level" container</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>from</code></em> :</span></p></td>
+<td>the actor that the focus is coming from. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>direction</code></em> :</span></p></td>
+<td>the direction focus is moving in</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>wrap_around</code></em> :</span></p></td>
+<td>whether focus should wrap around</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if <code class="function">clutter_actor_grab_key_focus()</code> has been
+called on an actor. <code class="literal">FALSE</code> if not.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-paint-background"></a><h3>st_widget_paint_background ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_paint_background          (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Paint the background of the widget. This is meant to be called by
+subclasses of StWiget that need to paint the background without
+painting children.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>The <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-peek-theme-node"></a><h3>st_widget_peek_theme_node ()</h3>
+<pre class="programlisting"><a class="link" href="st-st-theme-node.html#StThemeNode"><span class="returnvalue">StThemeNode</span></a> *       st_widget_peek_theme_node           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Returns the theme node for the widget if it has already been
+computed, <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the widget hasn't been added to a  stage or the theme
+node hasn't been computed. If <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> is returned, then ::style-changed
+will be reliably emitted before the widget is allocated or painted.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the theme node for the widget.
+This is owned by the widget. When attributes of the widget
+or the environment that affect the styling change (for example
+the style_class property of the widget), it will be recreated,
+and the ::style-changed signal will be emitted on the widget. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-remove-accessible-state"></a><h3>st_widget_remove_accessible_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_remove_accessible_state   (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">AtkStateType</span> state</code></em>);</pre>
+<p>
+This method removes <em class="parameter"><code>state</code></em> as on of the accessible states for
+<em class="parameter"><code>widget</code></em>. See <a class="link" href="StWidget.html#st-widget-add-accessible-state" title="st_widget_add_accessible_state ()"><code class="function">st_widget_add_accessible_state()</code></a> for more information.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>state</code></em> :</span></p></td>
+<td>
+<span class="type">AtkState</span> state to remove</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-remove-style-class-name"></a><h3>st_widget_remove_style_class_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_remove_style_class_name   (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style_class</code></em>);</pre>
+<p>
+Removes <em class="parameter"><code>style_class</code></em> from <em class="parameter"><code>actor</code></em>'s style class name, if it is
+present.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style_class</code></em> :</span></p></td>
+<td>a style class name string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-remove-style-pseudo-class"></a><h3>st_widget_remove_style_pseudo_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_remove_style_pseudo_class (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *pseudo_class</code></em>);</pre>
+<p>
+Removes <em class="parameter"><code>pseudo_class</code></em> from <em class="parameter"><code>actor</code></em>'s pseudo class, if it is present.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pseudo_class</code></em> :</span></p></td>
+<td>a pseudo class string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-accessible-name"></a><h3>st_widget_set_accessible_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_accessible_name       (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *name</code></em>);</pre>
+<p>
+This method sets <em class="parameter"><code>name</code></em> as the accessible name for <em class="parameter"><code>widget</code></em>.
+</p>
+<p>
+Usually you will have no need to set the accessible name for an
+object, as usually there is a label for most of the interface
+elements. So in general it is better to just use
+<em class="parameter"><code>st_widget_set_label_actor</code></em>. This method is only required when you
+need to set an accessible name and there is no available label
+object.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>widget to set the accessible name for</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>a character string to be set as the accessible name. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-accessible-role"></a><h3>st_widget_set_accessible_role ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_accessible_role       (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">AtkRole</span> role</code></em>);</pre>
+<p>
+This method sets <em class="parameter"><code>role</code></em> as the accessible role for <em class="parameter"><code>widget</code></em>. This
+role describes what kind of user interface element <em class="parameter"><code>widget</code></em> is and
+is provided so that assistive technologies know how to present
+<em class="parameter"><code>widget</code></em> to the user.
+</p>
+<p>
+Usually you will have no need to set the accessible role for an
+object, as this information is extracted from the context of the
+object (ie: a <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> has by default a push button role). This
+method is only required when you need to redefine the role
+currently associated with the widget, for instance if it is being
+used in an unusual way (ie: a <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> used as a togglebutton), or
+if a generic object is used directly (ie: a container as a menu
+item).
+</p>
+<p>
+If <em class="parameter"><code>role</code></em> is <span class="type">ATK_ROLE_INVALID</span>, the role will not be changed
+and the accessible's default role will be used instead.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>widget to set the accessible role for</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>role</code></em> :</span></p></td>
+<td>The role to use</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-can-focus"></a><h3>st_widget_set_can_focus ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_can_focus             (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> can_focus</code></em>);</pre>
+<p>
+Marks <em class="parameter"><code>widget</code></em> as being able to receive keyboard focus via
+keyboard navigation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>can_focus</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the widget can receive keyboard focus
+via keyboard navigation</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-hover"></a><h3>st_widget_set_hover ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_hover                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> hover</code></em>);</pre>
+<p>
+Sets <em class="parameter"><code>widget</code></em>'s hover property and adds or removes "hover" from its
+pseudo class accordingly.
+</p>
+<p>
+If you have set <a class="link" href="StWidget.html#StWidget--track-hover" title='The "track-hover" property'><span class="type">"track-hover"</span></a>, you should not need to call
+this directly. You can call <a class="link" href="StWidget.html#st-widget-sync-hover" title="st_widget_sync_hover ()"><code class="function">st_widget_sync_hover()</code></a> if the hover
+state might be out of sync due to another actor's pointer grab.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hover</code></em> :</span></p></td>
+<td>whether the pointer is hovering over the widget</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-label-actor"></a><h3>st_widget_set_label_actor ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_label_actor           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterActor</span> *label</code></em>);</pre>
+<p>
+Sets <em class="parameter"><code>label</code></em> as the <span class="type">ClutterActor</span> that identifies (labels)
+<em class="parameter"><code>widget</code></em>. <em class="parameter"><code>label</code></em> can be <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that <em class="parameter"><code>widget</code></em> is not
+labelled any more
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>label</code></em> :</span></p></td>
+<td>a <span class="type">ClutterActor</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-style"></a><h3>st_widget_set_style ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_style                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style</code></em>);</pre>
+<p>
+Set the inline style string for this widget. The inline style string is an
+optional ';'-separated list of CSS properties that override the style as
+determined from the stylesheets of the current theme.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>a inline style string, or <a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-style-class-name"></a><h3>st_widget_set_style_class_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_style_class_name      (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *style_class_list</code></em>);</pre>
+<p>
+Set the style class name list. <em class="parameter"><code>style_class_list</code></em> can either be
+<a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>, for no classes, or a space-separated list of style class
+names. See also <a class="link" href="StWidget.html#st-widget-add-style-class-name" title="st_widget_add_style_class_name ()"><code class="function">st_widget_add_style_class_name()</code></a> and
+<a class="link" href="StWidget.html#st-widget-remove-style-class-name" title="st_widget_remove_style_class_name ()"><code class="function">st_widget_remove_style_class_name()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style_class_list</code></em> :</span></p></td>
+<td>a new style class list string. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-style-pseudo-class"></a><h3>st_widget_set_style_pseudo_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_style_pseudo_class    (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *pseudo_class_list</code></em>);</pre>
+<p>
+Set the style pseudo class list. <em class="parameter"><code>pseudo_class_list</code></em> can either be
+<a href="/home/otaylor/gnome/install/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>, for no classes, or a space-separated list of pseudo class
+names. See also <a class="link" href="StWidget.html#st-widget-add-style-pseudo-class" title="st_widget_add_style_pseudo_class ()"><code class="function">st_widget_add_style_pseudo_class()</code></a> and
+<a class="link" href="StWidget.html#st-widget-remove-style-pseudo-class" title="st_widget_remove_style_pseudo_class ()"><code class="function">st_widget_remove_style_pseudo_class()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pseudo_class_list</code></em> :</span></p></td>
+<td>a new pseudo class list string. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-theme"></a><h3>st_widget_set_theme ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_theme                 (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *actor</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="st-st-theme-node.html#StTheme"><span class="type">StTheme</span></a> *theme</code></em>);</pre>
+<p>
+Overrides the theme that would be inherited from the actor's parent
+or the stage with an entirely new theme (set of stylesheets).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>a <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theme</code></em> :</span></p></td>
+<td>a new style class string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-set-track-hover"></a><h3>st_widget_set_track_hover ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_set_track_hover           (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> track_hover</code></em>);</pre>
+<p>
+Enables hover tracking on the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>.
+</p>
+<p>
+If hover tracking is enabled, and the widget is visible and
+reactive, then <em class="parameter"><code>widget</code></em>'s <a class="link" href="StWidget.html#StWidget--hover" title='The "hover" property'><span class="type">"hover"</span></a> property will be updated
+automatically to reflect whether the pointer is in <em class="parameter"><code>widget</code></em> (or one
+of its children), and <em class="parameter"><code>widget</code></em>'s <a class="link" href="StWidget.html#StWidget--pseudo-class" title='The "pseudo-class" property'><span class="type">"pseudo-class"</span></a> will have
+the "hover" class added and removed from it accordingly.
+</p>
+<p>
+Note that currently it is not possible to correctly track the hover
+state when another actor has a pointer grab. You can use
+<a class="link" href="StWidget.html#st-widget-sync-hover" title="st_widget_sync_hover ()"><code class="function">st_widget_sync_hover()</code></a> to update the property manually in this
+case.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>track_hover</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the widget should track the pointer hover state</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-style-changed"></a><h3>st_widget_style_changed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_style_changed             (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-widget-sync-hover"></a><h3>st_widget_sync_hover ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_widget_sync_hover                (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
+<p>
+Sets <em class="parameter"><code>widget</code></em>'s hover state according to the current pointer
+position. This can be used to ensure that it is correct after
+(or during) a pointer grab.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StWidget.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StWidget--accessible-name"></a><h3>The <code class="literal">"accessible-name"</code> property</h3>
+<pre class="programlisting">  "accessible-name"          <span class="type">gchar</span>*                : Read / Write</pre>
+<p>
+Object instance's name for assistive technology access.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--accessible-role"></a><h3>The <code class="literal">"accessible-role"</code> property</h3>
+<pre class="programlisting">  "accessible-role"          <span class="type">AtkRole</span>               : Read / Write</pre>
+<p>
+The accessible role of this object
+</p>
+<p>Default value: ATK_ROLE_INVALID</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--can-focus"></a><h3>The <code class="literal">"can-focus"</code> property</h3>
+<pre class="programlisting">  "can-focus"                <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+Whether or not the widget can be focused via keyboard navigation.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--hover"></a><h3>The <code class="literal">"hover"</code> property</h3>
+<pre class="programlisting">  "hover"                    <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+Whether or not the pointer is currently hovering over the widget. This is
+only tracked automatically if <a class="link" href="StWidget.html#StWidget--track-hover" title='The "track-hover" property'><span class="type">"track-hover"</span></a> is <code class="literal">TRUE</code>, but you can
+adjust it manually in any case.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--label-actor"></a><h3>The <code class="literal">"label-actor"</code> property</h3>
+<pre class="programlisting">  "label-actor"              <span class="type">ClutterActor</span>*         : Read / Write</pre>
+<p>Label that identifies this widget.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--pseudo-class"></a><h3>The <code class="literal">"pseudo-class"</code> property</h3>
+<pre class="programlisting">  "pseudo-class"             <span class="type">gchar</span>*                : Read / Write</pre>
+<p>
+The pseudo-class of the actor. Typical values include "hover", "active",
+"focus".
+</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--stylable"></a><h3>The <code class="literal">"stylable"</code> property</h3>
+<pre class="programlisting">  "stylable"                 <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+Enable or disable styling of the widget
+</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--style"></a><h3>The <code class="literal">"style"</code> property</h3>
+<pre class="programlisting">  "style"                    <span class="type">gchar</span>*                : Read / Write</pre>
+<p>
+Inline style information for the actor as a ';'-separated list of
+CSS properties.
+</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--style-class"></a><h3>The <code class="literal">"style-class"</code> property</h3>
+<pre class="programlisting">  "style-class"              <span class="type">gchar</span>*                : Read / Write</pre>
+<p>
+The style-class of the actor for use in styling.
+</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--theme"></a><h3>The <code class="literal">"theme"</code> property</h3>
+<pre class="programlisting">  "theme"                    <a class="link" href="st-st-theme-node.html#StTheme"><span class="type">StTheme</span></a>*              : Read / Write</pre>
+<p>
+A theme set on this actor overriding the global theming for this actor
+and its descendants
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget--track-hover"></a><h3>The <code class="literal">"track-hover"</code> property</h3>
+<pre class="programlisting">  "track-hover"              <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+Determines whether the widget tracks pointer hover state. If
+<code class="literal">TRUE</code> (and the widget is visible and reactive), the
+<a class="link" href="StWidget.html#StWidget--hover" title='The "hover" property'><span class="type">"hover"</span></a> property and "hover" style pseudo class will be
+adjusted automatically as the pointer moves in and out of the
+widget.
+</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="StWidget.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="StWidget-popup-menu"></a><h3>The <code class="literal">"popup-menu"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget,
+                                                        <span class="type">gpointer</span>  user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the user has requested a context menu (eg, via a
+keybinding)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StWidget-style-changed"></a><h3>The <code class="literal">"style-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget,
+                                                        <span class="type">gpointer</span>  user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the style information that the widget derives from the
+theme changes
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>shell-mobile-providers</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="ShellMountOperation.html" title="ShellMountOperation">
+<link rel="next" href="ShellNetworkAgent.html" title="ShellNetworkAgent">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ShellMountOperation.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="ShellNetworkAgent.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-shell-mobile-providers.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-shell-mobile-providers.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#shell-shell-mobile-providers.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-shell-mobile-providers"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-shell-mobile-providers.top_of_page"></a>shell-mobile-providers</span></h2>
+<p>shell-mobile-providers</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-shell-mobile-providers.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellGsmMccMnc"></a><a name="ShellMobileAccessMethod"></a><a name="ShellMobileAccessMethodType"></a><a name="ShellMobileProvider"></a><pre class="synopsis">                    <a class="link" href="shell-shell-mobile-providers.html#ShellGsmMccMnc-struct" title="ShellGsmMccMnc">ShellGsmMccMnc</a>;
+                    <a class="link" href="shell-shell-mobile-providers.html#ShellMobileAccessMethod-struct" title="ShellMobileAccessMethod">ShellMobileAccessMethod</a>;
+enum                <a class="link" href="shell-shell-mobile-providers.html#ShellMobileAccessMethodType-enum" title="enum ShellMobileAccessMethodType">ShellMobileAccessMethodType</a>;
+                    <a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider-struct" title="ShellMobileProvider">ShellMobileProvider</a>;
+<a class="link" href="shell-shell-mobile-providers.html#ShellMobileAccessMethod"><span class="returnvalue">ShellMobileAccessMethod</span></a> * <a class="link" href="shell-shell-mobile-providers.html#shell-mobile-access-method-ref" title="shell_mobile_access_method_ref ()">shell_mobile_access_method_ref</a>
+                                                        (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileAccessMethod"><span class="type">ShellMobileAccessMethod</span></a> *method</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-mobile-providers.html#shell-mobile-access-method-unref" title="shell_mobile_access_method_unref ()">shell_mobile_access_method_unref</a>    (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileAccessMethod"><span class="type">ShellMobileAccessMethod</span></a> *method</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="shell-shell-mobile-providers.html#shell-mobile-provider-get-cdma-sid" title="shell_mobile_provider_get_cdma_sid ()">shell_mobile_provider_get_cdma_sid</a>  (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a> *provider</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="shell-shell-mobile-providers.html#shell-mobile-provider-get-gsm-mcc-mnc" title="shell_mobile_provider_get_gsm_mcc_mnc ()">shell_mobile_provider_get_gsm_mcc_mnc</a>
+                                                        (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a> *provider</code></em>);
+<a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="returnvalue">ShellMobileProvider</span></a> * <a class="link" href="shell-shell-mobile-providers.html#shell-mobile-provider-ref" title="shell_mobile_provider_ref ()">shell_mobile_provider_ref</a>         (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a> *provider</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-mobile-providers.html#shell-mobile-provider-unref" title="shell_mobile_provider_unref ()">shell_mobile_provider_unref</a>         (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a> *provider</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-mobile-providers.html#shell-mobile-providers-dump" title="shell_mobile_providers_dump ()">shell_mobile_providers_dump</a>         (<em class="parameter"><code><span class="type">GHashTable</span> *providers</code></em>);
+<span class="returnvalue">GHashTable</span> *        <a class="link" href="shell-shell-mobile-providers.html#shell-mobile-providers-parse" title="shell_mobile_providers_parse ()">shell_mobile_providers_parse</a>        (<em class="parameter"><code><span class="type">GHashTable</span> **out_ccs</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-mobile-providers.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GBoxed
+   +----ShellGsmMccMnc
+</pre>
+<pre class="synopsis">
+  GBoxed
+   +----ShellMobileAccessMethod
+</pre>
+<pre class="synopsis">
+  GEnum
+   +----ShellMobileAccessMethodType
+</pre>
+<pre class="synopsis">
+  GBoxed
+   +----ShellMobileProvider
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-mobile-providers.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="shell-shell-mobile-providers.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellGsmMccMnc-struct"></a><h3>ShellGsmMccMnc</h3>
+<pre class="programlisting">typedef struct {
+    char *mcc;
+    char *mnc;
+} ShellGsmMccMnc;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellMobileAccessMethod-struct"></a><h3>ShellMobileAccessMethod</h3>
+<pre class="programlisting">typedef struct {
+    char *name;
+    /* maps lang (char *) -&gt; name (char *) */
+    GHashTable *lcl_names;
+
+    char *username;
+    char *password;
+    char *gateway;
+    GSList *dns; /* GSList of 'char *' */
+
+    /* Only used with SHELL_PROVIDER_TYPE_GSM */
+    char *gsm_apn;
+
+    ShellMobileAccessMethodType type;
+
+    gint refs;
+} ShellMobileAccessMethod;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellMobileAccessMethodType-enum"></a><h3>enum ShellMobileAccessMethodType</h3>
+<pre class="programlisting">typedef enum {
+    SHELL_MOBILE_ACCESS_METHOD_TYPE_UNKNOWN = 0,
+    SHELL_MOBILE_ACCESS_METHOD_TYPE_GSM,
+    SHELL_MOBILE_ACCESS_METHOD_TYPE_CDMA
+} ShellMobileAccessMethodType;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellMobileProvider-struct"></a><h3>ShellMobileProvider</h3>
+<pre class="programlisting">typedef struct {
+    char *name;
+    /* maps lang (char *) -&gt; name (char *) */
+    GHashTable *lcl_names;
+
+    GSList *methods; /* GSList of ShellMobileAccessMethod */
+
+    GSList *gsm_mcc_mnc; /* GSList of ShellGsmMccMnc */
+    GSList *cdma_sid; /* GSList of guint32 */
+
+    gint refs;
+} ShellMobileProvider;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mobile-access-method-ref"></a><h3>shell_mobile_access_method_ref ()</h3>
+<pre class="programlisting"><a class="link" href="shell-shell-mobile-providers.html#ShellMobileAccessMethod"><span class="returnvalue">ShellMobileAccessMethod</span></a> * shell_mobile_access_method_ref
+                                                        (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileAccessMethod"><span class="type">ShellMobileAccessMethod</span></a> *method</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mobile-access-method-unref"></a><h3>shell_mobile_access_method_unref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_mobile_access_method_unref    (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileAccessMethod"><span class="type">ShellMobileAccessMethod</span></a> *method</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mobile-provider-get-cdma-sid"></a><h3>shell_mobile_provider_get_cdma_sid ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_mobile_provider_get_cdma_sid  (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a> *provider</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>provider</code></em> :</span></p></td>
+<td>a <a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the
+list of CDMA sids this provider exposes. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint32][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mobile-provider-get-gsm-mcc-mnc"></a><h3>shell_mobile_provider_get_gsm_mcc_mnc ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            shell_mobile_provider_get_gsm_mcc_mnc
+                                                        (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a> *provider</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>provider</code></em> :</span></p></td>
+<td>a <a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the
+list of <a class="link" href="shell-shell-mobile-providers.html#ShellGsmMccMnc"><span class="type">ShellGsmMccMnc</span></a> this provider exposes. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Shell.GsmMccMnc][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mobile-provider-ref"></a><h3>shell_mobile_provider_ref ()</h3>
+<pre class="programlisting"><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="returnvalue">ShellMobileProvider</span></a> * shell_mobile_provider_ref         (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a> *provider</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mobile-provider-unref"></a><h3>shell_mobile_provider_unref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_mobile_provider_unref         (<em class="parameter"><code><a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a> *provider</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mobile-providers-dump"></a><h3>shell_mobile_providers_dump ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_mobile_providers_dump         (<em class="parameter"><code><span class="type">GHashTable</span> *providers</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mobile-providers-parse"></a><h3>shell_mobile_providers_parse ()</h3>
+<pre class="programlisting"><span class="returnvalue">GHashTable</span> *        shell_mobile_providers_parse        (<em class="parameter"><code><span class="type">GHashTable</span> **out_ccs</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_ccs</code></em> :</span></p></td>
+<td>(element-type utf8 utf8): a <span class="type">GHashTable</span> containing
+country codes. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a
+hash table where keys are country names <span class="type">gchar</span>, values are a <span class="type">GSList</span>
+of <a class="link" href="shell-shell-mobile-providers.html#ShellMobileProvider"><span class="type">ShellMobileProvider</span></a>. Everything is destroyed with <code class="function">g_hash_table_destroy()</code>. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GList][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellTrayManager</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch04.html" title="Tray Icons">
+<link rel="prev" href="ShellTrayIcon.html" title="ShellTrayIcon">
+<link rel="next" href="ch05.html" title="Recorder">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ShellTrayIcon.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="ch05.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#ShellTrayManager.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#ShellTrayManager.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#ShellTrayManager.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#ShellTrayManager.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#ShellTrayManager.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="ShellTrayManager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ShellTrayManager.top_of_page"></a>ShellTrayManager</span></h2>
+<p>ShellTrayManager</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="ShellTrayManager.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="ShellTrayManager.html#ShellTrayManager-struct" title="struct ShellTrayManager">ShellTrayManager</a>;
+struct              <a class="link" href="ShellTrayManager.html#ShellTrayManagerClass" title="struct ShellTrayManagerClass">ShellTrayManagerClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="ShellTrayManager.html#shell-tray-manager-manage-stage" title="shell_tray_manager_manage_stage ()">shell_tray_manager_manage_stage</a>     (<em class="parameter"><code><a class="link" href="ShellTrayManager.html" title="ShellTrayManager"><span class="type">ShellTrayManager</span></a> *manager</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>,
+                                                         <em class="parameter"><code><a href="/home/otaylor/gnome/install/share/gtk-doc/html/st/StWidget.html"><span class="type">StWidget</span></a> *theme_widget</code></em>);
+<a class="link" href="ShellTrayManager.html" title="ShellTrayManager"><span class="returnvalue">ShellTrayManager</span></a> *  <a class="link" href="ShellTrayManager.html#shell-tray-manager-new" title="shell_tray_manager_new ()">shell_tray_manager_new</a>              (<em class="parameter"><code><span class="type">void</span></code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellTrayManager.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----ShellTrayManager
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellTrayManager.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="ShellTrayManager.html#ShellTrayManager--bg-color" title='The "bg-color" property'>bg-color</a>"                 <span class="type">ClutterColor</span>*         : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellTrayManager.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="ShellTrayManager.html#ShellTrayManager-tray-icon-added" title='The "tray-icon-added" signal'>tray-icon-added</a>"                                : <code class="literal">Run Last</code>
+  "<a class="link" href="ShellTrayManager.html#ShellTrayManager-tray-icon-removed" title='The "tray-icon-removed" signal'>tray-icon-removed</a>"                              : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellTrayManager.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="ShellTrayManager.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellTrayManager-struct"></a><h3>struct ShellTrayManager</h3>
+<pre class="programlisting">struct ShellTrayManager;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTrayManagerClass"></a><h3>struct ShellTrayManagerClass</h3>
+<pre class="programlisting">struct ShellTrayManagerClass {
+  GObjectClass parent_class;
+
+  void (* tray_icon_added)   (ShellTrayManager *manager,
+			      ClutterActor     *icon,
+			      const char       *lowercase_wm_class);
+  void (* tray_icon_removed) (ShellTrayManager *manager,
+			      ClutterActor     *icon);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tray-manager-manage-stage"></a><h3>shell_tray_manager_manage_stage ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_tray_manager_manage_stage     (<em class="parameter"><code><a class="link" href="ShellTrayManager.html" title="ShellTrayManager"><span class="type">ShellTrayManager</span></a> *manager</code></em>,
+                                                         <em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>,
+                                                         <em class="parameter"><code><a href="/home/otaylor/gnome/install/share/gtk-doc/html/st/StWidget.html"><span class="type">StWidget</span></a> *theme_widget</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-tray-manager-new"></a><h3>shell_tray_manager_new ()</h3>
+<pre class="programlisting"><a class="link" href="ShellTrayManager.html" title="ShellTrayManager"><span class="returnvalue">ShellTrayManager</span></a> *  shell_tray_manager_new              (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ShellTrayManager.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ShellTrayManager--bg-color"></a><h3>The <code class="literal">"bg-color"</code> property</h3>
+<pre class="programlisting">  "bg-color"                 <span class="type">ClutterColor</span>*         : Read / Write / Construct Only</pre>
+<p>Background color (only if we don't have transparency).</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="ShellTrayManager.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ShellTrayManager-tray-icon-added"></a><h3>The <code class="literal">"tray-icon-added"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellTrayManager.html" title="ShellTrayManager"><span class="type">ShellTrayManager</span></a> *shelltraymanager,
+                                                        <span class="type">ClutterActor</span>     *arg1,
+                                                        <span class="type">gpointer</span>          user_data)             : <code class="literal">Run Last</code></pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellTrayManager-tray-icon-removed"></a><h3>The <code class="literal">"tray-icon-removed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellTrayManager.html" title="ShellTrayManager"><span class="type">ShellTrayManager</span></a> *shelltraymanager,
+                                                        <span class="type">ClutterActor</span>     *arg1,
+                                                        <span class="type">gpointer</span>          user_data)             : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellWM</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="shell-ShellGlobal.html" title="ShellGlobal">
+<link rel="next" href="shell-shell-xfixes-cursor.html" title="shell-xfixes-cursor">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="shell-ShellGlobal.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="shell-shell-xfixes-cursor.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-ShellWM.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-ShellWM.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-ShellWM"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-ShellWM.top_of_page"></a>ShellWM</span></h2>
+<p>ShellWM</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-ShellWM.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="shell-ShellWM.html#ShellWMClass" title="struct ShellWMClass">ShellWMClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellWM.html#shell-wm-completed-destroy" title="shell_wm_completed_destroy ()">shell_wm_completed_destroy</a>          (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellWM.html#shell-wm-completed-map" title="shell_wm_completed_map ()">shell_wm_completed_map</a>              (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellWM.html#shell-wm-completed-maximize" title="shell_wm_completed_maximize ()">shell_wm_completed_maximize</a>         (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellWM.html#shell-wm-completed-minimize" title="shell_wm_completed_minimize ()">shell_wm_completed_minimize</a>         (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellWM.html#shell-wm-completed-switch-workspace" title="shell_wm_completed_switch_workspace ()">shell_wm_completed_switch_workspace</a> (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="shell-ShellWM.html#shell-wm-completed-unmaximize" title="shell_wm_completed_unmaximize ()">shell_wm_completed_unmaximize</a>       (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);
+<span class="returnvalue">ShellWM</span> *           <a class="link" href="shell-ShellWM.html#shell-wm-new" title="shell_wm_new ()">shell_wm_new</a>                        (<em class="parameter"><code><span class="type">MetaPlugin</span> *plugin</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-ShellWM.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="shell-ShellWM.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellWMClass"></a><h3>struct ShellWMClass</h3>
+<pre class="programlisting">struct ShellWMClass {
+  GObjectClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-wm-completed-destroy"></a><h3>shell_wm_completed_destroy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_wm_completed_destroy          (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);</pre>
+<p>
+The plugin must call this when it has completed a window destroy effect.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>wm</code></em> :</span></p></td>
+<td>the ShellWM</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>the MetaWindowActor actor</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-wm-completed-map"></a><h3>shell_wm_completed_map ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_wm_completed_map              (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);</pre>
+<p>
+The plugin must call this when it has completed a window map effect.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>wm</code></em> :</span></p></td>
+<td>the ShellWM</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>the MetaWindowActor actor</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-wm-completed-maximize"></a><h3>shell_wm_completed_maximize ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_wm_completed_maximize         (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);</pre>
+<p>
+The plugin must call this when it has completed a window maximize effect.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>wm</code></em> :</span></p></td>
+<td>the ShellWM</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>the MetaWindowActor actor</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-wm-completed-minimize"></a><h3>shell_wm_completed_minimize ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_wm_completed_minimize         (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);</pre>
+<p>
+The plugin must call this when it has completed a window minimize effect.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>wm</code></em> :</span></p></td>
+<td>the ShellWM</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>the MetaWindowActor actor</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-wm-completed-switch-workspace"></a><h3>shell_wm_completed_switch_workspace ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_wm_completed_switch_workspace (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>);</pre>
+<p>
+The plugin must call this when it has finished switching the
+workspace.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>wm</code></em> :</span></p></td>
+<td>the ShellWM</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-wm-completed-unmaximize"></a><h3>shell_wm_completed_unmaximize ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_wm_completed_unmaximize       (<em class="parameter"><code><span class="type">ShellWM</span> *wm</code></em>,
+                                                         <em class="parameter"><code><span class="type">MetaWindowActor</span> *actor</code></em>);</pre>
+<p>
+The plugin must call this when it has completed a window unmaximize effect.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>wm</code></em> :</span></p></td>
+<td>the ShellWM</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actor</code></em> :</span></p></td>
+<td>the MetaWindowActor actor</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-wm-new"></a><h3>shell_wm_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">ShellWM</span> *           shell_wm_new                        (<em class="parameter"><code><span class="type">MetaPlugin</span> *plugin</code></em>);</pre>
+<p>
+Creates a new window management interface by hooking into <em class="parameter"><code>plugin</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>the <span class="type">MetaPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new window-management interface</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StTable</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="containers.html" title="Containers">
+<link rel="prev" href="StScrollView.html" title="StScrollView">
+<link rel="next" href="styling.html" title="Styling">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StScrollView.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="containers.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="styling.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StTable.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StTable.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StTable.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StTable.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StTable.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StTable"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StTable.top_of_page"></a>StTable</span></h2>
+<p>StTable — A multi-child layout container based on rows
+and columns</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StTable.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StTable.html#StTable-struct" title="struct StTable">StTable</a>;
+enum                <a class="link" href="StTable.html#StTableChildOptions" title="enum StTableChildOptions">StTableChildOptions</a>;
+struct              <a class="link" href="StTable.html#StTableClass" title="struct StTableClass">StTableClass</a>;
+<span class="returnvalue">gint</span>                <a class="link" href="StTable.html#st-table-get-column-count" title="st_table_get_column_count ()">st_table_get_column_count</a>           (<em class="parameter"><code><a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a> *table</code></em>);
+<span class="returnvalue">gint</span>                <a class="link" href="StTable.html#st-table-get-row-count" title="st_table_get_row_count ()">st_table_get_row_count</a>              (<em class="parameter"><code><a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a> *table</code></em>);
+<a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          <a class="link" href="StTable.html#st-table-new" title="st_table_new ()">st_table_new</a>                        (<em class="parameter"><code><span class="type">void</span></code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StTable.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----StTable
+</pre>
+</div>
+<div class="refsect1">
+<a name="StTable.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StTable implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StTable.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StTable.html#StTable--column-count" title='The "column-count" property'>column-count</a>"             <span class="type">gint</span>                  : Read
+  "<a class="link" href="StTable.html#StTable--homogeneous" title='The "homogeneous" property'>homogeneous</a>"              <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="StTable.html#StTable--row-count" title='The "row-count" property'>row-count</a>"                <span class="type">gint</span>                  : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="StTable.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a> is a mult-child layout container based on a table arrangement
+with rows and columns. <a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a> adds several child properties to it's
+children that control their position and size in the table.
+</p>
+</div>
+<div class="refsect1">
+<a name="StTable.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StTable-struct"></a><h3>struct StTable</h3>
+<pre class="programlisting">struct StTable;</pre>
+<p>
+The contents of this structure is private and should only be accessed using
+the provided API.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTableChildOptions"></a><h3>enum StTableChildOptions</h3>
+<pre class="programlisting">typedef enum {
+  ST_KEEP_ASPECT_RATIO = 1 &lt;&lt; 0,
+  ST_X_EXPAND          = 1 &lt;&lt; 1,
+  ST_Y_EXPAND          = 1 &lt;&lt; 2,
+  ST_X_FILL            = 1 &lt;&lt; 3,
+  ST_Y_FILL            = 1 &lt;&lt; 4
+} StTableChildOptions;
+</pre>
+<p>
+Denotes the child properties an StTable child will have.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="ST-KEEP-ASPECT-RATIO:CAPS"></a><span class="term"><code class="literal">ST_KEEP_ASPECT_RATIO</code></span></p></td>
+<td>whether to respect the widget's aspect ratio
+</td>
+</tr>
+<tr>
+<td><p><a name="ST-X-EXPAND:CAPS"></a><span class="term"><code class="literal">ST_X_EXPAND</code></span></p></td>
+<td>whether to allocate extra space on the widget's x-axis
+</td>
+</tr>
+<tr>
+<td><p><a name="ST-Y-EXPAND:CAPS"></a><span class="term"><code class="literal">ST_Y_EXPAND</code></span></p></td>
+<td>whether to allocate extra space on the widget's y-axis
+</td>
+</tr>
+<tr>
+<td><p><a name="ST-X-FILL:CAPS"></a><span class="term"><code class="literal">ST_X_FILL</code></span></p></td>
+<td>whether to stretch the child to fill the cell horizontally
+</td>
+</tr>
+<tr>
+<td><p><a name="ST-Y-FILL:CAPS"></a><span class="term"><code class="literal">ST_Y_FILL</code></span></p></td>
+<td>whether to stretch the child to fill the cell vertically
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTableClass"></a><h3>struct StTableClass</h3>
+<pre class="programlisting">struct StTableClass {
+  StWidgetClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-table-get-column-count"></a><h3>st_table_get_column_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>                st_table_get_column_count           (<em class="parameter"><code><a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a> *table</code></em>);</pre>
+<p>
+Retrieve the current number of columns in <em class="parameter"><code>table</code></em>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td>A <a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of columns</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-table-get-row-count"></a><h3>st_table_get_row_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>                st_table_get_row_count              (<em class="parameter"><code><a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a> *table</code></em>);</pre>
+<p>
+Retrieve the current number rows in the <em class="parameter"><code>table</code></em>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td>A <a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of rows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-table-new"></a><h3>st_table_new ()</h3>
+<pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          st_table_new                        (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Create a new <a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <a class="link" href="StTable.html" title="StTable"><span class="type">StTable</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StTable.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StTable--column-count"></a><h3>The <code class="literal">"column-count"</code> property</h3>
+<pre class="programlisting">  "column-count"             <span class="type">gint</span>                  : Read</pre>
+<p>The number of columns in the table.</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTable--homogeneous"></a><h3>The <code class="literal">"homogeneous"</code> property</h3>
+<pre class="programlisting">  "homogeneous"              <span class="type">gboolean</span>              : Read / Write</pre>
+<p>Homogeneous rows and columns.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StTable--row-count"></a><h3>The <code class="literal">"row-count"</code> property</h3>
+<pre class="programlisting">  "row-count"                <span class="type">gint</span>                  : Read</pre>
+<p>The number of rows in the table.</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

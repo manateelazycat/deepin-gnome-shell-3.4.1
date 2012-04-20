@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>shell-polkit-authentication-agent</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="ShellNetworkAgent.html" title="ShellNetworkAgent">
+<link rel="next" href="shell-ShellTpClient.html" title="ShellTpClient">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ShellNetworkAgent.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="shell-ShellTpClient.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-shell-polkit-authentication-agent.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-shell-polkit-authentication-agent.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#shell-shell-polkit-authentication-agent.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#shell-shell-polkit-authentication-agent.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-shell-polkit-authentication-agent"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-shell-polkit-authentication-agent.top_of_page"></a>shell-polkit-authentication-agent</span></h2>
+<p>shell-polkit-authentication-agent</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-shell-polkit-authentication-agent.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellPolkitAuthenticationAgent"></a><pre class="synopsis">                    <a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent-struct" title="ShellPolkitAuthenticationAgent">ShellPolkitAuthenticationAgent</a>;
+                    <a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgentClass" title="ShellPolkitAuthenticationAgentClass">ShellPolkitAuthenticationAgentClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="shell-shell-polkit-authentication-agent.html#shell-polkit-authentication-agent-complete" title="shell_polkit_authentication_agent_complete ()">shell_polkit_authentication_agent_complete</a>
+                                                        (<em class="parameter"><code><a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent"><span class="type">ShellPolkitAuthenticationAgent</span></a> *agent</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> dismissed</code></em>);
+<a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent"><span class="returnvalue">ShellPolkitAuthenticationAgent</span></a> * <a class="link" href="shell-shell-polkit-authentication-agent.html#shell-polkit-authentication-agent-new" title="shell_polkit_authentication_agent_new ()">shell_polkit_authentication_agent_new</a>
+                                                        (<em class="parameter"><code><span class="type">void</span></code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-polkit-authentication-agent.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----PolkitAgentListener
+         +----ShellPolkitAuthenticationAgent
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-polkit-authentication-agent.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent-cancel" title='The "cancel" signal'>cancel</a>"                                         : <code class="literal">Run Last</code>
+  "<a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent-initiate" title='The "initiate" signal'>initiate</a>"                                       : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-polkit-authentication-agent.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="shell-shell-polkit-authentication-agent.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellPolkitAuthenticationAgent-struct"></a><h3>ShellPolkitAuthenticationAgent</h3>
+<pre class="programlisting">typedef struct _ShellPolkitAuthenticationAgent ShellPolkitAuthenticationAgent;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellPolkitAuthenticationAgentClass"></a><h3>ShellPolkitAuthenticationAgentClass</h3>
+<pre class="programlisting">typedef struct _ShellPolkitAuthenticationAgentClass ShellPolkitAuthenticationAgentClass;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-polkit-authentication-agent-complete"></a><h3>shell_polkit_authentication_agent_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                shell_polkit_authentication_agent_complete
+                                                        (<em class="parameter"><code><a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent"><span class="type">ShellPolkitAuthenticationAgent</span></a> *agent</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> dismissed</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-polkit-authentication-agent-new"></a><h3>shell_polkit_authentication_agent_new ()</h3>
+<pre class="programlisting"><a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent"><span class="returnvalue">ShellPolkitAuthenticationAgent</span></a> * shell_polkit_authentication_agent_new
+                                                        (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="shell-shell-polkit-authentication-agent.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ShellPolkitAuthenticationAgent-cancel"></a><h3>The <code class="literal">"cancel"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent"><span class="type">ShellPolkitAuthenticationAgent</span></a> *shellpolkitauthenticationagent,
+                                                        <span class="type">gpointer</span>                        user_data)                           : <code class="literal">Run Last</code></pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellPolkitAuthenticationAgent-initiate"></a><h3>The <code class="literal">"initiate"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="shell-shell-polkit-authentication-agent.html#ShellPolkitAuthenticationAgent"><span class="type">ShellPolkitAuthenticationAgent</span></a> *shellpolkitauthenticationagent,
+                                                        <span class="type">gchar</span>                          *arg1,
+                                                        <span class="type">gchar</span>                          *arg2,
+                                                        <span class="type">gchar</span>                          *arg3,
+                                                        <span class="type">gchar</span>                          *arg4,
+                                                        <span class="type">GStrv</span>                           arg5,
+                                                        <span class="type">gpointer</span>                        user_data)                           : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

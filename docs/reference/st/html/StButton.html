@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StButton</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="widgets.html" title="Widgets">
+<link rel="prev" href="widgets.html" title="Widgets">
+<link rel="next" href="StDrawingArea.html" title="StDrawingArea">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="widgets.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="widgets.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StDrawingArea.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StButton.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StButton.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StButton.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StButton.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StButton.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#StButton.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StButton"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StButton.top_of_page"></a>StButton</span></h2>
+<p>StButton — Button widget</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StButton.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StButton.html#StButton-struct" title="struct StButton">StButton</a>;
+struct              <a class="link" href="StButton.html#StButtonClass" title="struct StButtonClass">StButtonClass</a>;
+enum                <a class="link" href="StButton.html#StButtonMask" title="enum StButtonMask">StButtonMask</a>;
+<span class="returnvalue">void</span>                <a class="link" href="StButton.html#st-button-fake-release" title="st_button_fake_release ()">st_button_fake_release</a>              (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);
+<a class="link" href="StButton.html#StButtonMask" title="enum StButtonMask"><span class="returnvalue">StButtonMask</span></a>        <a class="link" href="StButton.html#st-button-get-button-mask" title="st_button_get_button_mask ()">st_button_get_button_mask</a>           (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StButton.html#st-button-get-checked" title="st_button_get_checked ()">st_button_get_checked</a>               (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StButton.html#st-button-get-label" title="st_button_get_label ()">st_button_get_label</a>                 (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="StButton.html#st-button-get-toggle-mode" title="st_button_get_toggle_mode ()">st_button_get_toggle_mode</a>           (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);
+<a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          <a class="link" href="StButton.html#st-button-new" title="st_button_new ()">st_button_new</a>                       (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          <a class="link" href="StButton.html#st-button-new-with-label" title="st_button_new_with_label ()">st_button_new_with_label</a>            (<em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StButton.html#st-button-set-button-mask" title="st_button_set_button_mask ()">st_button_set_button_mask</a>           (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="StButton.html#StButtonMask" title="enum StButtonMask"><span class="type">StButtonMask</span></a> mask</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StButton.html#st-button-set-checked" title="st_button_set_checked ()">st_button_set_checked</a>               (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> checked</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StButton.html#st-button-set-label" title="st_button_set_label ()">st_button_set_label</a>                 (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StButton.html#st-button-set-toggle-mode" title="st_button_set_toggle_mode ()">st_button_set_toggle_mode</a>           (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> toggle</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StButton.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----<a class="link" href="StBin.html" title="StBin">StBin</a>
+                           +----StButton
+</pre>
+</div>
+<div class="refsect1">
+<a name="StButton.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StButton implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StButton.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StButton.html#StButton--button-mask" title='The "button-mask" property'>button-mask</a>"              <a class="link" href="StButton.html#StButtonMask" title="enum StButtonMask"><span class="type">StButtonMask</span></a>          : Read / Write
+  "<a class="link" href="StButton.html#StButton--checked" title='The "checked" property'>checked</a>"                  <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="StButton.html#StButton--label" title='The "label" property'>label</a>"                    <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="StButton.html#StButton--pressed" title='The "pressed" property'>pressed</a>"                  <span class="type">gboolean</span>              : Read
+  "<a class="link" href="StButton.html#StButton--toggle-mode" title='The "toggle-mode" property'>toggle-mode</a>"              <span class="type">gboolean</span>              : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="StButton.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="StButton.html#StButton-clicked" title='The "clicked" signal'>clicked</a>"                                        : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="StButton.description"></a><h2>Description</h2>
+<p>
+A button widget with support for either a text label or icon, toggle mode
+and transitions effects between states.
+</p>
+</div>
+<div class="refsect1">
+<a name="StButton.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StButton-struct"></a><h3>struct StButton</h3>
+<pre class="programlisting">struct StButton;</pre>
+<p>
+The contents of this structure is private and should only be accessed using
+the provided API.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StButtonClass"></a><h3>struct StButtonClass</h3>
+<pre class="programlisting">struct StButtonClass {
+  StBinClass parent_class;
+
+  /* vfuncs, not signals */
+  void (* transition) (StButton     *button);
+
+  /* signals */
+  void (* clicked) (StButton *button);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StButtonMask"></a><h3>enum StButtonMask</h3>
+<pre class="programlisting">typedef enum {
+  ST_BUTTON_ONE   = (1 &lt;&lt; 0),
+  ST_BUTTON_TWO   = (1 &lt;&lt; 1),
+  ST_BUTTON_THREE = (1 &lt;&lt; 2),
+} StButtonMask;
+</pre>
+<p>
+A mask representing which mouse buttons an StButton responds to.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="ST-BUTTON-ONE:CAPS"></a><span class="term"><code class="literal">ST_BUTTON_ONE</code></span></p></td>
+<td>button 1 (left)
+</td>
+</tr>
+<tr>
+<td><p><a name="ST-BUTTON-TWO:CAPS"></a><span class="term"><code class="literal">ST_BUTTON_TWO</code></span></p></td>
+<td>button 2 (middle)
+</td>
+</tr>
+<tr>
+<td><p><a name="ST-BUTTON-THREE:CAPS"></a><span class="term"><code class="literal">ST_BUTTON_THREE</code></span></p></td>
+<td>button 3 (right)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-fake-release"></a><h3>st_button_fake_release ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_button_fake_release              (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);</pre>
+<p>
+If this widget is holding a pointer grab, this function will
+will ungrab it, and reset the pressed state.  The effect is
+similar to if the user had released the mouse button, but without
+emitting the clicked signal.
+</p>
+<p>
+This function is useful if for example you want to do something
+after the user is holding the mouse button for a given period of
+time, breaking the grab.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>an <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-get-button-mask"></a><h3>st_button_get_button_mask ()</h3>
+<pre class="programlisting"><a class="link" href="StButton.html#StButtonMask" title="enum StButtonMask"><span class="returnvalue">StButtonMask</span></a>        st_button_get_button_mask           (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);</pre>
+<p>
+Gets the mask of mouse buttons that <em class="parameter"><code>button</code></em> emits the
+<a class="link" href="StButton.html#StButton-clicked" title='The "clicked" signal'><span class="type">"clicked"</span></a> signal for.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>a <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the mask of mouse buttons that <em class="parameter"><code>button</code></em> emits the
+<a class="link" href="StButton.html#StButton-clicked" title='The "clicked" signal'><span class="type">"clicked"</span></a> signal for.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-get-checked"></a><h3>st_button_get_checked ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_button_get_checked               (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);</pre>
+<p>
+Get the state of the button that is in toggle mode.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>a <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the button is checked, or <code class="literal">FALSE</code> if not</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-get-label"></a><h3>st_button_get_label ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_button_get_label                 (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);</pre>
+<p>
+Get the text displayed on the button
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>a <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the text for the button. This must not be freed by the application</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-get-toggle-mode"></a><h3>st_button_get_toggle_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            st_button_get_toggle_mode           (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);</pre>
+<p>
+Get the toggle mode status of the button.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>a <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if toggle mode is set, otherwise <code class="literal">FALSE</code>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-new"></a><h3>st_button_new ()</h3>
+<pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          st_button_new                       (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Create a new button
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-new-with-label"></a><h3>st_button_new_with_label ()</h3>
+<pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *          st_button_new_with_label            (<em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
+<p>
+Create a new <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> with the specified label
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>text to set the label to</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-set-button-mask"></a><h3>st_button_set_button_mask ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_button_set_button_mask           (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="StButton.html#StButtonMask" title="enum StButtonMask"><span class="type">StButtonMask</span></a> mask</code></em>);</pre>
+<p>
+Sets which mouse buttons <em class="parameter"><code>button</code></em> emits <a class="link" href="StButton.html#StButton-clicked" title='The "clicked" signal'><span class="type">"clicked"</span></a> for.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>a <span class="type">Stbutton</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mask</code></em> :</span></p></td>
+<td>the mask of mouse buttons that <em class="parameter"><code>button</code></em> responds to</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-set-checked"></a><h3>st_button_set_checked ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_button_set_checked               (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> checked</code></em>);</pre>
+<p>
+Sets the pressed state of the button. This is only really useful if the
+button has <span class="type">toggle-mode</span> mode set to <code class="literal">TRUE</code>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>a <span class="type">Stbutton</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>checked</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> or <code class="literal">FALSE</code>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-set-label"></a><h3>st_button_set_label ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_button_set_label                 (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
+<p>
+Sets the text displayed on the button
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>a <span class="type">Stbutton</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>text to set the label to</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-button-set-toggle-mode"></a><h3>st_button_set_toggle_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_button_set_toggle_mode           (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> toggle</code></em>);</pre>
+<p>
+Enables or disables toggle mode for the button. In toggle mode, the active
+state will be "toggled" when the user clicks the button.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>a <span class="type">Stbutton</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>toggle</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> or <code class="literal">FALSE</code>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StButton.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StButton--button-mask"></a><h3>The <code class="literal">"button-mask"</code> property</h3>
+<pre class="programlisting">  "button-mask"              <a class="link" href="StButton.html#StButtonMask" title="enum StButtonMask"><span class="type">StButtonMask</span></a>          : Read / Write</pre>
+<p>Which buttons trigger the 'clicked' signal.</p>
+<p>Default value: ST_BUTTON_ONE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StButton--checked"></a><h3>The <code class="literal">"checked"</code> property</h3>
+<pre class="programlisting">  "checked"                  <span class="type">gboolean</span>              : Read / Write</pre>
+<p>Indicates if a toggle button is "on" or "off".</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StButton--label"></a><h3>The <code class="literal">"label"</code> property</h3>
+<pre class="programlisting">  "label"                    <span class="type">gchar</span>*                : Read / Write</pre>
+<p>Label of the button.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StButton--pressed"></a><h3>The <code class="literal">"pressed"</code> property</h3>
+<pre class="programlisting">  "pressed"                  <span class="type">gboolean</span>              : Read</pre>
+<p>Indicates if the button is pressed in.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StButton--toggle-mode"></a><h3>The <code class="literal">"toggle-mode"</code> property</h3>
+<pre class="programlisting">  "toggle-mode"              <span class="type">gboolean</span>              : Read / Write</pre>
+<p>Enable or disable toggling.</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="StButton.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="StButton-clicked"></a><h3>The <code class="literal">"clicked"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button,
+                                                        <span class="type">gint</span>      clicked_button,
+                                                        <span class="type">gpointer</span>  user_data)           : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the user activates the button, either with a mouse press and
+release or with the keyboard.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>button</code></em> :</span></p></td>
+<td>the object that received the signal</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clicked_button</code></em> :</span></p></td>
+<td>the mouse button that was used</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

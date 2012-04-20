@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShellMountOperation</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="shell-shell-util.html" title="shell-util">
+<link rel="next" href="shell-shell-mobile-providers.html" title="shell-mobile-providers">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="shell-shell-util.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="shell-shell-mobile-providers.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#ShellMountOperation.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#ShellMountOperation.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#ShellMountOperation.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#ShellMountOperation.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="ShellMountOperation"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ShellMountOperation.top_of_page"></a>ShellMountOperation</span></h2>
+<p>ShellMountOperation</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="ShellMountOperation.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="ShellMountOperation.html#ShellMountOperation-struct" title="struct ShellMountOperation">ShellMountOperation</a>;
+struct              <a class="link" href="ShellMountOperation.html#ShellMountOperationClass" title="struct ShellMountOperationClass">ShellMountOperationClass</a>;
+<span class="returnvalue">gchar</span> **            <a class="link" href="ShellMountOperation.html#shell-mount-operation-get-show-processes-choices" title="shell_mount_operation_get_show_processes_choices ()">shell_mount_operation_get_show_processes_choices</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a> *self</code></em>);
+<span class="returnvalue">gchar</span> *             <a class="link" href="ShellMountOperation.html#shell-mount-operation-get-show-processes-message" title="shell_mount_operation_get_show_processes_message ()">shell_mount_operation_get_show_processes_message</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a> *self</code></em>);
+<span class="returnvalue">GArray</span> *            <a class="link" href="ShellMountOperation.html#shell-mount-operation-get-show-processes-pids" title="shell_mount_operation_get_show_processes_pids ()">shell_mount_operation_get_show_processes_pids</a>
+                                                        (<em class="parameter"><code><a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a> *self</code></em>);
+<span class="returnvalue">GMountOperation</span> *   <a class="link" href="ShellMountOperation.html#shell-mount-operation-new" title="shell_mount_operation_new ()">shell_mount_operation_new</a>           (<em class="parameter"><code><span class="type">void</span></code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellMountOperation.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GMountOperation
+         +----ShellMountOperation
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellMountOperation.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="ShellMountOperation.html#ShellMountOperation-show-processes-2" title='The "show-processes-2" signal'>show-processes-2</a>"                               : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="ShellMountOperation.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="ShellMountOperation.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellMountOperation-struct"></a><h3>struct ShellMountOperation</h3>
+<pre class="programlisting">struct ShellMountOperation;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ShellMountOperationClass"></a><h3>struct ShellMountOperationClass</h3>
+<pre class="programlisting">struct ShellMountOperationClass {
+  GMountOperationClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mount-operation-get-show-processes-choices"></a><h3>shell_mount_operation_get_show_processes_choices ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> **            shell_mount_operation_get_show_processes_choices
+                                                        (<em class="parameter"><code><a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mount-operation-get-show-processes-message"></a><h3>shell_mount_operation_get_show_processes_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *             shell_mount_operation_get_show_processes_message
+                                                        (<em class="parameter"><code><a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mount-operation-get-show-processes-pids"></a><h3>shell_mount_operation_get_show_processes_pids ()</h3>
+<pre class="programlisting"><span class="returnvalue">GArray</span> *            shell_mount_operation_get_show_processes_pids
+                                                        (<em class="parameter"><code><a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>a <a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a <span class="type">GArray</span>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GPid]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="shell-mount-operation-new"></a><h3>shell_mount_operation_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GMountOperation</span> *   shell_mount_operation_new           (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ShellMountOperation.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ShellMountOperation-show-processes-2"></a><h3>The <code class="literal">"show-processes-2"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="ShellMountOperation.html" title="ShellMountOperation"><span class="type">ShellMountOperation</span></a> *shellmountoperation,
+                                                        <span class="type">gpointer</span>             user_data)                : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

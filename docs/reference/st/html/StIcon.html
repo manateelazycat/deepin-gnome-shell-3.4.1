@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StIcon</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="widgets.html" title="Widgets">
+<link rel="prev" href="StEntry.html" title="StEntry">
+<link rel="next" href="StLabel.html" title="StLabel">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StEntry.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="widgets.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StLabel.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StIcon.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StIcon.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StIcon.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StIcon.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StIcon.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StIcon"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StIcon.top_of_page"></a>StIcon</span></h2>
+<p>StIcon — a simple styled icon actor</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StIcon.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="StIcon.html#StIcon-struct" title="StIcon">StIcon</a>;
+                    <a class="link" href="StIcon.html#StIconClass" title="StIconClass">StIconClass</a>;
+<span class="returnvalue">GIcon</span> *             <a class="link" href="StIcon.html#st-icon-get-gicon" title="st_icon_get_gicon ()">st_icon_get_gicon</a>                   (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>);
+const <span class="returnvalue">gchar</span> *       <a class="link" href="StIcon.html#st-icon-get-icon-name" title="st_icon_get_icon_name ()">st_icon_get_icon_name</a>               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>);
+<span class="returnvalue">gint</span>                <a class="link" href="StIcon.html#st-icon-get-icon-size" title="st_icon_get_icon_size ()">st_icon_get_icon_size</a>               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>);
+<span class="returnvalue">StIconType</span>          <a class="link" href="StIcon.html#st-icon-get-icon-type" title="st_icon_get_icon_type ()">st_icon_get_icon_type</a>               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>);
+<span class="returnvalue">ClutterActor</span> *      <a class="link" href="StIcon.html#st-icon-new" title="st_icon_new ()">st_icon_new</a>                         (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StIcon.html#st-icon-set-gicon" title="st_icon_set_gicon ()">st_icon_set_gicon</a>                   (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">GIcon</span> *gicon</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StIcon.html#st-icon-set-icon-name" title="st_icon_set_icon_name ()">st_icon_set_icon_name</a>               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *icon_name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StIcon.html#st-icon-set-icon-size" title="st_icon_set_icon_size ()">st_icon_set_icon_size</a>               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> size</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StIcon.html#st-icon-set-icon-type" title="st_icon_set_icon_type ()">st_icon_set_icon_type</a>               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">StIconType</span> icon_type</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StIcon.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----StIcon
+</pre>
+</div>
+<div class="refsect1">
+<a name="StIcon.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StIcon implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StIcon.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="StIcon.html#StIcon--gicon" title='The "gicon" property'>gicon</a>"                    <span class="type">GIcon</span>*                : Read / Write
+  "<a class="link" href="StIcon.html#StIcon--icon-name" title='The "icon-name" property'>icon-name</a>"                <span class="type">gchar</span>*                : Read / Write
+  "<a class="link" href="StIcon.html#StIcon--icon-size" title='The "icon-size" property'>icon-size</a>"                <span class="type">gint</span>                  : Read / Write
+  "<a class="link" href="StIcon.html#StIcon--icon-type" title='The "icon-type" property'>icon-type</a>"                <span class="type">StIconType</span>            : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="StIcon.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> is a simple styled texture actor that displays an image from
+a stylesheet.
+</p>
+</div>
+<div class="refsect1">
+<a name="StIcon.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StIcon-struct"></a><h3>StIcon</h3>
+<pre class="programlisting">typedef struct _StIcon StIcon;</pre>
+<p>
+The contents of this structure are private and should only be accessed
+through the public API.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StIconClass"></a><h3>StIconClass</h3>
+<pre class="programlisting">typedef struct {
+  StWidgetClass parent_class;
+
+  /* padding for future expansion */
+  void (*_padding_0) (void);
+  void (*_padding_1) (void);
+  void (*_padding_2) (void);
+  void (*_padding_3) (void);
+  void (*_padding_4) (void);
+} StIconClass;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-get-gicon"></a><h3>st_icon_get_gicon ()</h3>
+<pre class="programlisting"><span class="returnvalue">GIcon</span> *             st_icon_get_gicon                   (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>an icon</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the override GIcon, if set, or NULL. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-get-icon-name"></a><h3>st_icon_get_icon_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *       st_icon_get_icon_name               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-get-icon-size"></a><h3>st_icon_get_icon_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>                st_icon_get_icon_size               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>);</pre>
+<p>
+Gets the size explicit size on the icon. This is not necesariily
+ the size that the icon will actually be displayed at.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>an icon</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the size explicitly set, or -1 if no size has been set</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-get-icon-type"></a><h3>st_icon_get_icon_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">StIconType</span>          st_icon_get_icon_type               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>);</pre>
+<p>
+Gets the type of icon we'll look up to display in the actor.
+See <a class="link" href="StIcon.html#st-icon-set-icon-type" title="st_icon_set_icon_type ()"><code class="function">st_icon_set_icon_type()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>a <a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the icon type.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-new"></a><h3>st_icon_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *      st_icon_new                         (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Create a newly allocated <a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A newly allocated <a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-set-gicon"></a><h3>st_icon_set_gicon ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_icon_set_gicon                   (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">GIcon</span> *gicon</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>an icon</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gicon</code></em> :</span></p></td>
+<td>a <span class="type">GIcon</span> to override :icon-name. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-set-icon-name"></a><h3>st_icon_set_icon_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_icon_set_icon_name               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">gchar</span> *icon_name</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-set-icon-size"></a><h3>st_icon_set_icon_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_icon_set_icon_size               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> size</code></em>);</pre>
+<p>
+Sets an explicit size for the icon.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>an icon</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>if positive, the new size, otherwise the size will be
+derived from the current style</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-icon-set-icon-type"></a><h3>st_icon_set_icon_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_icon_set_icon_type               (<em class="parameter"><code><a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a> *icon</code></em>,
+                                                         <em class="parameter"><code><span class="type">StIconType</span> icon_type</code></em>);</pre>
+<p>
+Sets the type of icon we'll look up to display in the actor.
+The icon type determines whether we use a symbolic icon or
+a full color icon and also is used for specific handling for
+application and document icons.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td>a <a class="link" href="StIcon.html" title="StIcon"><span class="type">StIcon</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon_type</code></em> :</span></p></td>
+<td>the type of icon to use</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StIcon.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="StIcon--gicon"></a><h3>The <code class="literal">"gicon"</code> property</h3>
+<pre class="programlisting">  "gicon"                    <span class="type">GIcon</span>*                : Read / Write</pre>
+<p>A GIcon to override :icon-name.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StIcon--icon-name"></a><h3>The <code class="literal">"icon-name"</code> property</h3>
+<pre class="programlisting">  "icon-name"                <span class="type">gchar</span>*                : Read / Write</pre>
+<p>An icon name.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StIcon--icon-size"></a><h3>The <code class="literal">"icon-size"</code> property</h3>
+<pre class="programlisting">  "icon-size"                <span class="type">gint</span>                  : Read / Write</pre>
+<p>The size if the icon, if positive. Otherwise the size will be derived from the current style.</p>
+<p>Allowed values: &gt;= G_MAXULONG</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StIcon--icon-type"></a><h3>The <code class="literal">"icon-type"</code> property</h3>
+<pre class="programlisting">  "icon-type"                <span class="type">StIconType</span>            : Read / Write</pre>
+<p>The type of icon that should be used.</p>
+<p>Default value: ST_ICON_SYMBOLIC</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>

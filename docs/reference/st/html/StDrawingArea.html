@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StDrawingArea</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="St Reference Manual">
+<link rel="up" href="widgets.html" title="Widgets">
+<link rel="prev" href="StButton.html" title="StButton">
+<link rel="next" href="StEntry.html" title="StEntry">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="StButton.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="widgets.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">St Reference Manual</th>
+<td><a accesskey="n" href="StEntry.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#StDrawingArea.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#StDrawingArea.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#StDrawingArea.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#StDrawingArea.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#StDrawingArea.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="StDrawingArea"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="StDrawingArea.top_of_page"></a>StDrawingArea</span></h2>
+<p>StDrawingArea — A dynamically-sized Cairo drawing area</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="StDrawingArea.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="StDrawingArea.html#StDrawingArea-struct" title="struct StDrawingArea">StDrawingArea</a>;
+struct              <a class="link" href="StDrawingArea.html#StDrawingAreaClass" title="struct StDrawingAreaClass">StDrawingAreaClass</a>;
+<span class="returnvalue">cairo_t</span> *           <a class="link" href="StDrawingArea.html#st-drawing-area-get-context" title="st_drawing_area_get_context ()">st_drawing_area_get_context</a>         (<em class="parameter"><code><a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a> *area</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StDrawingArea.html#st-drawing-area-get-surface-size" title="st_drawing_area_get_surface_size ()">st_drawing_area_get_surface_size</a>    (<em class="parameter"><code><a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a> *area</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *width</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *height</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="StDrawingArea.html#st-drawing-area-queue-repaint" title="st_drawing_area_queue_repaint ()">st_drawing_area_queue_repaint</a>       (<em class="parameter"><code><a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a> *area</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="StDrawingArea.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----ClutterActor
+               +----<a class="link" href="StWidget.html" title="StWidget">StWidget</a>
+                     +----StDrawingArea
+</pre>
+</div>
+<div class="refsect1">
+<a name="StDrawingArea.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+StDrawingArea implements
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
+</div>
+<div class="refsect1">
+<a name="StDrawingArea.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="StDrawingArea.html#StDrawingArea-repaint" title='The "repaint" signal'>repaint</a>"                                        : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="StDrawingArea.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a> is similar to <span class="type">ClutterCairoTexture</span> in that
+it allows drawing via Cairo; the primary difference is that
+it is dynamically sized.  To use, connect to the <a class="link" href="StDrawingArea.html#StDrawingArea-repaint" title='The "repaint" signal'><span class="type">"repaint"</span></a>
+signal, and inside the signal handler, call
+<a class="link" href="StDrawingArea.html#st-drawing-area-get-context" title="st_drawing_area_get_context ()"><code class="function">st_drawing_area_get_context()</code></a> to get the Cairo context to draw to.  The
+<a class="link" href="StDrawingArea.html#StDrawingArea-repaint" title='The "repaint" signal'><span class="type">"repaint"</span></a> signal will be emitted by default when the area is
+resized or the CSS style changes; you can use the
+<a class="link" href="StDrawingArea.html#st-drawing-area-queue-repaint" title="st_drawing_area_queue_repaint ()"><code class="function">st_drawing_area_queue_repaint()</code></a> as well.
+</p>
+</div>
+<div class="refsect1">
+<a name="StDrawingArea.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="StDrawingArea-struct"></a><h3>struct StDrawingArea</h3>
+<pre class="programlisting">struct StDrawingArea;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="StDrawingAreaClass"></a><h3>struct StDrawingAreaClass</h3>
+<pre class="programlisting">struct StDrawingAreaClass {
+    StWidgetClass parent_class;
+
+    void (*repaint) (StDrawingArea *area);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-drawing-area-get-context"></a><h3>st_drawing_area_get_context ()</h3>
+<pre class="programlisting"><span class="returnvalue">cairo_t</span> *           st_drawing_area_get_context         (<em class="parameter"><code><a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a> *area</code></em>);</pre>
+<p>
+Gets the Cairo context to paint to. This function must only be called
+from a signal hander for the ::repaint signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>area</code></em> :</span></p></td>
+<td>the <a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the Cairo context for the paint operation. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-drawing-area-get-surface-size"></a><h3>st_drawing_area_get_surface_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_drawing_area_get_surface_size    (<em class="parameter"><code><a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a> *area</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *width</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *height</code></em>);</pre>
+<p>
+Gets the size of the cairo surface being painted to, which is equal
+to the size of the content area of the widget. This function must
+only be called from a signal hander for the ::repaint signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>area</code></em> :</span></p></td>
+<td>the <a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>location to store the width of the painted area. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>location to store the height of the painted area. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="st-drawing-area-queue-repaint"></a><h3>st_drawing_area_queue_repaint ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                st_drawing_area_queue_repaint       (<em class="parameter"><code><a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a> *area</code></em>);</pre>
+<p>
+Will cause the actor to emit a ::repaint signal before it is next
+drawn to the scene. Useful if some parameters for the area being
+drawn other than the size or style have changed. Note that
+<code class="function">clutter_actor_queue_redraw()</code> will simply result in the same
+contents being drawn to the scene again.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>area</code></em> :</span></p></td>
+<td>the <a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="StDrawingArea.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="StDrawingArea-repaint"></a><h3>The <code class="literal">"repaint"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="StDrawingArea.html" title="StDrawingArea"><span class="type">StDrawingArea</span></a> *stdrawingarea,
+                                                        <span class="type">gpointer</span>       user_data)          : <code class="literal">Run Last</code></pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>
