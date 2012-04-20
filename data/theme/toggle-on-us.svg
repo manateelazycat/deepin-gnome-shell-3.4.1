@@ -1,130 +1,101 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="65"
-   height="22"
-   id="svg2857"
-   version="1.1"
-   inkscape:version="0.48.1 r9760"
-   sodipodi:docname="toggle-on-us.svg">
-  <defs
-     id="defs2859">
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 526.18109 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="744.09448 : 526.18109 : 1"
-       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
-       id="perspective2865" />
-    <inkscape:perspective
-       id="perspective2843"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_x="0 : 0.5 : 1"
-       sodipodi:type="inkscape:persp3d" />
-  </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="19.689855"
-     inkscape:cy="2.0517979"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="941"
-     inkscape:window-height="751"
-     inkscape:window-x="2577"
-     inkscape:window-y="206"
-     inkscape:window-maximized="0"
-     borderlayer="true"
-     inkscape:showpageshadow="false" />
-  <metadata
-     id="metadata2862">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-444.64286,-781.36218)">
-    <g
-       style="display:inline"
-       transform="translate(-351.35714,708.36218)"
-       id="g16453">
-      <rect
-         style="color:#000000;fill:#4a90d9;fill-opacity:1;fill-rule:nonzero;stroke:#3465a4;stroke-width:0.99999994000000003;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-         id="rect16256-9-4"
-         width="63.000004"
-         height="19"
-         x="-859.5"
-         y="74.5"
-         rx="4"
-         ry="4"
-         transform="scale(-1,1)" />
-      <rect
-         style="fill:#000000;fill-opacity:1;stroke:#5f5f5f;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
-         id="rect16258-5-4"
-         width="31"
-         height="20"
-         x="-860"
-         y="74"
-         rx="4"
-         ry="4"
-         transform="scale(-1,1)" />
-      <g
-         style="display:inline"
-         id="g16298-3-6"
-         transform="matrix(-1,0,0,1,1651.1322,-33.986291)">
-        <path
-           inkscape:connector-curvature="0"
-           id="path16265-3-5"
-           d="m 803.6322,115.48629 0,4.29495"
-           style="fill:none;stroke:#5f5f5f;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" />
-        <path
-           inkscape:connector-curvature="0"
-           id="path16265-0-2-0"
-           d="m 806.62805,115.48629 0,4.29495"
-           style="fill:none;stroke:#5f5f5f;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;display:inline" />
-        <path
-           inkscape:connector-curvature="0"
-           id="path16265-8-7-1"
-           d="m 809.6239,115.48629 0,4.29495"
-           style="fill:none;stroke:#5f5f5f;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;display:inline" />
-      </g>
-      <g
-         style="font-size:8.95877075px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Cantarell;-inkscape-font-specification:Cantarell Bold"
-         id="text42229-3-0">
-        <path
-           d="m 808.01473,80.573953 c 0.63283,6e-6 1.19567,0.123947 1.68852,0.371824 0.49284,0.247888 0.88071,0.609505 1.16359,1.084851 0.28287,0.472439 0.42431,1.022155 0.42432,1.649149 -10e-6,0.635748 -0.13853,1.200045 -0.41557,1.692892 -0.27705,0.489934 -0.66637,0.870506 -1.16796,1.141719 -0.50161,0.271212 -1.07757,0.406819 -1.72789,0.406819 -0.4287,0 -0.83552,-0.06562 -1.22046,-0.196848 -0.38495,-0.134148 -0.73053,-0.32808 -1.03673,-0.581795 -0.3033,-0.256631 -0.54535,-0.589085 -0.72615,-0.997363 -0.1779,-0.408276 -0.26684,-0.869045 -0.26684,-1.382311 0,-0.638658 0.13998,-1.200039 0.41994,-1.684144 0.27996,-0.487011 0.66782,-0.858835 1.16359,-1.115472 0.49576,-0.259541 1.06298,-0.389315 1.70164,-0.389321 m 0.57305,1.089225 c -0.20123,-0.05249 -0.40682,-0.07873 -0.61679,-0.07874 -0.20998,5e-6 -0.41411,0.02625 -0.61242,0.07874 -0.19831,0.04958 -0.38932,0.129779 -0.57304,0.240592 -0.18081,0.107907 -0.33975,0.242055 -0.47681,0.402445 -0.13707,0.160399 -0.24643,0.358705 -0.32808,0.594918 -0.0817,0.233305 -0.12249,0.491395 -0.12249,0.774269 0,0.67366 0.20851,1.214627 0.62554,1.622902 0.41703,0.408279 0.93758,0.612417 1.56166,0.612416 0.25955,10e-7 0.51035,-0.04228 0.7524,-0.126857 0.24496,-0.08457 0.47097,-0.20997 0.67803,-0.376199 0.20705,-0.166225 0.37328,-0.392236 0.49868,-0.678031 0.1254,-0.285792 0.1881,-0.610956 0.1881,-0.975492 0,-0.297455 -0.0437,-0.568668 -0.13123,-0.813638 -0.0875,-0.247878 -0.20414,-0.453475 -0.34995,-0.61679 -0.1429,-0.163307 -0.31059,-0.301829 -0.50306,-0.415568 -0.18956,-0.11373 -0.38641,-0.195385 -0.59054,-0.244967"
-           style="line-height:125%;fill:#ffffff;fill-opacity:1;marker:none;font-family:Cantarell;-inkscape-font-specification:Cantarell Bold"
-           id="path18606" />
-        <path
-           d="m 813.15903,80.639569 1.21608,0 3.4689,4.776844 0,-4.776844 1.10235,0 0,6.216022 -1.22921,0 -3.45577,-4.785594 0,4.785594 -1.10235,0 0,-6.216022"
-           style="line-height:125%;fill:#ffffff;fill-opacity:1;marker:none;font-family:Cantarell;-inkscape-font-specification:Cantarell Bold"
-           id="path18608" />
-      </g>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51px"
+	 height="19px" viewBox="0 0 51 19" enable-background="new 0 0 51 19" xml:space="preserve">
+<g id="图层_1">
+	<path opacity="0.8" fill="#767575" d="M50.75,17.582c0,0.783-0.64,1.418-1.431,1.418H1.514c-0.79,0-1.431-0.635-1.431-1.418V2.584
+		c0-0.783,0.641-1.417,1.431-1.417h47.806c0.791,0,1.431,0.635,1.431,1.417V17.582z"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="25.4995" y1="-2.3149" x2="25.4995" y2="17.5799">
+		<stop  offset="0.0847" style="stop-color:#1B4400"/>
+		<stop  offset="0.1249" style="stop-color:#35610C"/>
+		<stop  offset="0.1935" style="stop-color:#5C8C1E"/>
+		<stop  offset="0.2471" style="stop-color:#74A62A"/>
+		<stop  offset="0.2788" style="stop-color:#7DB02E"/>
+		<stop  offset="0.8942" style="stop-color:#598235"/>
+		<stop  offset="1" style="stop-color:#53851E"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M50.75,16.666c0,0.783-0.634,1.418-1.417,1.418H1.667c-0.782,0-1.417-0.635-1.417-1.418V1.667
+		c0-0.783,0.635-1.417,1.417-1.417h47.666c0.783,0,1.417,0.635,1.417,1.417V16.666z"/>
+	<path fill="#4A7033" d="M49.333,18.334H1.667C0.748,18.334,0,17.586,0,16.666V1.667C0,0.748,0.748,0,1.667,0h47.666
+		C50.252,0,51,0.748,51,1.667v14.999C51,17.586,50.252,18.334,49.333,18.334z M1.667,0.5C1.023,0.5,0.5,1.024,0.5,1.667v14.999
+		c0,0.644,0.523,1.168,1.167,1.168h47.666c0.644,0,1.167-0.524,1.167-1.168V1.667c0-0.644-0.523-1.167-1.167-1.167H1.667z"/>
+	<g>
+		<path opacity="0.15" fill="#231815" d="M47.633,15.559c0,0.574-0.467,1.041-1.041,1.041H23.717c-0.576,0-1.041-0.467-1.041-1.041
+			V3.807c0-0.575,0.465-1.041,1.041-1.041h22.875c0.574,0,1.041,0.466,1.041,1.041V15.559z"/>
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="35.1543" y1="1.8491" x2="35.1543" y2="15.4332">
+			<stop  offset="0" style="stop-color:#DCDDDD"/>
+			<stop  offset="0.0485" style="stop-color:#E9EAEA"/>
+			<stop  offset="0.1214" style="stop-color:#F6F6F6"/>
+			<stop  offset="0.22" style="stop-color:#FDFDFD"/>
+			<stop  offset="0.4545" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.7229" style="stop-color:#FDFDFD"/>
+			<stop  offset="0.8196" style="stop-color:#F6F6F6"/>
+			<stop  offset="0.8885" style="stop-color:#EBEBEB"/>
+			<stop  offset="0.9438" style="stop-color:#DADADA"/>
+			<stop  offset="0.9758" style="stop-color:#CCCCCC"/>
+		</linearGradient>
+		<path fill="url(#SVGID_2_)" d="M47.633,14.809c0,0.574-0.467,1.041-1.041,1.041H23.717c-0.576,0-1.041-0.467-1.041-1.041V3.057
+			c0-0.575,0.465-1.041,1.041-1.041h22.875c0.574,0,1.041,0.466,1.041,1.041V14.809z"/>
+		<g opacity="0.24">
+			<rect x="33.183" y="5.349" fill="#ACACAB" width="0.748" height="7.084"/>
+			<rect x="34.975" y="5.349" fill="#ACACAB" width="0.748" height="7.084"/>
+			<rect x="36.766" y="5.349" fill="#ACACAB" width="0.748" height="7.084"/>
+		</g>
+		<g>
+			<rect x="32.988" y="5.162" fill="#ACACAB" width="0.748" height="7.084"/>
+			<rect x="34.78" y="5.162" fill="#ACACAB" width="0.748" height="7.084"/>
+			<rect x="36.571" y="5.162" fill="#ACACAB" width="0.748" height="7.084"/>
+		</g>
+	</g>
+</g>
+<g id="图层_2" display="none">
+	<path display="inline" opacity="0.8" fill="#767575" d="M50.75,17.582c0,0.783-0.64,1.418-1.431,1.418H1.514
+		c-0.79,0-1.431-0.635-1.431-1.418V2.584c0-0.783,0.641-1.418,1.431-1.418h47.806c0.791,0,1.431,0.635,1.431,1.418V17.582z"/>
+	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="25.7495" y1="-1.1763" x2="25.7495" y2="18.644">
+		<stop  offset="0.0847" style="stop-color:#646465"/>
+		<stop  offset="0.091" style="stop-color:#666667"/>
+		<stop  offset="0.209" style="stop-color:#7F8080"/>
+		<stop  offset="0.2788" style="stop-color:#898A89"/>
+		<stop  offset="0.8942" style="stop-color:#636464"/>
+		<stop  offset="1" style="stop-color:#636464"/>
+	</linearGradient>
+	<path display="inline" fill="url(#SVGID_3_)" d="M51,16.416c0,0.783-0.634,1.418-1.417,1.418H1.917
+		c-0.782,0-1.417-0.635-1.417-1.418V1.417C0.5,0.635,1.135,0,1.917,0h47.666C50.366,0,51,0.635,51,1.417V16.416z"/>
+	<path display="inline" fill="#595959" d="M49.333,18.334H1.667C0.748,18.334,0,17.586,0,16.666V1.667C0,0.749,0.748,0,1.667,0
+		h47.666C50.252,0,51,0.749,51,1.667v14.999C51,17.586,50.252,18.334,49.333,18.334z M1.667,0.5C1.023,0.5,0.5,1.024,0.5,1.667
+		v14.999c0,0.645,0.523,1.168,1.167,1.168h47.666c0.644,0,1.167-0.523,1.167-1.168V1.667c0-0.644-0.523-1.167-1.167-1.167H1.667z"/>
+	<g display="inline">
+		<path opacity="0.15" fill="#231815" d="M28.305,15.563c0,0.574-0.467,1.041-1.041,1.041H4.389c-0.576,0-1.041-0.467-1.041-1.041
+			V3.811c0-0.574,0.465-1.041,1.041-1.041h22.875c0.574,0,1.041,0.467,1.041,1.041V15.563z"/>
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="15.8257" y1="1.853" x2="15.8257" y2="15.4371">
+			<stop  offset="0" style="stop-color:#DCDDDD"/>
+			<stop  offset="0.0485" style="stop-color:#E9EAEA"/>
+			<stop  offset="0.1214" style="stop-color:#F6F6F6"/>
+			<stop  offset="0.22" style="stop-color:#FDFDFD"/>
+			<stop  offset="0.4545" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.7229" style="stop-color:#FDFDFD"/>
+			<stop  offset="0.8196" style="stop-color:#F6F6F6"/>
+			<stop  offset="0.8885" style="stop-color:#EBEBEB"/>
+			<stop  offset="0.9438" style="stop-color:#DADADA"/>
+			<stop  offset="0.9758" style="stop-color:#CCCCCC"/>
+		</linearGradient>
+		<path fill="url(#SVGID_4_)" d="M28.305,14.813c0,0.574-0.467,1.041-1.041,1.041H4.389c-0.576,0-1.041-0.467-1.041-1.041V3.061
+			c0-0.574,0.465-1.041,1.041-1.041h22.875c0.574,0,1.041,0.467,1.041,1.041V14.813z"/>
+		<g opacity="0.24">
+			<rect x="13.854" y="5.354" fill="#ACACAB" width="0.748" height="7.084"/>
+			<rect x="15.646" y="5.354" fill="#ACACAB" width="0.748" height="7.084"/>
+			<rect x="17.438" y="5.354" fill="#ACACAB" width="0.748" height="7.084"/>
+		</g>
+		<g>
+			<rect x="13.66" y="5.166" fill="#ACACAB" width="0.748" height="7.084"/>
+			<rect x="15.452" y="5.166" fill="#ACACAB" width="0.748" height="7.084"/>
+			<rect x="17.243" y="5.166" fill="#ACACAB" width="0.748" height="7.084"/>
+		</g>
+	</g>
+</g>
+<g id="图层_3" display="none">
+</g>
+<g id="图层_4">
+</g>
 </svg>
